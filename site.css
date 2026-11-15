@@ -38,7 +38,8 @@
 .hero__frames { position: absolute; inset: 0; z-index: -1; background: var(--color-paper-2); color: var(--color-ink); }
 .hero__frames img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity var(--dur-frame) var(--ease-in-out); }
 .hero__frames img.is-on { opacity: 1; }
-.hero__frames::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--color-scrim) 0%, var(--color-scrim-mid) 38%, var(--color-scrim-none) 72%), linear-gradient(var(--color-veil), var(--color-veil)); }
+/* L'image du rush reste telle que l'app la montre : seul le bas, sous le texte, est assombri. */
+.hero__frames::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--color-scrim) 0%, var(--color-scrim-mid) 26%, var(--color-scrim-none) 52%); }
 .hero__body { display: grid; gap: var(--space-lg); }
 .hero__head { max-width: 22ch; font: 500 var(--text-display)/1.02 var(--font-display); letter-spacing: var(--tracking-display); }
 .hero__lede { max-width: 44ch; font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
@@ -109,7 +110,7 @@ h2 { font: 500 var(--text-section)/1.04 var(--font-display); letter-spacing: var
 /* La fin : la forêt vue de l'hélicoptère, et ce qu'il faut savoir avant la sortie. */
 .close { position: relative; display: grid; align-items: end; min-height: 86svh; margin-top: var(--section-gap-l); padding-block: var(--space-4xl) var(--space-3xl); overflow: hidden; isolation: isolate; }
 .close__frame { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; max-width: none; object-fit: cover; }
-.close::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, var(--color-scrim) 4%, var(--color-scrim-mid) 55%, var(--color-veil) 100%); }
+.close::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, var(--color-scrim) 4%, var(--color-scrim-mid) 42%, var(--color-scrim-none) 80%); }
 .close__body { display: grid; gap: var(--space-xl); }
 .close h2 { max-width: 14ch; font-size: var(--text-display); line-height: 1.02; }
 .signup { display: grid; gap: var(--space-xs); max-width: 34rem; }

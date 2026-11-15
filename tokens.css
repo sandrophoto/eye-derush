@@ -16,7 +16,7 @@
   --color-rule: oklch(34% 0.009 55);
   --color-accent: oklch(72% 0.07 48); --color-accent-ink: oklch(19% 0.012 55); --color-focus: oklch(80% 0.11 52);
   --color-scrim: oklch(19% 0.006 55 / 0.94); --color-scrim-mid: oklch(19% 0.006 55 / 0.55); --color-scrim-none: oklch(19% 0.006 55 / 0);
-  --color-veil: oklch(19% 0.006 55 / 0.28); --color-glass: oklch(22.5% 0.007 55 / 0.86); --color-edge: oklch(95% 0.012 62 / 0.1);
+  --color-glass: oklch(22.5% 0.007 55 / 0.86); --color-edge: oklch(95% 0.012 62 / 0.1);
   --font-display: "Clash Grotesk", ui-sans-serif, system-ui, sans-serif; --font-body: "Switzer", ui-sans-serif, system-ui, sans-serif; --font-outlier: var(--font-body);
   --radius-card: 14px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
   --tracking-display: -0.022em;
