@@ -55,10 +55,11 @@
 .hero__frames::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--color-scrim) 0%, var(--color-scrim-mid) 30%, var(--color-scrim-none) 58%); }
 .hero__body { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-xl) var(--gap-columns); align-items: end; }
 .hero__main { display: grid; gap: var(--space-lg); }
-.hero__head { max-width: 11ch; font: 300 var(--text-display)/0.98 var(--font-display); letter-spacing: var(--tracking-display); }
+.hero__head { font: 300 var(--text-hero)/1 var(--font-display); letter-spacing: var(--tracking-display); }
 .hero__lede { max-width: 40ch; font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
 .hero__found { display: grid; justify-items: end; gap: var(--space-2xs); text-align: right; }
-.hero__found-label { font-size: var(--text-lead); color: var(--color-ink-2); }
+.hero__query { max-width: 16ch; font: 300 var(--text-2xl)/1.1 var(--font-display); letter-spacing: -0.02em; text-wrap: balance; }
+.hero__found-label { margin-top: var(--space-sm); font-size: var(--text-lead); color: var(--color-ink-2); }
 .hero__tc { font: 300 var(--text-tc)/0.86 var(--font-outlier); letter-spacing: -0.06em; font-variant-numeric: tabular-nums; color: var(--color-accent); white-space: nowrap; }
 .queries { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs); }
 .query { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; padding: 0 var(--space-md) 0 var(--space-sm); border: 1px solid var(--color-edge); border-radius: var(--radius-pill); background: var(--color-glass); color: var(--color-ink); font-size: var(--text-sm); white-space: nowrap; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
@@ -103,9 +104,13 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .crop--list { --x: 271; --y: 96; --w: 1400; --h: 590; }
 .crop--cards { --x: 271; --y: 58; --w: 1000; --h: 660; }
 .crop--previews { --x: 1700; --y: 55; --w: 860; --h: 600; }
+.crop--speech { --x: 2020; --y: 40; --w: 540; --h: 265; }
+.crop--filterbar { --x: 271; --y: 58; --w: 1970; --h: 250; }
+.crop--person { --x: 271; --y: 58; --w: 1480; --h: 400; }
 .shot--bleed .crop { border-radius: var(--space-xs); }
 .crop > img { position: absolute; max-width: none; height: auto; width: calc(2560 / var(--w) * 100%); left: calc(var(--x) / var(--w) * -100%); top: calc(var(--y) / var(--h) * -100%); }
-.shot--list { margin-top: var(--space-2xl); }
+.shot--list, .shot--next, .pair--wide { margin-top: var(--space-2xl); }
+.panel--drawer { margin-bottom: var(--space-2xl); }
 
 /* Un panneau de l'app à sa taille réelle : feuille, volet, coup d'œil. */
 .panel { margin: 0; }
@@ -130,6 +135,7 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .langs__grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: var(--gap-columns); align-items: center; }
 .langs__figure { font: 300 clamp(8rem, 24vw, 22rem)/0.8 var(--font-display); letter-spacing: -0.06em; color: var(--color-ink); white-space: nowrap; }
 .langs__text { display: grid; gap: var(--space-lg); }
+.langs__grid > .pair { grid-column: 1 / -1; }
 .facts--1 { grid-template-columns: minmax(0, 1fr); margin-top: var(--space-xl); }
 .facts--1 > div { padding: var(--space-md) 0; }
 
@@ -179,6 +185,17 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .origin__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl) var(--gap-columns); align-items: center; }
 .origin__text { display: grid; gap: var(--space-lg); }
 .origin__shots { display: grid; grid-template-columns: minmax(0, 270fr) minmax(0, 322fr); gap: var(--space-lg); align-items: start; }
+
+/* Corriger : le texte à gauche, les trois temps de la correction à droite. */
+.fix__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-2xl) var(--gap-columns); align-items: start; }
+.fix__text { display: grid; gap: var(--space-lg); position: sticky; top: calc(var(--nav-h) + var(--space-xl)); }
+.fix__shots { display: grid; gap: var(--space-xl); }
+
+/* Personnages : la question de validation, et la liste des visages. */
+.people__grid { display: grid; grid-template-columns: minmax(0, 860fr) minmax(0, 420fr); gap: var(--gap-columns); align-items: start; }
+
+/* La mémoire : la phrase de positionnement, puis quatre différences. */
+.memory .statement { max-width: 20ch; }
 
 /* L'essentiel : trois chiffres mesurés sur le catalogue de Sandro, en grand, séparés d'un filet. */
 .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; border-top: 1px solid var(--color-rule); }
@@ -252,7 +269,8 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
   .nav__end { margin-inline-start: auto; }
 }
 @media (max-width: 60rem) {
-  .head, .offers, .origin__grid, .rows > div, .send__grid, .duo, .hero__body, .offline__grid, .langs__grid { grid-template-columns: minmax(0, 1fr); }
+  .fix__text { position: static; }
+  .head, .offers, .origin__grid, .fix__grid, .people__grid, .rows > div, .send__grid, .duo, .hero__body, .offline__grid, .langs__grid { grid-template-columns: minmax(0, 1fr); }
   .head { align-items: start; gap: var(--space-md); margin-bottom: var(--space-2xl); }
   .hero__found { justify-items: start; text-align: left; }
   .facts--3, .facts--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }

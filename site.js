@@ -6,8 +6,11 @@
   // ----- Titres : chaque mot dans sa ligne, pour monter un à un (le texte reste lisible sans script). -----
   const split = (el) => {
     const text = el.textContent;
-    el.setAttribute('aria-label', text);
+    const spoken = document.createElement('span');   // lu par les lecteurs d'écran ; les mots animés leur sont cachés
+    spoken.className = 'visually-hidden';
+    spoken.textContent = text;
     el.textContent = '';
+    el.append(spoken);
     text.split(' ').forEach((word, index, all) => {
       const outer = document.createElement('span');
       const inner = document.createElement('span');
@@ -33,7 +36,7 @@
   const shots = [...document.querySelectorAll('[data-src-en]')].map((el) => ({ el, fr: el.getAttribute('src'), en: el.dataset.srcEn }));
   const meta = {
     fr: { title: document.title, description: document.querySelector('meta[name="description"]').content },
-    en: { title: 'Eye Derush: the exact shot, found in your rushes', description: 'Eye Derush listens to and watches your rushes on the Mac, then finds every moment from a word or an idea.' },
+    en: { title: 'Eye Derush: every shoot you’ve ever done, one memory', description: 'Eye Derush remembers all your rushes on the Mac: what is said, what is seen. Even with the drives unplugged, whatever your editing software.' },
   };
 
   let lang = 'fr';
@@ -81,10 +84,6 @@
   };
   function showQuery(button, animate = true) {
     question.textContent = button.dataset[lang === 'fr' ? 'qFr' : 'qEn'];
-    split(question);
-    question.classList.remove('is-in');
-    void question.offsetWidth;   // repart de zéro : les mots remontent à chaque plan
-    question.classList.add('is-in');
     if (animate) rollTo(button.dataset.tc); else timecode.textContent = button.dataset.tc;
     queries.forEach((q) => q.setAttribute('aria-pressed', String(q === button)));
     frames.forEach((f) => f.classList.toggle('is-on', f.dataset.frame === button.dataset.query));
@@ -195,11 +194,11 @@
     entry.target.classList.add('is-in');
     reveal.unobserve(entry.target);
   }), { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('[data-reveal], [data-split]:not([data-hero-q])').forEach((el) => reveal.observe(el));
+  document.querySelectorAll('[data-reveal], [data-split]').forEach((el) => { if (!el.closest('.hero')) reveal.observe(el); });
 
   // ----- Ouverture de la page : le titre, puis le reste (voir site.css). -----
   setTimeout(() => {   // un minuteur, pas requestAnimationFrame : il passe aussi dans un onglet ouvert en arrière-plan
     root.classList.add('is-ready');
-    question.classList.add('is-in');
+    document.querySelectorAll('.hero [data-split]').forEach((el) => el.classList.add('is-in'));
   }, 60);
 })();
