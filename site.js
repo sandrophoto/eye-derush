@@ -58,8 +58,17 @@
       label.textContent = label.dataset[`label${key}${lang === 'en' ? 'En' : ''}`];
     });
     syncRotation();
+    labelZooms();
     try { localStorage.setItem('eye-derush-lang', lang); } catch { /* navigation privée : la langue n'est pas retenue */ }
   };
+
+  // Une capture qu'on peut agrandir : son intitulé dit le geste, puis ce qu'elle montre.
+  function labelZooms() {
+    document.querySelectorAll('[data-zoom]').forEach((el) => {
+      const img = el.matches('img') ? el : el.querySelector('img');
+      el.setAttribute('aria-label', `${lang === 'fr' ? 'Agrandir :' : 'Enlarge:'} ${img.alt}`);
+    });
+  }
 
   // ----- En-tête : chaque recherche montre son image, sa question et le minutage où elle est trouvée. -----
   const question = document.querySelector('[data-hero-q]');
@@ -88,6 +97,12 @@
     if (animate) rollTo(button.dataset.tc); else timecode.textContent = button.dataset.tc;
     queries.forEach((q) => q.setAttribute('aria-pressed', String(q === button)));
     frames.forEach((f) => f.classList.toggle('is-on', f.dataset.frame === button.dataset.query));
+    // Sur un téléphone, les recherches tiennent sur une ligne qui glisse : la recherche choisie reste visible.
+    const bar = button.parentElement;
+    if (bar.scrollWidth > bar.clientWidth) {
+      const offset = button.getBoundingClientRect().left - bar.getBoundingClientRect().left - parseFloat(getComputedStyle(bar).paddingLeft);
+      bar.scrollBy({ left: offset, behavior: still ? 'auto' : 'smooth' });
+    }
   }
 
   // Les plans défilent seuls, lentement ; un clic sur une recherche, le survol ou le clavier les arrêtent, « Pause » aussi.
@@ -139,6 +154,13 @@
     const show = () => stage.style.setProperty('--pos', `${range.value}%`);
     range.addEventListener('input', show);
     show();
+    const follow = (event) => {
+      const box = stage.getBoundingClientRect();
+      range.value = Math.round(Math.min(Math.max((event.clientX - box.left) / box.width, 0), 1) * 100);
+      show();
+    };
+    stage.addEventListener('pointerdown', (event) => { stage.setPointerCapture(event.pointerId); follow(event); });
+    stage.addEventListener('pointermove', (event) => { if (stage.hasPointerCapture(event.pointerId)) follow(event); });
     const after = figure.querySelector('[data-compare-after]');
     const label = figure.querySelector('[data-compare-label]');
     figure.querySelectorAll('[data-compare-src]').forEach((button) => button.addEventListener('click', () => {
@@ -148,6 +170,34 @@
       figure.querySelectorAll('[data-compare-src]').forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
     }));
   });
+
+  // ----- Agrandir : une capture s'ouvre à sa vraie taille, sur le passage montré dans la page. -----
+  const zoom = document.createElement('dialog');
+  zoom.className = 'zoom';
+  zoom.innerHTML = '<button class="zoom__close" type="button"></button><img alt="">';
+  document.body.append(zoom);
+  const zoomImg = zoom.querySelector('img'), zoomClose = zoom.querySelector('button');
+  zoomClose.addEventListener('click', () => zoom.close());
+  zoom.addEventListener('click', (event) => { if (event.target === zoom) zoom.close(); });
+  const openZoom = (target) => {
+    const img = target.matches('img') ? target : target.querySelector('img');
+    zoomImg.src = img.currentSrc || img.src;
+    zoomImg.alt = img.alt;
+    zoomClose.textContent = lang === 'fr' ? 'Fermer' : 'Close';
+    zoom.showModal();
+    // Toute la hauteur de l'écran (jamais plus que l'image), ouverte au bord gauche du passage montré dans la page.
+    const height = Math.min(zoom.clientHeight, img.naturalHeight);
+    zoomImg.style.height = `${height}px`;
+    zoom.scrollLeft = (parseFloat(getComputedStyle(target).getPropertyValue('--x')) || 0) * (height / img.naturalHeight);
+  };
+  document.querySelectorAll('.crop, .panel > img').forEach((el) => {
+    el.dataset.zoom = '';
+    el.tabIndex = 0;
+    el.setAttribute('role', 'button');
+    el.addEventListener('click', () => openZoom(el));
+    el.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openZoom(el); } });
+  });
+  labelZooms();
 
   // ----- Inscription : l'adresse part chez FormSubmit ; « c'est noté » seulement quand le service l'a confirmé. -----
   const words = {

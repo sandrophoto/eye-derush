@@ -329,12 +329,37 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .js.is-ready .queries { transition-delay: 640ms; }
 .js.is-ready .hero__playhead { transition-delay: 720ms; }
 
+/* ---------- Agrandir une capture : la fenêtre de l'app à sa vraie taille, à parcourir ---------- */
+
+[data-zoom] { cursor: zoom-in; }
+[data-zoom]:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+/* Sur un écran tactile, un petit signe dit qu'on peut agrandir. */
+@media (hover: none) {
+  .crop[data-zoom]::after { content: ""; position: absolute; right: var(--space-xs); bottom: var(--space-xs); z-index: 2; width: 32px; height: 32px; border-radius: var(--radius-pill); background: var(--color-scrim-mid) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f3ede6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center / 16px no-repeat; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+}
+.zoom { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; overflow: auto; overscroll-behavior: contain; background: var(--color-paper); color: var(--color-ink); }
+.zoom::backdrop { background: var(--color-scrim); }
+.zoom[open] { animation: zoom-in var(--dur-long) var(--ease-out); }
+.zoom[open] { display: grid; }
+/* L'image prend la hauteur de l'écran ; les marges automatiques la centrent sans rien rendre inatteignable. */
+.zoom img { max-width: none; width: auto; margin: auto; }
+.zoom__close { position: fixed; top: calc(var(--space-md) + env(safe-area-inset-top)); right: calc(var(--space-md) + env(safe-area-inset-right)); z-index: 1; min-width: 44px; min-height: 44px; padding: 0 var(--space-md); border: 1px solid var(--color-edge); border-radius: var(--radius-pill); background: var(--color-glass); color: var(--color-ink); font-size: var(--text-sm); cursor: pointer; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+html:has(.zoom[open]) { overflow: hidden; }
+@keyframes zoom-in { from { opacity: 0; transform: scale(0.97); } }
+
+/* Téléphones : pas de grossissement automatique du texte, pas de flash gris au toucher. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+a, button, input, [data-zoom] { -webkit-tap-highlight-color: transparent; }
+
 /* ---------- Écrans étroits ---------- */
 
 @media (max-width: 76rem) {
-  .nav__links { display: none; }
+  .nav__links { margin-inline-start: 0; }
+  .nav__links a:not([aria-current]) { display: none; }
+  .nav__links a[aria-current] { animation: chapter-in var(--dur-long) var(--ease-out); }
   .nav__end { margin-inline-start: auto; }
 }
+@keyframes chapter-in { from { opacity: 0; transform: translateY(6px); } }
 @media (max-width: 60rem) {
   .fix__text { position: static; }
   .head, .offers, .origin__grid, .fix__grid, .people__grid, .rows > div, .send__grid, .duo, .hero__body, .offline__grid, .langs__grid { grid-template-columns: minmax(0, 1fr); }
@@ -354,7 +379,48 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 }
 @media (max-width: 40rem) {
   .nav__soon { display: none; }
-  .facts--3, .facts--4, .cost__lists, .panels, .pair { grid-template-columns: minmax(0, 1fr); }
+  /* Une fois l'en-tête passé, l'icône seule : la place va au chapitre en cours. */
+  .nav:has([aria-current]) .wordmark span { display: none; }
+  .nav__row { gap: var(--space-md); }
+
+  /* En-tête : les recherches sur une ligne, à faire glisser du doigt. */
+  .queries { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); scroll-snap-type: x proximity; scrollbar-width: none; overscroll-behavior-x: contain; -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--gutter), #000 calc(100% - 40px), transparent); mask-image: linear-gradient(to right, transparent, #000 var(--gutter), #000 calc(100% - 40px), transparent); }
+  .queries::-webkit-scrollbar { display: none; }
+  .query, .hero__pause { flex-shrink: 0; scroll-snap-align: start; }
+  .hero__body { gap: var(--space-lg); }
+  .hero__main { gap: var(--space-md); }
+
+  /* Captures par deux ou par trois : un carrousel, la suivante dépasse au bord. */
+  .pair, .panels, .people__grid, .fix__shots { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; gap: var(--space-md); overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; align-items: start; }
+  .pair::-webkit-scrollbar, .panels::-webkit-scrollbar, .people__grid::-webkit-scrollbar, .fix__shots::-webkit-scrollbar { display: none; }
+  .pair > *, .panels > *, .people__grid > *, .fix__shots > * { scroll-snap-align: start; }
+  .pair > :nth-child(2), .panels > :nth-child(2), .people__grid > :nth-child(2) { animation: none !important; }
+  .origin__shots { gap: var(--space-sm); }
+
+  /* Les fenêtres entières, recadrées sur ce qui se lit sur un téléphone ; un toucher les ouvre en grand. */
+  .shot--bleed { width: calc(100% - 2 * var(--gutter)); }
+  .crop--clip { --x: 860; --y: 0; --w: 1700; --h: 1180; }
+  .crop--window { --x: 0; --y: 0; --w: 1280; --h: 1400; }
+  .crop--results { --x: 280; --y: 130; --w: 720; --h: 820; }
+  .crop--list { --x: 271; --y: 100; --w: 1060; --h: 640; }
+  .crop--filterbar { --x: 271; --y: 58; --w: 1000; --h: 700; }
+  .crop--person { --x: 0; --y: 40; --w: 1260; --h: 900; }
+
+  /* Un rythme plus serré : moins de vide entre un repère, un titre et sa capture. */
+  .kicker { margin-bottom: var(--space-lg); }
+  .head { margin-bottom: var(--space-xl); }
+  .statement { margin-bottom: var(--space-2xl); }
+  .facts { margin-top: var(--space-2xl); }
+  .facts > div { padding: var(--space-md) 0 0; }
+  .facts--3, .facts--4 { row-gap: var(--space-lg); }
+  .apps li { padding-block: var(--space-lg); }
+  .duo { margin-top: var(--space-2xl); }
+  .shot--list, .shot--next, .pair--wide, .panel--next, .pair--next { margin-top: var(--space-xl); }
+  .opener { min-height: 80svh; }
+  .opener__body { gap: var(--space-lg); }
+  .cost__lists { margin-top: var(--space-2xl); }
+  .tech h2 { margin-bottom: var(--space-2xl); }
+  .facts--3, .facts--4, .cost__lists { grid-template-columns: minmax(0, 1fr); }
   .signup__row { flex-wrap: wrap; }
   .signup input[type="email"] { flex-basis: 100%; max-width: none; }
   .crop { border-radius: var(--space-xs); }
