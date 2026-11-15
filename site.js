@@ -28,6 +28,7 @@
     document.title = meta[lang].title;
     document.querySelector('meta[name="description"]').content = meta[lang].description;
     showQuery(document.querySelector('.query[aria-pressed="true"]'));
+    syncRotation();
     try { localStorage.setItem('eye-derush-lang', lang); } catch { /* navigation privée : la langue n'est pas retenue */ }
   };
 
@@ -42,13 +43,40 @@
     queries.forEach((q) => q.setAttribute('aria-pressed', String(q === button)));
     frames.forEach((f) => f.classList.toggle('is-on', f.dataset.frame === button.dataset.query));
   }
-  queries.forEach((button) => button.addEventListener('click', () => showQuery(button)));
+  // Les plans défilent seuls, lentement ; un clic sur une recherche, le survol ou le clavier les arrêtent, « Pause » aussi.
+  const heading = document.querySelector('.hero__head');
+  const pause = document.querySelector('[data-hero-pause]');
+  const pauseLabel = pause.querySelector('span');
+  const rotation = { timer: null, held: matchMedia('(prefers-reduced-motion: reduce)').matches, hover: false };
+  const pauseWords = { fr: ['Pause', 'Lecture'], en: ['Pause', 'Play'] };
+  const syncRotation = () => {
+    clearInterval(rotation.timer);
+    rotation.timer = null;
+    pauseLabel.textContent = pauseWords[lang][rotation.held ? 1 : 0];
+    if (rotation.held || rotation.hover) return;
+    rotation.timer = setInterval(() => {
+      const current = queries.findIndex((q) => q.getAttribute('aria-pressed') === 'true');
+      showQuery(queries[(current + 1) % queries.length]);
+    }, 6000);
+  };
+  queries.forEach((button) => button.addEventListener('click', () => {
+    heading.setAttribute('aria-live', 'polite');   // annoncé seulement quand le visiteur choisit
+    rotation.held = true;
+    showQuery(button);
+    syncRotation();
+  }));
+  pause.addEventListener('click', () => { rotation.held = !rotation.held; syncRotation(); });
+  const heroBody = document.querySelector('.hero__body');
+  [['pointerenter', true], ['pointerleave', false], ['focusin', true], ['focusout', false]]
+    .forEach(([type, value]) => heroBody.addEventListener(type, () => { rotation.hover = value; syncRotation(); }));
+  if (!rotation.held) pause.hidden = false;
 
   document.querySelector('[data-lang-toggle]').addEventListener('click', () => setLang(lang === 'fr' ? 'en' : 'fr'));
   let saved = null;
   try { saved = localStorage.getItem('eye-derush-lang'); } catch { /* idem */ }
   const wanted = saved || ((navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en');
   if (wanted === 'en') setLang('en');
+  syncRotation();
 
   // ----- Inscription : l'adresse part chez FormSubmit ; « c'est noté » seulement quand le service l'a confirmé. -----
   const words = {
