@@ -73,6 +73,7 @@ h2 { font: 500 var(--text-section)/1.04 var(--font-display); letter-spacing: var
 .crop--clip { --x: 0; --y: 0; --w: 2560; --h: 1210; }
 .crop--window { --x: 0; --y: 0; --w: 2560; --h: 1400; }
 .crop--list { --x: 271; --y: 96; --w: 1400; --h: 590; }
+.crop--cards { --x: 271; --y: 58; --w: 1000; --h: 660; }
 .shot--bleed .crop { border-radius: var(--space-xs); }
 .crop > img { position: absolute; max-width: none; height: auto; width: calc(2560 / var(--w) * 100%); left: calc(var(--x) / var(--w) * -100%); top: calc(var(--y) / var(--h) * -100%); }
 .shot figcaption { margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-muted); }
@@ -97,6 +98,7 @@ h2 { font: 500 var(--text-section)/1.04 var(--font-display); letter-spacing: var
 .duo h3 { font: 500 var(--text-2xl)/1.1 var(--font-display); letter-spacing: -0.015em; max-width: 14ch; }
 .duo p { max-width: 34ch; color: var(--color-ink-2); }
 .shot--list { margin-top: var(--space-2xl); }
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-columns); }
 
 /* Hors ligne : la phrase en grand, à gauche ; la précision à droite. */
 .offline .statement { max-width: 16ch; margin-bottom: 0; }
@@ -174,7 +176,7 @@ h2 { font: 500 var(--text-section)/1.04 var(--font-display); letter-spacing: var
 }
 @media (max-width: 40rem) {
   .nav__soon { display: none; }
-  .facts--3, .facts--4, .cost__lists, .panels { grid-template-columns: minmax(0, 1fr); }
+  .facts--3, .facts--4, .cost__lists, .panels, .pair { grid-template-columns: minmax(0, 1fr); }
   .facts > div { padding-inline: 0; border-left: 0; }
   .query { white-space: normal; text-align: left; padding-block: var(--space-xs); }
   .signup__row { flex-wrap: wrap; }
