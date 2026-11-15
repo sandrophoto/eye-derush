@@ -12,11 +12,16 @@
 <meta name="theme-color" content="#161615">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@500&f[]=switzer@400,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/frame-rainbow-2400.jpg" imagesrcset="img/frame-rainbow-1200.jpg 1200w, img/frame-rainbow-2400.jpg 2400w" imagesizes="100vw" fetchpriority="high">
+<link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400&f[]=switzer@400,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css?v=3">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+<div class="progress" aria-hidden="true"></div>
 <a class="skip" href="#main" data-en="Skip to content">Aller au contenu</a>
 
 <header class="nav" data-nav>
@@ -53,63 +58,64 @@
     <img data-frame="wall" src="img/frame-wall-2400.jpg" srcset="img/frame-wall-1200.jpg 1200w, img/frame-wall-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
   </div>
   <div class="container hero__body">
-    <h1 class="hero__head">
-      <span data-hero-q>L’arc-en-ciel sur les crêtes ?</span><br>
-      <span data-hero-a>Trouvé à 0:03.</span>
-    </h1>
-    <p class="hero__lede" data-en="Eye Derush listens to and watches your rushes, then finds every moment.">Eye Derush écoute et regarde vos rushs, puis retrouve chaque moment.</p>
+    <div class="hero__main">
+      <h1 class="hero__head" data-split data-hero-q>L’arc-en-ciel sur les crêtes ?</h1>
+      <p class="hero__lede" data-en="Eye Derush listens to and watches your rushes, then finds every moment.">Eye Derush écoute et regarde vos rushs, puis retrouve chaque moment.</p>
+    </div>
+    <p class="hero__found"><span class="hero__found-label" data-en="Found at">Trouvé à</span> <span class="hero__tc" data-hero-tc>0:03</span></p>
     <div class="queries" role="group" aria-label="Essayez une recherche" data-en-aria-label="Try a search">
       <button class="query" type="button" aria-pressed="true" data-query="rainbow"
-        data-q-fr="L’arc-en-ciel sur les crêtes ?" data-a-fr="Trouvé à 0:03."
-        data-q-en="Rainbow over the ridges?" data-a-en="Found at 0:03.">
+        data-q-fr="L’arc-en-ciel sur les crêtes ?" data-tc="0:03"
+        data-q-en="Rainbow over the ridges?">
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <span data-en="rainbow">arc-en-ciel</span>
       </button>
       <button class="query" type="button" aria-pressed="false" data-query="arch"
-        data-q-fr="La façade du refuge ?" data-a-fr="Trouvé à 0:07."
-        data-q-en="Front of the hut?" data-a-en="Found at 0:07.">
+        data-q-fr="La façade du refuge ?" data-tc="0:07"
+        data-q-en="Front of the hut?">
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <span data-en="front of the hut">façade du refuge</span>
       </button>
       <button class="query" type="button" aria-pressed="false" data-query="pilot"
-        data-q-fr="Le pilote face aux montagnes ?" data-a-fr="Trouvé à 0:36."
-        data-q-en="Pilot facing the mountains?" data-a-en="Found at 0:36.">
+        data-q-fr="Le pilote face aux montagnes ?" data-tc="0:36"
+        data-q-en="Pilot facing the mountains?">
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <span data-en="pilot">pilote</span>
       </button>
       <button class="query" type="button" aria-pressed="false" data-query="turbine"
-        data-q-fr="L’éolienne à contre-jour ?" data-a-fr="Trouvé à 0:48."
-        data-q-en="Wind turbine against the light?" data-a-en="Found at 0:48.">
+        data-q-fr="L’éolienne à contre-jour ?" data-tc="0:48"
+        data-q-en="Wind turbine against the light?">
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <span data-en="wind turbine">éolienne</span>
       </button>
       <button class="query" type="button" aria-pressed="false" data-query="eggs"
-        data-q-fr="Les coquilles d’œufs en cuisine ?" data-a-fr="Trouvé à 0:17."
-        data-q-en="Eggshells in the kitchen?" data-a-en="Found at 0:17.">
+        data-q-fr="Les coquilles d’œufs en cuisine ?" data-tc="0:17"
+        data-q-en="Eggshells in the kitchen?">
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <span data-en="eggshells">coquilles d’œufs</span>
       </button>
       <button class="query" type="button" aria-pressed="false" data-query="dusk"
-        data-q-fr="Le ciel rose du soir ?" data-a-fr="Trouvé à 0:14."
-        data-q-en="Pink evening sky?" data-a-en="Found at 0:14.">
+        data-q-fr="Le ciel rose du soir ?" data-tc="0:14"
+        data-q-en="Pink evening sky?">
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <span data-en="evening sky">ciel du soir</span>
       </button>
       <button class="query" type="button" aria-pressed="false" data-query="wall"
-        data-q-fr="Le refuge sous la grande paroi ?" data-a-fr="Trouvé à 0:09."
-        data-q-en="Hut beneath the great wall?" data-a-en="Found at 0:09.">
+        data-q-fr="Le refuge sous la grande paroi ?" data-tc="0:09"
+        data-q-en="Hut beneath the great wall?">
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <span data-en="great wall">grande paroi</span>
       </button>
       <button class="hero__pause" type="button" data-hero-pause hidden><span data-en="Pause">Pause</span></button>
     </div>
+    <div class="hero__playhead" aria-hidden="true"><span data-hero-playhead></span></div>
   </div>
 </section>
 
 <section class="section search" id="chercher">
   <div class="container">
     <div class="head">
-      <h2 data-en="Speech and pictures, in the same results">Paroles et images, dans les mêmes résultats</h2>
+      <h2 data-split data-en="Speech and pictures, in the same results">Paroles et images, dans les mêmes résultats</h2>
       <p class="lead" data-en="Every result says why it is there, and opens to the second.">Chaque résultat dit pourquoi il est là, et s’ouvre à la seconde près.</p>
     </div>
     <figure class="shot" data-reveal>
@@ -139,7 +145,7 @@
 <section class="section clip" id="fiche">
   <div class="container">
     <div class="head">
-      <h2 data-en="Click a sentence, the clip opens there">Cliquez une phrase, le plan s’ouvre là</h2>
+      <h2 data-split data-en="Click a sentence, the clip opens there">Cliquez une phrase, le plan s’ouvre là</h2>
       <p class="lead" data-en="The transcript follows playback, names who is speaking, and lets you fix a word or mark a section.">La transcription suit la lecture, nomme qui parle, et se corrige ou se découpe en sections.</p>
     </div>
   </div>
@@ -165,7 +171,7 @@
 <section class="section offline" id="hors-ligne">
   <div class="container">
     <div class="head">
-      <h2 class="statement" data-en="Log your rushes on the train, on a plane or on the sofa">Dérushez dans le train, en avion ou sur le canapé</h2>
+      <h2 class="statement" data-split data-en="Log your rushes on the train, on a plane or on the sofa">Dérushez dans le train, en avion ou sur le canapé</h2>
       <p class="lead" data-en="The catalogue carries a light copy of every clip. Leave the drives at the office.">Le catalogue emporte une copie légère de chaque plan. Laissez les disques au bureau.</p>
     </div>
     <dl class="facts facts--3" data-reveal>
@@ -187,7 +193,7 @@
 
 <section class="section sort" id="ranger">
   <div class="container">
-    <h2 class="statement" data-en="Your files are never modified, moved or copied.">Vos fichiers ne sont jamais modifiés, déplacés ni copiés.</h2>
+    <h2 class="statement" data-split data-en="Your files are never modified, moved or copied.">Vos fichiers ne sont jamais modifiés, déplacés ni copiés.</h2>
   </div>
   <figure class="shot shot--bleed" data-reveal>
     <div class="crop crop--window">
@@ -221,7 +227,7 @@
 <section class="section display" id="affichage">
   <div class="container">
     <div class="head">
-      <h2 data-en="Show what you need, hide the rest">Affichez ce qui vous sert, masquez le reste</h2>
+      <h2 data-split data-en="Show what you need, hide the rest">Affichez ce qui vous sert, masquez le reste</h2>
       <p class="lead" data-en="Every piece of information on a thumbnail switches on or off in one click: name, analysis badges, shooting details.">Chaque information d’une vignette s’allume ou s’éteint d’un clic : nom, pastilles d’analyse, détails de tournage.</p>
     </div>
     <div class="pair" data-reveal>
@@ -264,7 +270,7 @@
 <section class="section mark" id="sections">
   <div class="container">
     <div class="head">
-      <h2 data-en="Keep a passage, not the whole clip">Gardez un passage, pas tout le plan</h2>
+      <h2 data-split data-en="Keep a passage, not the whole clip">Gardez un passage, pas tout le plan</h2>
       <p class="lead" data-en="Drag across a thumbnail to mark a section, then rate it with one key: green to keep, red to drop.">Glissez sur une vignette pour tracer une section, puis classez-la d’une touche : vert pour garder, rouge pour écarter.</p>
     </div>
     <figure class="panel" data-reveal>
@@ -284,7 +290,7 @@
 <section class="section digest" id="resumer">
   <div class="container">
     <div class="head">
-      <h2 data-en="A summary, then the subjects that keep coming back">Un résumé, puis les sujets qui reviennent</h2>
+      <h2 data-split data-en="A summary, then the subjects that keep coming back">Un résumé, puis les sujets qui reviennent</h2>
       <p class="lead" data-en="On a selection of clips, the app writes what they show and say, then finds the themes. Each one becomes a bin in a click.">Sur une sélection de plans, l’app écrit ce qu’ils montrent et disent, puis repère les thématiques. Chacune devient un chutier d’un clic.</p>
     </div>
     <div class="panels" data-reveal>
@@ -305,7 +311,7 @@
 <section class="section send" id="envoyer">
   <div class="container">
     <div class="head">
-      <h2 data-en="Then everything goes to the edit">Puis tout part au montage</h2>
+      <h2 data-split data-en="Then everything goes to the edit">Puis tout part au montage</h2>
       <p class="lead" data-en="A moment, a section or a whole bin: the editor reads your rushes where they are.">Un moment, une section ou un chutier entier : le logiciel lit vos rushs là où ils sont.</p>
     </div>
     <div class="send__grid">
@@ -335,7 +341,7 @@
 <section class="section cost" id="cout">
   <div class="container cost__grid">
     <div class="cost__figure">
-      <h2 data-en="A quote before anything is sent">Un devis avant chaque envoi</h2>
+      <h2 data-split data-en="A quote before anything is sent">Un devis avant chaque envoi</h2>
       <p class="figure"><span class="num" data-en="$0.50">0,50 $</span></p>
       <p class="figure__unit" data-en="roughly, per hour of rushes analysed">environ, par heure de rushs analysée</p>
       <div class="cost__lists" data-reveal>
@@ -370,7 +376,7 @@
 
 <section class="section tech" id="formats">
   <div class="container">
-    <h2 data-en="Your formats, your log profiles">Vos formats, vos profils log</h2>
+    <h2 data-split data-en="Your formats, your log profiles">Vos formats, vos profils log</h2>
     <dl class="rows" data-reveal>
       <div>
         <dt data-en="Video">Vidéo</dt>
@@ -399,7 +405,7 @@
 <section class="close" id="disponible">
   <img class="close__frame" src="img/frame-ridges-2400.jpg" srcset="img/frame-ridges-1200.jpg 1200w, img/frame-ridges-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
   <div class="container close__body">
-    <h2 data-en="Coming soon to the Mac App Store">Bientôt sur le Mac App Store</h2>
+    <h2 data-split data-en="Coming soon to the Mac App Store">Bientôt sur le Mac App Store</h2>
     <form class="signup" data-endpoint="https://formsubmit.co/ajax/ab19c9072e7dc18155cf9bcd71c43bbb" novalidate>
       <label for="email" data-en="News of Eye Derush before it ships">Des nouvelles d’Eye Derush avant la sortie</label>
       <div class="signup__row">
@@ -425,6 +431,6 @@
   </div>
 </footer>
 
-<script src="site.js"></script>
+<script src="site.js?v=3"></script>
 </body>
 </html>

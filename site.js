@@ -1,6 +1,24 @@
-// Eye Derush : langue de la page, recherches de l'en-tête, arrivée des captures.
+// Eye Derush : langue de la page, plans de l'en-tête, arrivées des titres et des captures.
 (() => {
   const root = document.documentElement;
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ----- Titres : chaque mot dans sa ligne, pour monter un à un (le texte reste lisible sans script). -----
+  const split = (el) => {
+    const text = el.textContent;
+    el.setAttribute('aria-label', text);
+    el.textContent = '';
+    text.split(' ').forEach((word, index, all) => {
+      const outer = document.createElement('span');
+      const inner = document.createElement('span');
+      outer.className = 'word';
+      outer.setAttribute('aria-hidden', 'true');
+      inner.style.setProperty('--i', index);
+      inner.textContent = word;
+      outer.append(inner);
+      el.append(outer, index < all.length - 1 ? ' ' : '');
+    });
+  };
 
   // ----- Langue : le français est dans la page, l'anglais dans les attributs data-en. -----
   const texts = [...document.querySelectorAll('[data-en]')].map((el) => ({ el, fr: el.textContent, en: el.dataset.en }));
@@ -22,45 +40,77 @@
   const setLang = (next) => {
     lang = next;
     root.lang = lang;
-    texts.forEach((t) => { t.el.textContent = t[lang]; });
+    texts.forEach((t) => {
+      t.el.textContent = t[lang];
+      if (t.el.hasAttribute('data-split')) split(t.el);
+    });
     attrs.forEach((a) => a.el.setAttribute(a.target, a[lang]));
     shots.forEach((s) => s.el.setAttribute('src', s[lang]));
     document.title = meta[lang].title;
     document.querySelector('meta[name="description"]').content = meta[lang].description;
-    showQuery(document.querySelector('.query[aria-pressed="true"]'));
+    showQuery(document.querySelector('.query[aria-pressed="true"]'), false);
     syncRotation();
     try { localStorage.setItem('eye-derush-lang', lang); } catch { /* navigation privée : la langue n'est pas retenue */ }
   };
 
-  // ----- En-tête : chaque recherche montre son image, sa question et sa réponse. -----
+  // ----- En-tête : chaque recherche montre son image, sa question et le minutage où elle est trouvée. -----
   const question = document.querySelector('[data-hero-q]');
-  const answer = document.querySelector('[data-hero-a]');
+  const timecode = document.querySelector('[data-hero-tc]');
+  const playhead = document.querySelector('[data-hero-playhead]');
   const frames = [...document.querySelectorAll('[data-frame]')];
   const queries = [...document.querySelectorAll('.query')];
-  function showQuery(button) {
+  const seconds = (tc) => { const [m, s] = tc.split(':').map(Number); return m * 60 + s; };
+  const clock = (total) => `${Math.floor(total / 60)}:${String(total % 60).padStart(2, '0')}`;
+  let rolling = 0;
+  // Le minutage défile de l'ancien au nouveau, comme un compteur de lecteur qu'on fait avancer.
+  const rollTo = (tc) => {
+    cancelAnimationFrame(rolling);
+    const from = seconds(timecode.textContent), to = seconds(tc);
+    if (still || from === to) { timecode.textContent = tc; return; }
+    const start = performance.now(), length = 900;
+    const step = (now) => {
+      const t = Math.min((now - start) / length, 1), eased = 1 - (1 - t) ** 4;
+      timecode.textContent = clock(Math.round(from + (to - from) * eased));
+      if (t < 1) rolling = requestAnimationFrame(step);
+    };
+    rolling = requestAnimationFrame(step);
+  };
+  function showQuery(button, animate = true) {
     question.textContent = button.dataset[lang === 'fr' ? 'qFr' : 'qEn'];
-    answer.textContent = button.dataset[lang === 'fr' ? 'aFr' : 'aEn'];
+    split(question);
+    question.classList.remove('is-in');
+    void question.offsetWidth;   // repart de zéro : les mots remontent à chaque plan
+    question.classList.add('is-in');
+    if (animate) rollTo(button.dataset.tc); else timecode.textContent = button.dataset.tc;
     queries.forEach((q) => q.setAttribute('aria-pressed', String(q === button)));
     frames.forEach((f) => f.classList.toggle('is-on', f.dataset.frame === button.dataset.query));
   }
+
   // Les plans défilent seuls, lentement ; un clic sur une recherche, le survol ou le clavier les arrêtent, « Pause » aussi.
-  const heading = document.querySelector('.hero__head');
   const pause = document.querySelector('[data-hero-pause]');
   const pauseLabel = pause.querySelector('span');
-  const rotation = { timer: null, held: matchMedia('(prefers-reduced-motion: reduce)').matches, hover: false };
+  const rotation = { timer: null, held: still, hover: false };
   const pauseWords = { fr: ['Pause', 'Lecture'], en: ['Pause', 'Play'] };
-  const syncRotation = () => {
+  const restartPlayhead = (running) => {
+    playhead.classList.remove('is-running');
+    void playhead.offsetWidth;
+    if (running) playhead.classList.add('is-running');
+  };
+  function syncRotation() {
     clearInterval(rotation.timer);
     rotation.timer = null;
     pauseLabel.textContent = pauseWords[lang][rotation.held ? 1 : 0];
-    if (rotation.held || rotation.hover) return;
+    const running = !rotation.held && !rotation.hover;
+    restartPlayhead(running);
+    if (!running) return;
     rotation.timer = setInterval(() => {
       const current = queries.findIndex((q) => q.getAttribute('aria-pressed') === 'true');
       showQuery(queries[(current + 1) % queries.length]);
+      restartPlayhead(true);
     }, 6000);
-  };
+  }
   queries.forEach((button) => button.addEventListener('click', () => {
-    heading.setAttribute('aria-live', 'polite');   // annoncé seulement quand le visiteur choisit
+    question.setAttribute('aria-live', 'polite');   // annoncé seulement quand le visiteur choisit
     rotation.held = true;
     showQuery(button);
     syncRotation();
@@ -75,8 +125,8 @@
   let saved = null;
   try { saved = localStorage.getItem('eye-derush-lang'); } catch { /* idem */ }
   const wanted = saved || ((navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en');
-  if (wanted === 'en') setLang('en');
-  syncRotation();
+  document.querySelectorAll('[data-split]').forEach(split);
+  if (wanted === 'en') setLang('en'); else syncRotation();
 
   // ----- Inscription : l'adresse part chez FormSubmit ; « c'est noté » seulement quand le service l'a confirmé. -----
   const words = {
@@ -118,11 +168,17 @@
   new IntersectionObserver(([entry]) => nav.classList.toggle('is-solid', !entry.isIntersecting), { rootMargin: '-72px 0px 0px 0px' })
     .observe(document.querySelector('[data-hero]'));
 
-  // ----- Arrivée des captures, une fois. -----
+  // ----- Arrivées : titres et captures, une fois, quand ils entrent à l'écran. -----
   const reveal = new IntersectionObserver((entries) => entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
     entry.target.classList.add('is-in');
     reveal.unobserve(entry.target);
   }), { rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('[data-reveal]').forEach((el) => reveal.observe(el));
+  document.querySelectorAll('[data-reveal], [data-split]:not([data-hero-q])').forEach((el) => reveal.observe(el));
+
+  // ----- Ouverture de la page : le titre, puis le reste (voir site.css). -----
+  setTimeout(() => {   // un minuteur, pas requestAnimationFrame : il passe aussi dans un onglet ouvert en arrière-plan
+    root.classList.add('is-ready');
+    question.classList.add('is-in');
+  }, 60);
 })();

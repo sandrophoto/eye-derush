@@ -1,14 +1,14 @@
 :root {
   --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
   --text-xs: 0.8125rem; --text-sm: 0.9375rem; --text-md: 1.0625rem; --text-lg: 1.25rem; --text-xl: 1.5625rem; --text-2xl: 1.953rem; --text-3xl: 2.441rem;
-  --text-display: clamp(2.5rem, 4.6vw + 0.9rem, 5.25rem);
-  --text-section: clamp(2.125rem, 2.6vw + 1.1rem, 3.75rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.4vw + 1rem, 1.4375rem);
-  --text-app: clamp(2rem, 3.4vw + 0.8rem, 4.25rem); --text-figure: clamp(5.5rem, 15vw, 13rem);
+  --text-display: clamp(3rem, 6.2vw + 0.5rem, 7.25rem); --text-statement: clamp(2.75rem, 5.2vw + 0.6rem, 6.5rem); --text-tc: clamp(4.5rem, 12.5vw, 12.5rem);
+  --text-section: clamp(2.375rem, 3.7vw + 1rem, 5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.4vw + 1rem, 1.4375rem);
+  --text-app: clamp(2.25rem, 3.6vw + 0.8rem, 4.75rem); --text-figure: clamp(6rem, 16vw, 14.5rem);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms; --dur-frame: 900ms;
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms; --dur-frame: 1200ms; --dur-reveal: 1100ms; --dur-zoom: 8000ms; --dur-slide: 6000ms;
   --color-error: oklch(66% 0.19 27); --color-success: oklch(72% 0.14 150);
-  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 152px; --section-gap-l: 184px;
-  --nav-h: 68px;
+  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 128px; --section-gap: 176px; --section-gap-l: 208px;
+  --nav-h: 72px;
   --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
   /* Les couleurs de l'app : anthracite de la fenêtre, terre cuite poudrée de l'accent (Theme.swift), teintées vers 55. */
   --color-paper: oklch(19% 0.006 55); --color-paper-2: oklch(22.5% 0.007 55); --color-paper-3: oklch(26.5% 0.008 55);
@@ -17,7 +17,9 @@
   --color-accent: oklch(72% 0.07 48); --color-accent-ink: oklch(19% 0.012 55); --color-focus: oklch(80% 0.11 52);
   --color-scrim: oklch(19% 0.006 55 / 0.94); --color-scrim-mid: oklch(19% 0.006 55 / 0.55); --color-scrim-none: oklch(19% 0.006 55 / 0); --color-scrim-nav: oklch(19% 0.006 55 / 0.8);
   --color-glass: oklch(22.5% 0.007 55 / 0.86); --color-edge: oklch(95% 0.012 62 / 0.1);
-  --font-display: "Clash Grotesk", ui-sans-serif, system-ui, sans-serif; --font-body: "Switzer", ui-sans-serif, system-ui, sans-serif; --font-outlier: var(--font-body);
+  --font-display: "Gambetta", ui-serif, Georgia, serif; --font-body: "Switzer", ui-sans-serif, system-ui, sans-serif; --font-outlier: "JetBrains Mono", ui-monospace, monospace;
   --radius-card: 14px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
-  --tracking-display: -0.022em;
+  --tracking-display: -0.03em;
+  /* Le chapitre clair (hors ligne) : sable chaud, encre anthracite. */
+  --color-sand: oklch(91.5% 0.018 72); --color-sand-ink: oklch(21% 0.012 55); --color-sand-ink-2: oklch(38% 0.016 55); --color-sand-rule: oklch(79% 0.022 70);
 }
