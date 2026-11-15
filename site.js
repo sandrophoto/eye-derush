@@ -49,6 +49,10 @@
     document.title = meta[lang].title;
     document.querySelector('meta[name="description"]').content = meta[lang].description;
     showQuery(document.querySelector('.query[aria-pressed="true"]'), false);
+    document.querySelectorAll('[data-compare-label]').forEach((label) => {
+      const key = label.dataset.current === 'lut' ? 'Lut' : 'Look';
+      label.textContent = label.dataset[`label${key}${lang === 'en' ? 'En' : ''}`];
+    });
     syncRotation();
     try { localStorage.setItem('eye-derush-lang', lang); } catch { /* navigation privée : la langue n'est pas retenue */ }
   };
@@ -127,6 +131,23 @@
   const wanted = saved || ((navigator.language || 'fr').toLowerCase().startsWith('fr') ? 'fr' : 'en');
   document.querySelectorAll('[data-split]').forEach(split);
   if (wanted === 'en') setLang('en'); else syncRotation();
+
+  // ----- Avant, après : le curseur fixe la limite entre les deux images ; les boutons changent ce qui est appliqué. -----
+  document.querySelectorAll('[data-compare]').forEach((figure) => {
+    const stage = figure.querySelector('.compare__stage');
+    const range = figure.querySelector('.compare__range');
+    const show = () => stage.style.setProperty('--pos', `${range.value}%`);
+    range.addEventListener('input', show);
+    show();
+    const after = figure.querySelector('[data-compare-after]');
+    const label = figure.querySelector('[data-compare-label]');
+    figure.querySelectorAll('[data-compare-src]').forEach((button) => button.addEventListener('click', () => {
+      after.src = button.dataset.compareSrc;
+      label.dataset.current = button.dataset.compareKey;
+      label.textContent = label.dataset[`label${button.dataset.compareKey === 'lut' ? 'Lut' : 'Look'}${lang === 'en' ? 'En' : ''}`];
+      figure.querySelectorAll('[data-compare-src]').forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+    }));
+  });
 
   // ----- Inscription : l'adresse part chez FormSubmit ; « c'est noté » seulement quand le service l'a confirmé. -----
   const words = {

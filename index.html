@@ -17,7 +17,7 @@
 <link rel="preload" as="image" href="img/frame-rainbow-2400.jpg" imagesrcset="img/frame-rainbow-1200.jpg 1200w, img/frame-rainbow-2400.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400&f[]=switzer@400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=4">
+<link rel="stylesheet" href="site.css?v=5">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -33,9 +33,10 @@
     <nav class="nav__links" aria-label="Sections" data-en-aria-label="Sections">
       <a href="#chercher" data-en="Search">Chercher</a>
       <a href="#fiche" data-en="Clip view">La fiche</a>
+      <a href="#langues" data-en="Languages">Langues</a>
+      <a href="#correction" data-en="Colour">Couleur</a>
       <a href="#hors-ligne" data-en="Offline">Hors ligne</a>
       <a href="#ranger" data-en="Organise">Ranger</a>
-      <a href="#envoyer" data-en="Send">Envoyer</a>
       <a href="#cout" data-en="Cost">Coût</a>
     </nav>
     <div class="nav__end">
@@ -60,7 +61,7 @@
   <div class="container hero__body">
     <div class="hero__main">
       <h1 class="hero__head" data-split data-hero-q>L’arc-en-ciel sur les crêtes ?</h1>
-      <p class="hero__lede" data-en="Eye Derush listens to and watches your rushes, then finds every moment.">Eye Derush écoute et regarde vos rushs, puis retrouve chaque moment.</p>
+      <p class="hero__lede" data-en="Eye Derush’s AI listens to and watches your rushes, then finds every moment.">L’IA d’Eye Derush écoute et regarde vos rushs, puis retrouve chaque moment.</p>
     </div>
     <p class="hero__found"><span class="hero__found-label" data-en="Found at">Trouvé à</span> <span class="hero__tc" data-hero-tc>0:03</span></p>
     <div class="queries" role="group" aria-label="Essayez une recherche" data-en-aria-label="Try a search">
@@ -116,7 +117,7 @@
   <div class="container">
     <div class="head">
       <h2 data-split data-en="Speech and pictures, in the same results">Paroles et images, dans les mêmes résultats</h2>
-      <p class="lead" data-en="Every result says why it is there, and opens to the second.">Chaque résultat dit pourquoi il est là, et s’ouvre à la seconde près.</p>
+      <p class="lead" data-en="An AI-powered search that understands the context of every shot. Each result opens to the second.">Une recherche propulsée par l’IA, qui comprend le contexte de chaque plan. Chaque résultat s’ouvre à la seconde près.</p>
     </div>
     <figure class="shot" data-reveal>
       <div class="crop crop--results">
@@ -132,7 +133,7 @@
       </div>
       <div>
         <dt data-en="By meaning">Par le sens</dt>
-        <dd data-en="A passage that says the same thing in other words.">Un passage qui dit la même chose avec d’autres mots.</dd>
+        <dd data-en="The AI finds a passage that says the same thing in other words.">L’IA retrouve un passage qui dit la même chose avec d’autres mots.</dd>
       </div>
       <div>
         <dt data-en="More like this">Plus comme ça</dt>
@@ -165,6 +166,86 @@
       <img src="img/shot-quicklook-fr.webp" data-src-en="img/shot-quicklook-en.webp" width="960" height="680" loading="lazy"
         alt="Le coup d’œil : le plan lu dans un panneau, avec son sous-titre et sa barre de lecture." data-en-alt="Quick look: the clip playing in a panel, with its subtitle and transport bar.">
     </figure>
+  </div>
+</section>
+
+<section class="section langs" id="langues">
+  <div class="container langs__grid">
+    <p class="langs__figure" aria-hidden="true">100+</p>
+    <div class="langs__text">
+      <h2 data-split data-en="Transcribed in more than 100 languages">Transcrit dans plus de 100 langues</h2>
+      <p class="lead" data-en="A rush in Slovenian, Japanese or Portuguese becomes text you can search, then a translation in French or English.">Un rush en slovène, en japonais ou en portugais devient un texte qui se cherche, puis une traduction en français ou en anglais.</p>
+      <dl class="facts facts--1" data-reveal>
+        <div>
+          <dt data-en="Who speaks">Qui parle</dt>
+          <dd data-en="Each voice gets its own name in the transcript.">Chaque voix a son nom dans la transcription.</dd>
+        </div>
+        <div>
+          <dt data-en="Translated subtitles">Sous-titres traduits</dt>
+          <dd data-en="Shown on the player and sent to the edit with the clips.">Affichés sur le lecteur et envoyés au montage avec les plans.</dd>
+        </div>
+        <div>
+          <dt data-en="Searchable translations">Traductions cherchables</dt>
+          <dd data-en="A French word finds the Slovenian sentence that means it.">Un mot français retrouve la phrase slovène qui le dit.</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="section grade" id="correction">
+  <div class="container">
+    <div class="head">
+      <h2 data-split data-en="Your log footage, already graded">Vos images log, déjà étalonnées</h2>
+      <p class="lead" data-en="Two LUTs on top of each other, applied on screen only: your files are never modified.">Deux LUT l’une sur l’autre, appliquées à l’écran seulement : vos fichiers ne sont jamais modifiés.</p>
+    </div>
+    <figure class="compare" data-compare data-reveal>
+      <div class="compare__stage">
+        <img class="compare__after" data-compare-after src="img/grade-look.jpg" width="2400" height="1350" loading="lazy" alt="Le même plan avec la LUT Caméra puis la LUT Look." data-en-alt="The same shot with the Camera LUT, then the Look LUT.">
+        <img class="compare__before" src="img/grade-log.jpg" width="2400" height="1350" loading="lazy" alt="Le plan tel que la caméra l’enregistre, en S-Log3." data-en-alt="The shot as the camera records it, in S-Log3.">
+        <div class="compare__handle" aria-hidden="true"></div>
+        <span class="compare__tag compare__tag--start" data-en="S-Log3 as shot">S-Log3 brut</span>
+        <span class="compare__tag compare__tag--end" data-compare-label data-label-lut="LUT Caméra" data-label-lut-en="Camera LUT" data-label-look="LUT Caméra + Look" data-label-look-en="Camera LUT + Look">LUT Caméra + Look</span>
+        <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Avant, après" data-en-aria-label="Before, after">
+      </div>
+      <figcaption class="compare__bar">
+        <span data-en="Drag to compare.">Faites glisser pour comparer.</span>
+        <span class="seg" role="group" aria-label="Ce qui est appliqué" data-en-aria-label="What is applied">
+          <button type="button" class="seg__btn" aria-pressed="false" data-compare-src="img/grade-lut.jpg" data-compare-key="lut" data-en="Camera LUT">LUT Caméra</button>
+          <button type="button" class="seg__btn" aria-pressed="true" data-compare-src="img/grade-look.jpg" data-compare-key="look" data-en="+ Look">+ Look</button>
+        </span>
+      </figcaption>
+    </figure>
+    <dl class="facts facts--3" data-reveal>
+      <div>
+        <dt data-en="Camera LUT">LUT Caméra</dt>
+        <dd data-en="Brings log back to Rec. 709. On Auto, it picks the conversion for each camera: S-Log3, C-Log, V-Log, HLG…">Ramène le log en Rec. 709. En Auto, elle choisit la conversion de chaque caméra : S-Log3, C-Log, V-Log, HLG…</dd>
+      </div>
+      <div>
+        <dt data-en="Look LUT">LUT Look</dt>
+        <dd data-en="A style on top, with its strength set by hand.">Un style par-dessus, avec son intensité réglable.</dd>
+      </div>
+      <div>
+        <dt data-en="Exposure and temperature">Exposition et température</dt>
+        <dd data-en="Adjusted by hand before the LUT, in stops and in kelvins.">Réglées à la main avant la LUT, en diaphragmes et en kelvins.</dd>
+      </div>
+    </dl>
+    <div class="duo duo--grade">
+      <div class="duo__text">
+        <h3 data-en="Auto evens out the extremes">Auto rattrape les extrêmes</h3>
+        <p data-en="A clip that is far too bright or too dark is brought halfway back, in the thumbnails and the player. The others stay as they are.">Un plan beaucoup trop clair ou trop sombre est ramené à mi-chemin, dans les vignettes et le lecteur. Les autres restent tels quels.</p>
+      </div>
+      <figure class="compare compare--small" data-compare data-reveal>
+        <div class="compare__stage">
+          <img class="compare__after" src="img/expo-after.jpg" width="2400" height="1350" loading="lazy" alt="Le plan enneigé avec la correction Auto." data-en-alt="The snowy shot with the Auto correction.">
+          <img class="compare__before" src="img/expo-before.jpg" width="2400" height="1350" loading="lazy" alt="Un plan enneigé trop clair, sans correction." data-en-alt="A snowy shot that is too bright, without correction.">
+          <div class="compare__handle" aria-hidden="true"></div>
+          <span class="compare__tag compare__tag--start" data-en="Without Auto">Sans Auto</span>
+          <span class="compare__tag compare__tag--end" data-en="With Auto">Avec Auto</span>
+          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Sans Auto, avec Auto" data-en-aria-label="Without Auto, with Auto">
+        </div>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -315,7 +396,7 @@
   <div class="container">
     <div class="head">
       <h2 data-split data-en="A summary, then the subjects that keep coming back">Un résumé, puis les sujets qui reviennent</h2>
-      <p class="lead" data-en="On a selection of clips, the app writes what they show and say, then finds the themes. Each one becomes a bin in a click.">Sur une sélection de plans, l’app écrit ce qu’ils montrent et disent, puis repère les thématiques. Chacune devient un chutier d’un clic.</p>
+      <p class="lead" data-en="On a selection of clips, the AI writes what they show and say, then finds the themes. Each one becomes a bin in a click.">Sur une sélection de plans, l’IA écrit ce qu’ils montrent et disent, puis repère les thématiques. Chacune devient un chutier d’un clic.</p>
     </div>
     <div class="panels" data-reveal>
       <figure class="panel">
@@ -381,13 +462,13 @@
         <div>
           <h3 data-en="Paid, after a quote">Payant, après devis</h3>
           <ul>
-            <li data-en="Transcription (Gladia)">Transcription (Gladia)</li>
-            <li data-en="Picture description (OpenRouter)">Description des images (OpenRouter)</li>
-            <li data-en="Search by meaning">Recherche par le sens</li>
-            <li data-en="Themes across your rushes">Thématiques de vos rushs</li>
+            <li data-en="AI transcription">Transcription par l’IA</li>
+            <li data-en="AI picture description">Description des images par l’IA</li>
+            <li data-en="AI search by meaning">Recherche par le sens, par l’IA</li>
+            <li data-en="Themes found by AI">Thématiques trouvées par l’IA</li>
           </ul>
         </div>
-        <p class="cost__note" data-en="Analysis runs on your own keys, kept in the Mac’s Keychain. Two budgets set your limits.">L’analyse passe par vos propres clés, gardées dans le Trousseau du Mac. Deux budgets fixent vos limites.</p>
+        <p class="cost__note" data-en="AI analysis runs on your own accounts, kept in the Mac’s Keychain. Two budgets set your limits.">L’analyse par l’IA passe par vos propres comptes, gardés dans le Trousseau du Mac. Deux budgets fixent vos limites.</p>
       </div>
     </div>
     <figure class="panel" data-reveal>
@@ -455,6 +536,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=4"></script>
+<script src="site.js?v=5"></script>
 </body>
 </html>
