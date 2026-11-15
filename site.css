@@ -175,6 +175,14 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .apps__name { font: 300 var(--text-app)/1 var(--font-display); letter-spacing: var(--tracking-display); }
 .apps__how { max-width: 40ch; color: var(--color-ink-2); }
 
+/* L'essentiel : trois chiffres mesurés sur le catalogue de Sandro, en grand, séparés d'un filet. */
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; border-top: 1px solid var(--color-rule); }
+.stats > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: var(--space-sm); padding: var(--space-xl) var(--space-lg) 0; border-left: 1px solid var(--color-rule); }
+.stats > div:first-child { padding-left: 0; border-left: 0; }
+.stats dd { margin: 0; font: 300 clamp(3.5rem, 7vw, 7rem)/0.9 var(--font-display); letter-spacing: -0.04em; white-space: nowrap; }
+.stats dt { max-width: 24ch; color: var(--color-ink-2); }
+.stats__source { margin-top: var(--space-lg); font-size: var(--text-sm); color: var(--color-muted); }
+
 /* Tarifs : deux formules côte à côte, le chiffre en grand ; ce qui est gratuit et ce qui est compté. */
 .offers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--color-rule); }
 .offer { display: grid; gap: var(--space-md); padding: var(--space-xl) var(--space-xl) var(--space-xl) 0; }
@@ -243,6 +251,9 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
   .head { align-items: start; gap: var(--space-md); margin-bottom: var(--space-2xl); }
   .hero__found { justify-items: start; text-align: left; }
   .facts--3, .facts--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }
+  .stats { grid-template-columns: minmax(0, 1fr); }
+  .stats > div, .stats > div:first-child { padding: var(--space-lg) 0; border-left: 0; }
+  .stats > div + div { border-top: 1px solid var(--color-rule); }
   .rows > div { gap: var(--space-xs); }
   .duo { gap: var(--space-lg); margin-top: var(--space-3xl); }
   .offer, .offer + .offer { padding: var(--space-xl) 0; border-left: 0; }
