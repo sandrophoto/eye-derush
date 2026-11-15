@@ -98,6 +98,10 @@ h2 { font: 500 var(--text-section)/1.04 var(--font-display); letter-spacing: var
 .duo p { max-width: 34ch; color: var(--color-ink-2); }
 .shot--list { margin-top: var(--space-2xl); }
 
+/* Hors ligne : la phrase en grand, à gauche ; la précision à droite. */
+.offline .statement { max-width: 16ch; margin-bottom: 0; }
+.offline .facts { margin-top: var(--space-3xl); }
+
 /* Ranger : la phrase à l'échelle de la page, puis la bibliothèque. */
 .sort { margin-top: var(--section-gap); padding-block: var(--section-gap-s); background: var(--color-paper-2); }
 .statement { max-width: 20ch; margin-bottom: var(--space-2xl); font-size: var(--text-display); line-height: 1.02; }
