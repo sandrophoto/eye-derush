@@ -175,6 +175,11 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .apps__name { font: 300 var(--text-app)/1 var(--font-display); letter-spacing: var(--tracking-display); }
 .apps__how { max-width: 40ch; color: var(--color-ink-2); }
 
+/* D'où vient un plan : le texte à gauche, la barre latérale et la colonne de droite côte à côte. */
+.origin__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl) var(--gap-columns); align-items: center; }
+.origin__text { display: grid; gap: var(--space-lg); }
+.origin__shots { display: grid; grid-template-columns: minmax(0, 270fr) minmax(0, 322fr); gap: var(--space-lg); align-items: start; }
+
 /* L'essentiel : trois chiffres mesurés sur le catalogue de Sandro, en grand, séparés d'un filet. */
 .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; border-top: 1px solid var(--color-rule); }
 .stats > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: var(--space-sm); padding: var(--space-xl) var(--space-lg) 0; border-left: 1px solid var(--color-rule); }
@@ -247,7 +252,7 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
   .nav__end { margin-inline-start: auto; }
 }
 @media (max-width: 60rem) {
-  .head, .offers, .rows > div, .send__grid, .duo, .hero__body, .offline__grid, .langs__grid { grid-template-columns: minmax(0, 1fr); }
+  .head, .offers, .origin__grid, .rows > div, .send__grid, .duo, .hero__body, .offline__grid, .langs__grid { grid-template-columns: minmax(0, 1fr); }
   .head { align-items: start; gap: var(--space-md); margin-bottom: var(--space-2xl); }
   .hero__found { justify-items: start; text-align: left; }
   .facts--3, .facts--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }

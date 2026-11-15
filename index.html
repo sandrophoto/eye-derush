@@ -17,7 +17,7 @@
 <link rel="preload" as="image" href="img/frame-rainbow-2400.jpg" imagesrcset="img/frame-rainbow-1200.jpg 1200w, img/frame-rainbow-2400.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400&f[]=switzer@400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=7">
+<link rel="stylesheet" href="site.css?v=8">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -372,6 +372,45 @@
   </div>
 </section>
 
+<section class="section origin" id="origine">
+  <div class="container origin__grid">
+    <div class="origin__text">
+      <h2 data-split data-en="Always know where a clip comes from">Toujours savoir d’où vient un plan</h2>
+      <p class="lead" data-en="Select a clip: its folder and its bins light up in the sidebar, and the right column gives its path on the drive.">Choisissez un plan : son dossier et ses chutiers s’éclairent dans la barre latérale, et la colonne de droite donne son chemin sur le disque.</p>
+      <dl class="facts facts--1" data-reveal>
+        <div>
+          <dt data-en="Its folder">Son dossier</dt>
+          <dd data-en="Framed in the sidebar, wherever you are looking from.">Encadré dans la barre latérale, d’où que vous regardiez.</dd>
+        </div>
+        <div>
+          <dt data-en="Its bins and keywords">Ses chutiers et mots-clés</dt>
+          <dd data-en="Listed under the player, one click away.">Listés sous le lecteur, à un clic.</dd>
+        </div>
+        <div>
+          <dt data-en="Its shoot">Son tournage</dt>
+          <dd data-en="Camera, lens, date, operator and the file’s full path.">Caméra, objectif, date, cadreur et chemin complet du fichier.</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="origin__shots" data-reveal>
+      <figure class="shot">
+        <div class="crop" style="--x: 0; --y: 0; --w: 270; --h: 650">
+          <img src="img/shot-grid-fr.webp" data-src-en="img/shot-grid-en.webp" width="2560" height="1400" loading="lazy"
+            alt="La barre latérale : le dossier Tournage Refuge et le chutier Sélects encadrés, ceux du plan choisi." data-en-alt="The sidebar: the shoot folder and the Selects bin framed, those of the selected clip.">
+        </div>
+        <figcaption data-en="Its folder and bin, framed.">Son dossier et son chutier, encadrés.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="crop" style="--x: 2238; --y: 520; --w: 322; --h: 440">
+          <img src="img/shot-grid-fr.webp" data-src-en="img/shot-grid-en.webp" width="2560" height="1400" loading="lazy"
+            alt="La colonne de droite : mots-clés, chutiers, puis les informations du plan jusqu’à son dossier sur le disque." data-en-alt="The right column: keywords, bins, then the clip’s information down to its folder on the drive.">
+        </div>
+        <figcaption data-en="Its bins, keywords and path.">Ses chutiers, mots-clés et chemin.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <section class="section mark" id="sections">
   <div class="container">
     <div class="head">
@@ -581,6 +620,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=7"></script>
+<script src="site.js?v=8"></script>
 </body>
 </html>
