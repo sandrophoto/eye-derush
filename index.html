@@ -17,7 +17,7 @@
 <link rel="preload" as="image" href="img/frame-rainbow-2400.jpg" imagesrcset="img/frame-rainbow-1200.jpg 1200w, img/frame-rainbow-2400.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400&f[]=switzer@400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=5">
+<link rel="stylesheet" href="site.css?v=6">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -37,7 +37,7 @@
       <a href="#correction" data-en="Colour">Couleur</a>
       <a href="#hors-ligne" data-en="Offline">Hors ligne</a>
       <a href="#ranger" data-en="Organise">Ranger</a>
-      <a href="#cout" data-en="Cost">Coût</a>
+      <a href="#cout" data-en="Pricing">Tarifs</a>
     </nav>
     <div class="nav__end">
       <button class="lang" type="button" data-lang-toggle aria-label="Read this page in English" data-en-aria-label="Lire cette page en français"><span data-en="Français">English</span></button>
@@ -444,38 +444,45 @@
 </section>
 
 <section class="section cost" id="cout">
-  <div class="container cost__grid">
-    <div class="cost__figure">
-      <h2 data-split data-en="A quote before anything is sent">Un devis avant chaque envoi</h2>
-      <p class="figure"><span class="num" data-en="$0.50">0,50 $</span></p>
-      <p class="figure__unit" data-en="roughly, per hour of rushes analysed">environ, par heure de rushs analysée</p>
-      <div class="cost__lists" data-reveal>
-        <div>
-          <h3 data-en="Free, on your Mac">Gratuit, sur votre Mac</h3>
-          <ul>
-            <li data-en="Import and pre-analyse">Importer et pré-analyser</li>
-            <li data-en="Recognise faces">Reconnaître les visages</li>
-            <li data-en="Rate and organise">Classer et ranger</li>
-            <li data-en="Export to the edit">Exporter vers le montage</li>
-          </ul>
-        </div>
-        <div>
-          <h3 data-en="Paid, after a quote">Payant, après devis</h3>
-          <ul>
-            <li data-en="AI transcription">Transcription par l’IA</li>
-            <li data-en="AI picture description">Description des images par l’IA</li>
-            <li data-en="AI search by meaning">Recherche par le sens, par l’IA</li>
-            <li data-en="Themes found by AI">Thématiques trouvées par l’IA</li>
-          </ul>
-        </div>
-        <p class="cost__note" data-en="AI analysis runs on your own accounts, kept in the Mac’s Keychain. Two budgets set your limits.">L’analyse par l’IA passe par vos propres comptes, gardés dans le Trousseau du Mac. Deux budgets fixent vos limites.</p>
+  <div class="container">
+    <div class="head">
+      <h2 data-split data-en="Pay for analysis by the hour">Payez l’analyse à l’heure</h2>
+      <p class="lead" data-en="Two ways, as you prefer. Everything else in the app is free and stays on your Mac.">Deux formules, au choix. Tout le reste de l’app est gratuit et reste sur votre Mac.</p>
+    </div>
+    <div class="offers" data-reveal>
+      <div class="offer">
+        <h3 class="offer__name" data-en="Credits">Crédits</h3>
+        <p class="offer__figure"><span class="num" data-en="10 h">10 h</span></p>
+        <p class="offer__line" data-en="of analysis or more, used whenever you like.">d’analyse ou plus, utilisées quand vous voulez.</p>
+      </div>
+      <div class="offer">
+        <h3 class="offer__name" data-en="Subscription">Abonnement</h3>
+        <p class="offer__figure"><span class="num">1 h</span><span class="offer__per" data-en=" / month"> / mois</span></p>
+        <p class="offer__line" data-en="of analysis or more, every month.">d’analyse ou plus, chaque mois.</p>
       </div>
     </div>
-    <figure class="panel" data-reveal>
-      <img src="img/shot-analyze-fr.webp" data-src-en="img/shot-analyze-en.webp" width="500" height="580" loading="lazy"
-        alt="La feuille Analyser : huit plans choisis, paroles et images cochées, et l’estimation du coût avant de lancer." data-en-alt="The Analyze sheet: eight clips selected, speech and pictures ticked, and the cost estimate before starting.">
-      <figcaption data-en="The quote for eight clips, before anything leaves the Mac.">Le devis pour huit plans, avant que rien ne quitte le Mac.</figcaption>
-    </figure>
+    <p class="offers__note" data-en="Prices announced at launch.">Prix annoncés à la sortie.</p>
+    <div class="cost__lists" data-reveal>
+      <div>
+        <h3 data-en="Free, on your Mac">Gratuit, sur votre Mac</h3>
+        <ul>
+          <li data-en="Import and pre-analyse">Importer et pré-analyser</li>
+          <li data-en="Recognise faces">Reconnaître les visages</li>
+          <li data-en="Rate and organise">Classer et ranger</li>
+          <li data-en="Export to the edit">Exporter vers le montage</li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-en="Counted in hours of analysis">Compté en heures d’analyse</h3>
+        <ul>
+          <li data-en="AI transcription">Transcription par l’IA</li>
+          <li data-en="AI picture description">Description des images par l’IA</li>
+          <li data-en="AI search by meaning">Recherche par le sens, par l’IA</li>
+          <li data-en="Themes found by AI">Thématiques trouvées par l’IA</li>
+        </ul>
+      </div>
+      <p class="cost__note" data-en="Before each analysis, the app shows what it is about to count.">Avant chaque analyse, l’app montre ce qu’elle va compter.</p>
+    </div>
   </div>
 </section>
 
@@ -536,6 +543,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=5"></script>
+<script src="site.js?v=6"></script>
 </body>
 </html>
