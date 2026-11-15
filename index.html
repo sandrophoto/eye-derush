@@ -82,10 +82,10 @@
       <h2 data-en="Speech and pictures, in the same results">Paroles et images, dans les mêmes résultats</h2>
       <p class="lead" data-en="Every result says why it is there, and opens to the second.">Chaque résultat dit pourquoi il est là, et s’ouvre à la seconde près.</p>
     </div>
-    <figure class="shot shot--wide" data-reveal>
-      <div class="shot__frame" data-slot="search" data-kind="product" data-alt="La fenêtre d’Eye Derush après une recherche">
-        <img src="img/shot-search-fr.webp" data-src-en="img/shot-search-en.webp" width="2880" height="1800" loading="lazy"
-          alt="La fenêtre d’Eye Derush : les résultats de la recherche « hélicoptère », paroles et images mêlées, avec leur minutage." data-en-alt="The Eye Derush window: results for “helicopter”, speech and pictures together, each with its timecode.">
+    <figure class="shot" data-reveal>
+      <div class="crop crop--results">
+        <img src="img/shot-search-fr.webp" data-src-en="img/shot-search-en.webp" width="2560" height="1400" loading="lazy"
+          alt="Eye Derush après la recherche « hélicoptère » : neuf moments, paroles et images mêlées, chacun avec son minutage." data-en-alt="Eye Derush after searching “helicopter”: nine moments, speech and pictures together, each with its timecode.">
       </div>
       <figcaption data-en="Searching “helicopter”: what is said, and what is filmed.">Recherche « hélicoptère » : ce qui est dit, et ce qui est filmé.</figcaption>
     </figure>
@@ -107,31 +107,33 @@
 </section>
 
 <section class="section clip" id="fiche">
-  <div class="container clip__grid">
-    <div class="clip__text">
+  <div class="container">
+    <div class="head">
       <h2 data-en="Click a sentence, the clip opens there">Cliquez une phrase, le plan s’ouvre là</h2>
-      <p data-en="The transcript follows playback, with the name of whoever is speaking.">La transcription suit la lecture, avec le nom de qui parle.</p>
-      <p data-en="Fix a word, mark a section from the text, show translated subtitles.">Corrigez un mot, tracez une section depuis le texte, affichez les sous-titres traduits.</p>
+      <p class="lead" data-en="The transcript follows playback, names who is speaking, and lets you fix a word or mark a section.">La transcription suit la lecture, nomme qui parle, et se corrige ou se découpe en sections.</p>
     </div>
-    <figure class="shot" data-reveal>
-      <div class="shot__frame shot__frame--clip" data-slot="clip" data-kind="product" data-alt="La fiche d’un plan dans Eye Derush">
-        <img src="img/shot-clip-fr.webp" data-src-en="img/shot-clip-en.webp" width="2400" height="1440" loading="lazy"
-          alt="La fiche d’un plan : le lecteur à gauche, la transcription minutée à droite." data-en-alt="A clip window: the player on the left, the timed transcript on the right.">
-      </div>
-      <figcaption data-en="A clip window: player, transcript, description of the pictures.">La fiche d’un plan : lecteur, transcription, description des images.</figcaption>
-    </figure>
   </div>
+  <figure class="shot shot--bleed" data-reveal>
+    <div class="crop crop--clip">
+      <img src="img/shot-clip-fr.webp" data-src-en="img/shot-clip-en.webp" width="2560" height="1400" loading="lazy"
+        alt="La fiche d’un plan sur un écran de 2560 points : le lecteur et ses sous-titres à gauche, la transcription minutée à droite." data-en-alt="A clip window on a 2560-point screen: the player and its subtitles on the left, the timed transcript on the right.">
+    </div>
+    <figcaption data-en="A clip window: player, subtitles, timed transcript.">La fiche d’un plan : lecteur, sous-titres, transcription minutée.</figcaption>
+  </figure>
 </section>
 
 <section class="section sort" id="ranger">
   <div class="container">
     <h2 class="statement" data-en="Your files are never modified, moved or copied.">Vos fichiers ne sont jamais modifiés, déplacés ni copiés.</h2>
-    <figure class="shot shot--wide" data-reveal>
-      <div class="shot__frame" data-slot="grid" data-kind="product" data-alt="La bibliothèque d’Eye Derush en grille">
-        <img src="img/shot-grid-fr.webp" data-src-en="img/shot-grid-en.webp" width="2880" height="1800" loading="lazy"
-          alt="La bibliothèque en grille : les plans, les chutiers et les mots-clés à gauche, le plan choisi à droite." data-en-alt="The library as a grid: clips, with bins and keywords on the left and the selected clip on the right.">
-      </div>
-    </figure>
+  </div>
+  <figure class="shot shot--bleed" data-reveal>
+    <div class="crop crop--window">
+      <img src="img/shot-grid-fr.webp" data-src-en="img/shot-grid-en.webp" width="2560" height="1400" loading="lazy"
+        alt="La bibliothèque en grille sur un écran de 2560 points : les plans, les chutiers et les mots-clés à gauche, le plan choisi à droite." data-en-alt="The library as a grid on a 2560-point screen: clips, bins and keywords on the left, the selected clip on the right.">
+    </div>
+    <figcaption data-en="The whole window, on a 2560-point-wide screen.">La fenêtre entière, sur un écran de 2560 points de large.</figcaption>
+  </figure>
+  <div class="container">
     <dl class="facts facts--4" data-reveal>
       <div>
         <dt data-en="Favourites and rejects">Favoris et rejetés</dt>
@@ -207,6 +209,34 @@
   </div>
 </section>
 
+<section class="section tech" id="formats">
+  <div class="container">
+    <h2 data-en="Your formats, your log profiles">Vos formats, vos profils log</h2>
+    <dl class="rows" data-reveal>
+      <div>
+        <dt data-en="Video">Vidéo</dt>
+        <dd>MOV, MP4, M4V, MXF, MKV, AVI, MTS, M2TS</dd>
+      </div>
+      <div>
+        <dt data-en="Sound only">Son seul</dt>
+        <dd>WAV, MP3, M4A, AIFF, FLAC, CAF</dd>
+      </div>
+      <div>
+        <dt data-en="Log profiles, shown in Rec. 709">Profils log, affichés en Rec. 709</dt>
+        <dd>Sony S-Log2, S-Log3. Canon C-Log, C-Log2, C-Log3. Panasonic V-Log. Fujifilm F-Log, F-Log2. DJI D-Log. ARRI LogC3, LogC4. RED Log3G10. Apple Log. HLG.</dd>
+      </div>
+      <div>
+        <dt>Mac</dt>
+        <dd data-en="macOS 26 or later">macOS 26 ou plus récent</dd>
+      </div>
+      <div>
+        <dt data-en="Languages">Langues</dt>
+        <dd data-en="Interface in French and English">Interface en français et en anglais</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
 <section class="close" id="disponible">
   <img class="close__frame" src="img/frame-forest-2400.jpg" srcset="img/frame-forest-1200.jpg 1200w, img/frame-forest-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
   <div class="container close__body">
@@ -220,24 +250,6 @@
       </div>
       <p class="signup__help" id="email-help" aria-live="polite" data-en="Your address is used for Eye Derush news only. It travels through the FormSubmit service.">Votre adresse ne sert qu’aux nouvelles d’Eye Derush. Elle passe par le service FormSubmit.</p>
     </form>
-    <dl class="specs">
-      <div>
-        <dt>Mac</dt>
-        <dd data-en="macOS 26 or later">macOS 26 ou plus récent</dd>
-      </div>
-      <div>
-        <dt data-en="Languages">Langues</dt>
-        <dd data-en="Interface in French and English">Interface en français et en anglais</dd>
-      </div>
-      <div>
-        <dt data-en="Formats">Formats</dt>
-        <dd data-en="H.264, H.265 and Sony FX6 MXF">H.264, H.265 et MXF Sony FX6</dd>
-      </div>
-      <div>
-        <dt data-en="Log profiles">Profils log</dt>
-        <dd data-en="S-Log3, C-Log, V-Log and HLG shown in Rec. 709">S-Log3, C-Log, V-Log et HLG affichés en Rec. 709</dd>
-      </div>
-    </dl>
   </div>
 </section>
 
