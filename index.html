@@ -17,7 +17,7 @@
 <link rel="preload" as="image" href="img/frame-rainbow-2400.jpg" imagesrcset="img/frame-rainbow-1200.jpg 1200w, img/frame-rainbow-2400.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400&f[]=switzer@400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=10">
+<link rel="stylesheet" href="site.css?v=11">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -30,13 +30,11 @@
       <img src="img/icon-256.png" width="32" height="32" alt="">
       <span>Eye Derush</span>
     </a>
-    <nav class="nav__links" aria-label="Sections" data-en-aria-label="Sections">
-      <a href="#memoire" data-en="Memory">Mémoire</a>
-      <a href="#hors-ligne" data-en="Offline">Hors ligne</a>
-      <a href="#langues" data-en="Languages">Langues</a>
-      <a href="#chercher" data-en="Search">Chercher</a>
-      <a href="#personnages" data-en="People">Personnages</a>
-      <a href="#cout" data-en="Pricing">Tarifs</a>
+    <nav class="nav__links" aria-label="Chapitres" data-en-aria-label="Chapters">
+      <a href="#partout" data-nav-link><b>01</b> <span data-en="Anywhere">Partout</span></a>
+      <a href="#retrouver" data-nav-link><b>02</b> <span data-en="Find">Retrouver</span></a>
+      <a href="#ranger" data-nav-link><b>03</b> <span data-en="Sort">Ranger</span></a>
+      <a href="#analyse" data-nav-link><b>04</b> <span data-en="Analysis & pricing">Analyse et tarifs</span></a>
     </nav>
     <div class="nav__end">
       <button class="lang" type="button" data-lang-toggle aria-label="Read this page in English" data-en-aria-label="Lire cette page en français"><span data-en="Français">English</span></button>
@@ -136,8 +134,27 @@
   </div>
 </section>
 
+<div class="chapter" id="partout" data-chapter>
+<header class="opener">
+  <div class="opener__frame" aria-hidden="true">
+    <img src="img/frame-wall-2400.jpg" srcset="img/frame-wall-1200.jpg 1200w, img/frame-wall-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
+  </div>
+  <div class="container opener__body">
+    <p class="opener__num" aria-hidden="true">01</p>
+    <h2 class="opener__title" data-split data-en="Derush anywhere">Dérushez partout</h2>
+    <div class="opener__side">
+      <p class="opener__lede" data-en="Without the drives, then straight to the edit.">Sans les disques, puis droit au montage.</p>
+      <ol class="opener__toc">
+      <li><a href="#hors-ligne"><b>01.1</b> <span data-en="Offline">Hors ligne</span></a></li>
+      <li><a href="#envoyer"><b>01.2</b> <span data-en="To the edit">Vers le montage</span></a></li>
+      </ol>
+    </div>
+  </div>
+</header>
+
 <section class="section offline" id="hors-ligne">
   <div class="container">
+    <p class="kicker"><b>01.1</b> <span data-en="Offline">Hors ligne</span></p>
     <div class="offline__grid">
       <div class="offline__text">
         <h2 class="statement" data-split data-en="Log your rushes on the train, on a plane or on the sofa">Dérushez dans le train, en avion ou sur le canapé</h2>
@@ -170,6 +187,7 @@
 
 <section class="section send" id="envoyer">
   <div class="container">
+    <p class="kicker"><b>01.2</b> <span data-en="To the edit">Vers le montage</span></p>
     <div class="head">
       <h2 data-split data-en="Then everything goes to the edit">Puis tout part au montage</h2>
       <p class="lead" data-en="A moment, a section or a whole bin: the editor reads your rushes where they are.">Un moment, une section ou un chutier entier : le logiciel lit vos rushs là où ils sont.</p>
@@ -198,8 +216,32 @@
   </div>
 </section>
 
+</div>
+
+<div class="chapter" id="retrouver" data-chapter>
+<header class="opener">
+  <div class="opener__frame" aria-hidden="true">
+    <img src="img/frame-pilot-2400.jpg" srcset="img/frame-pilot-1200.jpg 1200w, img/frame-pilot-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
+  </div>
+  <div class="container opener__body">
+    <p class="opener__num" aria-hidden="true">02</p>
+    <h2 class="opener__title" data-split data-en="Find anything">Retrouvez tout</h2>
+    <div class="opener__side">
+      <p class="opener__lede" data-en="A word, a picture, a face, in any language.">Une parole, une image, un visage, dans n’importe quelle langue.</p>
+      <ol class="opener__toc">
+      <li><a href="#langues"><b>02.1</b> <span data-en="Languages">Langues</span></a></li>
+      <li><a href="#chercher"><b>02.2</b> <span data-en="Search">Recherche</span></a></li>
+      <li><a href="#fiche"><b>02.3</b> <span data-en="Clip view">Fiche du plan</span></a></li>
+      <li><a href="#corriger"><b>02.4</b> <span data-en="Transcript fixes">Correction du texte</span></a></li>
+      <li><a href="#personnages"><b>02.5</b> <span data-en="Faces">Visages</span></a></li>
+      </ol>
+    </div>
+  </div>
+</header>
+
 <section class="section langs" id="langues">
   <div class="container langs__grid">
+    <p class="kicker"><b>02.1</b> <span data-en="Languages">Langues</span></p>
     <p class="langs__figure" aria-hidden="true">100+</p>
     <div class="langs__text">
       <h2 data-split data-en="Transcribed in more than 100 languages">Transcrit dans plus de 100 langues</h2>
@@ -240,6 +282,7 @@
 
 <section class="section search" id="chercher">
   <div class="container">
+    <p class="kicker"><b>02.2</b> <span data-en="Search">Recherche</span></p>
     <div class="head">
       <h2 data-split data-en="Speech and pictures, in the same results">Paroles et images, dans les mêmes résultats</h2>
       <p class="lead" data-en="An AI-powered search that understands the context of every shot. Each result opens to the second.">Une recherche propulsée par l’IA, qui comprend le contexte de chaque plan. Chaque résultat s’ouvre à la seconde près.</p>
@@ -284,6 +327,7 @@
 
 <section class="section clip" id="fiche">
   <div class="container">
+    <p class="kicker"><b>02.3</b> <span data-en="Clip view">Fiche du plan</span></p>
     <div class="head">
       <h2 data-split data-en="Click a sentence, the clip opens there">Cliquez une phrase, le plan s’ouvre là</h2>
       <p class="lead" data-en="The transcript follows playback, names who is speaking, and lets you fix a word or mark a section.">La transcription suit la lecture, nomme qui parle, et se corrige ou se découpe en sections.</p>
@@ -310,6 +354,7 @@
 
 <section class="section fix" id="corriger">
   <div class="container fix__grid">
+    <p class="kicker"><b>02.4</b> <span data-en="Transcript fixes">Correction du texte</span></p>
     <div class="fix__text">
       <h2 data-split data-en="Fix the transcript in two moves">Corrigez la transcription en deux gestes</h2>
       <p class="lead" data-en="Double-click a line, fix the word, press Return. The app offers to replace it everywhere else.">Double-clic sur une ligne, corrigez le mot, Entrée. L’app propose de le remplacer partout ailleurs.</p>
@@ -342,6 +387,7 @@
 
 <section class="section people" id="personnages">
   <div class="container">
+    <p class="kicker"><b>02.5</b> <span data-en="Faces">Visages</span></p>
     <div class="head">
       <h2 data-split data-en="Find anyone by their face">Retrouvez chacun par son visage</h2>
       <p class="lead" data-en="The app groups the faces on your Mac. You give a name once; it finds every clip that person is in.">L’app regroupe les visages sur votre Mac. Vous donnez un nom une fois, elle retrouve tous les plans où la personne apparaît.</p>
@@ -382,8 +428,33 @@
   </div>
 </section>
 
-<section class="section sort" id="ranger">
+</div>
+
+<div class="chapter" id="ranger" data-chapter>
+<header class="opener">
+  <div class="opener__frame" aria-hidden="true">
+    <img src="img/frame-arch-2400.jpg" srcset="img/frame-arch-1200.jpg 1200w, img/frame-arch-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
+  </div>
+  <div class="container opener__body">
+    <p class="opener__num" aria-hidden="true">03</p>
+    <h2 class="opener__title" data-split data-en="Sort and view">Rangez, regardez</h2>
+    <div class="opener__side">
+      <p class="opener__lede" data-en="Rate, locate, summarize, grade, without ever touching your files.">Classer, situer, résumer, étalonner, sans jamais toucher à vos fichiers.</p>
+      <ol class="opener__toc">
+      <li><a href="#rangement"><b>03.1</b> <span data-en="Organizing">Rangement</span></a></li>
+      <li><a href="#origine"><b>03.2</b> <span data-en="Origin">Origine</span></a></li>
+      <li><a href="#sections"><b>03.3</b> <span data-en="Sections">Sections</span></a></li>
+      <li><a href="#resumer"><b>03.4</b> <span data-en="Summaries">Résumés</span></a></li>
+      <li><a href="#affichage"><b>03.5</b> <span data-en="Display">Affichage</span></a></li>
+      <li><a href="#correction"><b>03.6</b> <span data-en="Grading">Étalonnage</span></a></li>
+      </ol>
+    </div>
+  </div>
+</header>
+
+<section class="section sort" id="rangement">
   <div class="container">
+    <p class="kicker"><b>03.1</b> <span data-en="Organizing">Rangement</span></p>
     <h2 class="statement" data-split data-en="Your files are never modified, moved or copied.">Vos fichiers ne sont jamais modifiés, déplacés ni copiés.</h2>
   </div>
   <figure class="shot shot--bleed" data-reveal>
@@ -417,6 +488,7 @@
 
 <section class="section origin" id="origine">
   <div class="container origin__grid">
+    <p class="kicker"><b>03.2</b> <span data-en="Origin">Origine</span></p>
     <div class="origin__text">
       <h2 data-split data-en="Always know where a clip comes from">Toujours savoir d’où vient un plan</h2>
       <p class="lead" data-en="Select a clip: its folder and its bins light up in the sidebar, and the right column gives its path on the drive.">Choisissez un plan : son dossier et ses chutiers s’éclairent dans la barre latérale, et la colonne de droite donne son chemin sur le disque.</p>
@@ -456,6 +528,7 @@
 
 <section class="section mark" id="sections">
   <div class="container">
+    <p class="kicker"><b>03.3</b> <span data-en="Sections">Sections</span></p>
     <div class="head">
       <h2 data-split data-en="Keep a passage, not the whole clip">Gardez un passage, pas tout le plan</h2>
       <p class="lead" data-en="Drag across a thumbnail to mark a section, then rate it with one key: green to keep, red to drop.">Glissez sur une vignette pour tracer une section, puis classez-la d’une touche : vert pour garder, rouge pour écarter.</p>
@@ -476,6 +549,7 @@
 
 <section class="section digest" id="resumer">
   <div class="container">
+    <p class="kicker"><b>03.4</b> <span data-en="Summaries">Résumés</span></p>
     <div class="head">
       <h2 data-split data-en="A summary, then the subjects that keep coming back">Un résumé, puis les sujets qui reviennent</h2>
       <p class="lead" data-en="On a selection of clips, the AI writes what they show and say, then finds the themes. Each one becomes a bin in a click.">Sur une sélection de plans, l’IA écrit ce qu’ils montrent et disent, puis repère les thématiques. Chacune devient un chutier d’un clic.</p>
@@ -497,6 +571,7 @@
 
 <section class="section display" id="affichage">
   <div class="container">
+    <p class="kicker"><b>03.5</b> <span data-en="Display">Affichage</span></p>
     <div class="head">
       <h2 data-split data-en="Show what you need, hide the rest">Affichez ce qui vous sert, masquez le reste</h2>
       <p class="lead" data-en="Every piece of information on a thumbnail switches on or off in one click: name, analysis badges, shooting details.">Chaque information d’une vignette s’allume ou s’éteint d’un clic : nom, pastilles d’analyse, détails de tournage.</p>
@@ -555,6 +630,7 @@
 
 <section class="section grade" id="correction">
   <div class="container">
+    <p class="kicker"><b>03.6</b> <span data-en="Grading">Étalonnage</span></p>
     <div class="head">
       <h2 data-split data-en="Your log footage, already graded">Vos images log, déjà étalonnées</h2>
       <p class="lead" data-en="Two LUTs on top of each other, applied on screen only: your files are never modified.">Deux LUT l’une sur l’autre, appliquées à l’écran seulement : vos fichiers ne sont jamais modifiés.</p>
@@ -614,8 +690,30 @@
   </div>
 </section>
 
+</div>
+
+<div class="chapter" id="analyse" data-chapter>
+<header class="opener">
+  <div class="opener__frame" aria-hidden="true">
+    <img src="img/frame-turbine-2400.jpg" srcset="img/frame-turbine-1200.jpg 1200w, img/frame-turbine-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
+  </div>
+  <div class="container opener__body">
+    <p class="opener__num" aria-hidden="true">04</p>
+    <h2 class="opener__title" data-split data-en="Analysis, kept lean">L’analyse, au plus juste</h2>
+    <div class="opener__side">
+      <p class="opener__lede" data-en="What is sent, what is counted, what the app can read.">Ce qui part, ce qui est compté, ce que l’app sait lire.</p>
+      <ol class="opener__toc">
+      <li><a href="#essentiel"><b>04.1</b> <span data-en="The essentials">L’essentiel</span></a></li>
+      <li><a href="#cout"><b>04.2</b> <span data-en="Pricing">Tarifs</span></a></li>
+      <li><a href="#formats"><b>04.3</b> <span data-en="Formats">Formats</span></a></li>
+      </ol>
+    </div>
+  </div>
+</header>
+
 <section class="section lean" id="essentiel">
   <div class="container">
+    <p class="kicker"><b>04.1</b> <span data-en="The essentials">L’essentiel</span></p>
     <div class="head">
       <h2 data-split data-en="The AI analyses only what matters">L’IA n’analyse que ce qui compte</h2>
       <p class="lead" data-en="Before anything is sent, your Mac spots every change of shot and every word spoken. Less picture, less sound: less waiting, fewer hours counted.">Avant tout envoi, votre Mac repère chaque changement de plan et chaque parole. Moins d’images, moins de son : moins d’attente, moins d’heures comptées.</p>
@@ -654,6 +752,7 @@
 
 <section class="section cost" id="cout">
   <div class="container">
+    <p class="kicker"><b>04.2</b> <span data-en="Pricing">Tarifs</span></p>
     <div class="head">
       <h2 data-split data-en="Pay for analysis your way">Payez l’analyse à votre façon</h2>
       <p class="lead" data-en="Credits or a subscription, to fit your needs. Without analysis, the app still does everything else.">Crédits ou abonnement, selon vos besoins. Sans analyse, l’app sert pour tout le reste.</p>
@@ -697,6 +796,7 @@
 
 <section class="section tech" id="formats">
   <div class="container">
+    <p class="kicker"><b>04.3</b> <span data-en="Formats">Formats</span></p>
     <h2 data-split data-en="Your formats, your log profiles">Vos formats, vos profils log</h2>
     <dl class="rows" data-reveal>
       <div>
@@ -722,6 +822,8 @@
     </dl>
   </div>
 </section>
+
+</div>
 
 <section class="close" id="disponible">
   <img class="close__frame" src="img/frame-ridges-2400.jpg" srcset="img/frame-ridges-1200.jpg 1200w, img/frame-ridges-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
@@ -752,6 +854,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=10"></script>
+<script src="site.js?v=11"></script>
 </body>
 </html>

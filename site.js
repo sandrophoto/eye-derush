@@ -17,6 +17,7 @@
       outer.className = 'word';
       outer.setAttribute('aria-hidden', 'true');
       inner.style.setProperty('--i', index);
+      inner.style.setProperty('--p', all.length > 1 ? index / (all.length - 1) : 0);   // place du mot dans la phrase, de 0 à 1
       inner.textContent = word;
       outer.append(inner);
       el.append(outer, index < all.length - 1 ? ' ' : '');
@@ -195,6 +196,31 @@
     reveal.unobserve(entry.target);
   }), { rootMargin: '0px 0px -10% 0px' });
   document.querySelectorAll('[data-reveal], [data-split]').forEach((el) => { if (!el.closest('.hero')) reveal.observe(el); });
+
+  // ----- Barre du haut : le chapitre où l'on est. -----
+  const chapterLinks = new Map([...document.querySelectorAll('[data-nav-link]')].map((a) => [a.getAttribute('href').slice(1), a]));
+  const chapterWatch = new IntersectionObserver((entries) => entries.forEach((entry) => {
+    const link = chapterLinks.get(entry.target.id);
+    if (entry.isIntersecting) chapterLinks.forEach((a) => (a === link ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+    else link.removeAttribute('aria-current');
+  }), { rootMargin: '-50% 0px -50% 0px' });
+  document.querySelectorAll('[data-chapter]').forEach((el) => chapterWatch.observe(el));
+
+  // ----- Les chiffres mesurés comptent jusqu'à leur valeur, une fois, quand ils entrent à l'écran. -----
+  const count = new IntersectionObserver((entries) => entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    count.unobserve(entry.target);
+    const el = entry.target, final = el.textContent, match = final.match(/^([\d\s\u00a0\u202f]*\d)(.*)$/s);
+    if (!match) return;
+    const target = Number(match[1].replace(/\D/g, '')), start = performance.now(), length = 1600;
+    const step = (now) => {
+      const t = Math.min((now - start) / length, 1), eased = 1 - (1 - t) ** 4;
+      el.textContent = t < 1 ? Math.round(target * eased).toLocaleString('fr-FR') + match[2] : final;
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }), { rootMargin: '0px 0px -15% 0px' });
+  if (!still) document.querySelectorAll('.stats dd').forEach((el) => count.observe(el));
 
   // ----- Ouverture de la page : le titre, puis le reste (voir site.css). -----
   setTimeout(() => {   // un minuteur, pas requestAnimationFrame : il passe aussi dans un onglet ouvert en arrière-plan

@@ -31,6 +31,10 @@
 .nav__links a:hover { color: var(--color-ink); }
 .nav:not(.is-solid) .nav__links a, .nav:not(.is-solid) .lang { color: var(--color-ink); }
 .nav__links a:hover::after { transform: scaleX(1); }
+.nav__links b { margin-inline-end: var(--space-2xs); font: 300 var(--text-xs)/1 var(--font-outlier); color: var(--color-muted); }
+.nav__links a[aria-current="true"] { color: var(--color-ink); }
+.nav__links a[aria-current="true"]::after { transform: scaleX(1); }
+.nav__links a[aria-current="true"] b { color: var(--color-accent); }
 .nav__end { display: flex; align-items: center; gap: var(--space-md); }
 .lang { min-height: 44px; padding: 0 var(--space-sm); border: 0; background: none; color: var(--color-ink-2); font-size: var(--text-sm); white-space: nowrap; cursor: pointer; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; transition: color var(--dur-micro) var(--ease-out); }
 .lang:hover { color: var(--color-ink); }
@@ -248,10 +252,73 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .foot .wordmark { color: var(--color-ink); }
 .wordmark--studio { font: 500 var(--text-sm)/1 var(--font-body); letter-spacing: 0.01em; }
 
+/* ---------- Chapitres : une image du rush, un grand numéro, le sommaire ---------- */
+
+.opener { position: relative; display: grid; align-items: end; min-height: 92svh; margin-top: var(--section-gap); padding-block: var(--space-4xl) var(--space-3xl); overflow: hidden; isolation: isolate; view-timeline: --opener; }
+.opener + .offline { margin-top: 0; }
+/* L'image dépasse en haut et en bas : c'est la marge que la parallaxe parcourt. */
+.opener__frame { position: absolute; inset: -16% 0; z-index: -2; }
+.opener__frame img { width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.opener::after { content: ""; position: absolute; inset: -2px 0; z-index: -1; background: linear-gradient(to bottom, var(--color-paper) 0%, var(--color-scrim-none) 22%), linear-gradient(to top, var(--color-paper) 0%, var(--color-scrim) 10%, var(--color-scrim-mid) 45%, var(--color-scrim-none) 74%); }
+.opener__body { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-xl) var(--gap-columns); align-items: end; }
+.opener__num { grid-column: 1 / -1; margin-bottom: calc(-1 * var(--space-xl)); font: 300 clamp(7rem, 24vw, 22rem)/0.78 var(--font-outlier); letter-spacing: -0.07em; color: transparent; -webkit-text-stroke: 1.5px color-mix(in oklab, var(--color-ink) 80%, transparent); user-select: none; }
+.opener__title { max-width: 11ch; font-size: var(--text-display); line-height: 0.96; }
+.opener__side { display: grid; gap: var(--space-lg); }
+.opener__lede { max-width: 34ch; font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
+.opener__toc { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-edge); }
+.opener__toc a { display: flex; align-items: baseline; gap: var(--space-md); padding-block: var(--space-sm); border-bottom: 1px solid var(--color-edge); color: var(--color-ink-2); text-decoration: none; transition: color var(--dur-short) var(--ease-out); }
+.opener__toc a span { transition: transform var(--dur-long) var(--ease-out); }
+.opener__toc a:hover { color: var(--color-ink); }
+.opener__toc a:hover span { transform: translateX(var(--space-xs)); }
+.opener__toc b, .kicker b { font: 300 var(--text-xs)/1 var(--font-outlier); color: var(--color-accent); }
+
+/* Le repère de section : son numéro dans le chapitre, son nom, un filet jusqu'au bord. */
+.kicker { grid-column: 1 / -1; display: flex; align-items: baseline; gap: var(--space-sm); margin-bottom: var(--space-2xl); font-size: var(--text-xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-muted); }
+.kicker::after { content: ""; flex: 1; align-self: center; height: 1px; background: var(--color-rule); transform-origin: left; }
+.offline .kicker { color: var(--color-sand-ink-2); }
+.offline .kicker b { color: var(--color-sand-ink); }
+.offline .kicker::after { background: var(--color-sand-rule); }
+
+/* ---------- Défilement : parallaxe et lectures, sans script ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  @supports (animation-timeline: view()) {
+    /* En-tête : l'image s'attarde, le texte monte plus vite et s'efface. */
+    .hero__frames { animation: hero-frames linear both; animation-timeline: scroll(root); animation-range: 0 100svh; }
+    .hero__body { animation: hero-body linear both; animation-timeline: scroll(root); animation-range: 0 80svh; }
+    /* Chapitres : l'image glisse moins vite que la page, le numéro plus vite. */
+    .opener__frame { animation: opener-frame linear both; animation-timeline: --opener; animation-range: cover; }
+    .opener__num { animation: opener-num linear both; animation-timeline: --opener; animation-range: cover; }
+    /* Les grandes phrases s'allument mot à mot au fil de la lecture. */
+    .statement { view-timeline: --statement; }
+    .js .statement .word > span { animation: word-light linear both; animation-timeline: --statement; animation-range: cover calc(18% + var(--p, 0) * 26%) cover calc(26% + var(--p, 0) * 26%); }
+    /* La fenêtre entière s'élargit jusqu'aux bords. */
+    .shot--bleed .crop { animation: widen linear both; animation-timeline: view(); animation-range: entry 0% cover 45%; }
+    /* Deux captures côte à côte : la seconde avance plus vite. */
+    .pair > :nth-child(2), .panels > :nth-child(2), .people__grid > :nth-child(2), .origin__shots > :nth-child(2) { animation: lift linear both; animation-timeline: view(); animation-range: cover; }
+    /* Les chiffres monumentaux dérivent. */
+    .langs__figure { animation: drift linear both; animation-timeline: view(); animation-range: cover; }
+    .kicker::after { animation: rule linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; }
+    .close { view-timeline: --close; }
+    .close__frame { animation: close-frame linear both; animation-timeline: --close; animation-range: entry 0% cover 60%; }
+  }
+}
+@keyframes hero-frames { to { transform: translateY(28%) scale(1.04); } }
+@keyframes hero-body { to { transform: translateY(-14vh); opacity: 0; } }
+@keyframes opener-frame { from { transform: translateY(-11%); } to { transform: translateY(11%); } }
+@keyframes opener-num { from { transform: translateY(35%); } to { transform: translateY(-45%); } }
+@keyframes word-light { from { opacity: 0.16; } }
+@keyframes widen { from { transform: scale(0.86); border-radius: var(--radius-card); } }
+@keyframes lift { from { transform: translateY(56px); } to { transform: translateY(-56px); } }
+@keyframes drift { from { transform: translateX(-10%); } to { transform: translateX(6%); } }
+@keyframes rule { from { transform: scaleX(0); } }
+@keyframes close-frame { from { transform: translateY(-9%) scale(1.2); } }
+
 /* ---------- Arrivées : les captures se découvrent du bas vers le haut ---------- */
 
 .js [data-reveal] { opacity: 0; transform: translateY(28px); clip-path: inset(0 0 14% 0); transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out), clip-path var(--dur-reveal) var(--ease-out); }
-.js [data-reveal].is-in { opacity: 1; transform: none; clip-path: inset(0); }
+.js [data-reveal].is-in { opacity: 1; transform: none; clip-path: inset(-12% -4%); }
 /* L'ouverture de la page : la barre du haut, le texte, puis les recherches. */
 .js .nav__row > *, .js .hero__lede, .js .hero__found, .js .queries, .js .hero__playhead { opacity: 0; transform: translateY(14px); transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out); }
 .js.is-ready .nav__row > *, .js.is-ready .hero__lede, .js.is-ready .hero__found, .js.is-ready .queries, .js.is-ready .hero__playhead { opacity: 1; transform: none; }
@@ -281,6 +348,8 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
   .duo { gap: var(--space-lg); margin-top: var(--space-3xl); }
   .offer, .offer + .offer { padding: var(--space-xl) 0; border-left: 0; }
   .offer + .offer { border-top: 1px solid var(--color-rule); }
+  .opener__body { grid-template-columns: minmax(0, 1fr); }
+  .opener { min-height: 84svh; padding-block: var(--space-3xl) var(--space-2xl); }
   .close { min-height: 76svh; }
 }
 @media (max-width: 40rem) {
