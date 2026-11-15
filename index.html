@@ -17,7 +17,7 @@
 <link rel="preload" as="image" href="img/frame-rainbow-2400.jpg" imagesrcset="img/frame-rainbow-1200.jpg 1200w, img/frame-rainbow-2400.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400&f[]=switzer@400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=3">
+<link rel="stylesheet" href="site.css?v=4">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -170,9 +170,18 @@
 
 <section class="section offline" id="hors-ligne">
   <div class="container">
-    <div class="head">
-      <h2 class="statement" data-split data-en="Log your rushes on the train, on a plane or on the sofa">Dérushez dans le train, en avion ou sur le canapé</h2>
-      <p class="lead" data-en="The catalogue carries a light copy of every clip. Leave the drives at the office.">Le catalogue emporte une copie légère de chaque plan. Laissez les disques au bureau.</p>
+    <div class="offline__grid">
+      <div class="offline__text">
+        <h2 class="statement" data-split data-en="Log your rushes on the train, on a plane or on the sofa">Dérushez dans le train, en avion ou sur le canapé</h2>
+        <p class="lead" data-en="The catalogue carries a light copy of every clip. Leave the drives at the office.">Le catalogue emporte une copie légère de chaque plan. Laissez les disques au bureau.</p>
+      </div>
+      <figure class="shot" data-reveal>
+        <div class="crop crop--previews">
+          <img src="img/shot-previews-fr.webp" data-src-en="img/shot-previews-en.webp" width="2560" height="1400" loading="lazy"
+            alt="Eye Derush en mode Aperçus : l’interrupteur orange dans la barre des onglets, le plan lu depuis sa copie légère en 540p." data-en-alt="Eye Derush in Previews mode: the orange switch in the tab bar, the clip playing from its light 540p copy.">
+        </div>
+        <figcaption data-en="The switch on Previews: the app plays the catalogue’s light copy.">L’interrupteur sur Aperçus : l’app lit la copie légère du catalogue.</figcaption>
+      </figure>
     </div>
     <dl class="facts facts--3" data-reveal>
       <div>
@@ -230,7 +239,22 @@
       <h2 data-split data-en="Show what you need, hide the rest">Affichez ce qui vous sert, masquez le reste</h2>
       <p class="lead" data-en="Every piece of information on a thumbnail switches on or off in one click: name, analysis badges, shooting details.">Chaque information d’une vignette s’allume ou s’éteint d’un clic : nom, pastilles d’analyse, détails de tournage.</p>
     </div>
-    <div class="pair" data-reveal>
+    <figure class="panel" data-reveal>
+      <img src="img/shot-display-full-fr.webp" data-src-en="img/shot-display-full-en.webp" width="1560" height="290" loading="lazy"
+        alt="Quatre vignettes avec tout affiché : nom du fichier, pastilles d’analyse, durée, caméra, objectif et codec." data-en-alt="Four thumbnails with everything shown: file name, analysis badges, duration, camera, lens and codec.">
+      <figcaption data-en="Everything on: name, analysis badges, duration, camera, lens, codec.">Tout allumé : nom, pastilles d’analyse, durée, caméra, objectif, codec.</figcaption>
+    </figure>
+    <figure class="panel panel--next" data-reveal>
+      <img src="img/shot-display-bare-fr.webp" data-src-en="img/shot-display-bare-en.webp" width="1560" height="230" loading="lazy"
+        alt="Les mêmes vignettes avec tout masqué : l’image seule." data-en-alt="The same thumbnails with everything hidden: the picture alone.">
+      <figcaption data-en="Everything off: the picture alone.">Tout éteint : l’image seule.</figcaption>
+    </figure>
+    <figure class="panel panel--next panel--bar" data-reveal>
+      <img src="img/shot-display-bar-fr.webp" data-src-en="img/shot-display-bar-en.webp" width="1020" height="56" loading="lazy"
+        alt="Les boutons d’affichage de la barre des onglets : plans vus, rejetés, nom, pastilles, détails, grille ou liste, tri, taille des vignettes." data-en-alt="The display buttons in the tab bar: seen clips, rejects, name, badges, details, grid or list, sort, thumbnail size.">
+      <figcaption data-en="The buttons that do it, in the tab bar.">Les boutons qui le font, dans la barre des onglets.</figcaption>
+    </figure>
+    <div class="pair pair--next" data-reveal>
       <figure class="shot">
         <div class="crop crop--cards">
           <img src="img/shot-grid-fr.webp" data-src-en="img/shot-grid-en.webp" width="2560" height="1400" loading="lazy"
@@ -431,6 +455,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=3"></script>
+<script src="site.js?v=4"></script>
 </body>
 </html>

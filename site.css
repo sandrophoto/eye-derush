@@ -102,6 +102,7 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .crop--window { --x: 0; --y: 0; --w: 2560; --h: 1400; }
 .crop--list { --x: 271; --y: 96; --w: 1400; --h: 590; }
 .crop--cards { --x: 271; --y: 58; --w: 1000; --h: 660; }
+.crop--previews { --x: 1700; --y: 55; --w: 860; --h: 600; }
 .shot--bleed .crop { border-radius: var(--space-xs); }
 .crop > img { position: absolute; max-width: none; height: auto; width: calc(2560 / var(--w) * 100%); left: calc(var(--x) / var(--w) * -100%); top: calc(var(--y) / var(--h) * -100%); }
 .shot--list { margin-top: var(--space-2xl); }
@@ -111,6 +112,8 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .panel > img { border-radius: var(--radius-card); outline: 1px solid var(--color-edge); outline-offset: -1px; }
 .panels { display: grid; grid-template-columns: repeat(2, minmax(0, 440px)); gap: var(--gap-columns); align-items: start; }
 .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-columns); }
+.panel--next, .pair--next { margin-top: var(--space-2xl); }
+.panel--bar > img { border-radius: var(--space-xs); }
 .duo { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--gap-columns); align-items: center; margin-top: var(--space-4xl); }
 .duo__text { display: grid; gap: var(--space-md); }
 .duo h3 { font: 300 var(--text-3xl)/1.06 var(--font-display); letter-spacing: -0.02em; max-width: 13ch; }
@@ -125,7 +128,10 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 
 /* Hors ligne : le chapitre clair, sable chaud, pour couper la nuit de la page. */
 .offline { margin-top: var(--section-gap); padding-block: var(--section-gap-s); background: var(--color-sand); color: var(--color-sand-ink); }
+.offline__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl) var(--gap-columns); align-items: end; }
+.offline__text { display: grid; gap: var(--space-xl); }
 .offline .statement { max-width: 12ch; margin-bottom: 0; }
+.offline figcaption { color: var(--color-sand-ink-2); }
 .offline .lead, .offline .facts dd { color: var(--color-sand-ink-2); }
 .offline .facts > div { border-top-color: var(--color-sand-rule); }
 .offline ::selection { background: var(--color-sand-rule); color: var(--color-sand-ink); }
@@ -199,7 +205,7 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
   .nav__end { margin-inline-start: auto; }
 }
 @media (max-width: 60rem) {
-  .head, .cost__grid, .rows > div, .send__grid, .duo, .hero__body { grid-template-columns: minmax(0, 1fr); }
+  .head, .cost__grid, .rows > div, .send__grid, .duo, .hero__body, .offline__grid { grid-template-columns: minmax(0, 1fr); }
   .head { align-items: start; gap: var(--space-md); margin-bottom: var(--space-2xl); }
   .hero__found { justify-items: start; text-align: left; }
   .facts--3, .facts--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }
