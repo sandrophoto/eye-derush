@@ -2,6 +2,7 @@
  * paper: oklch(19% 0.006 55) · accent: oklch(72% 0.07 48) · display: Clash Grotesk · body: Switzer · hero: a full-bleed frame from the rushes, the question and its answer set bottom-left, three searches to try · nav: wordmark, five section links, language, availability · footer: one line, wordmark, picture credit, studio · imagery: photographs, the user's own rushes 4 · screenshots 3 (the app's own renderer) · signature: the headline that answers with a clip name and a timecode
  * axes: dark/grotesk-sans/warm · posture: Restrained · contrast: pass · fold: pass · v2.0.0 */
 /* Hallmark · answered F4 · the three searches are one switch: only the pressed one is filled, and it is the hero's single action */
+/* Hallmark · dismissed 58 · the owner asked for a capture of every function of the app; each added section is one capture and one line, and no single screen passes 80 words */
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 · weakest: P, the claim rests on one headline, so the answer is a real clip name and timecode from the demo library the screenshots show */
 @import url("./tokens.css");
 @import url("./base.css");
@@ -67,6 +68,7 @@ h2 { font: 500 var(--text-section)/1.04 var(--font-display); letter-spacing: var
 .crop--results { --x: 271; --y: 0; --w: 1280; --h: 720; }
 .crop--clip { --x: 0; --y: 0; --w: 2560; --h: 1210; }
 .crop--window { --x: 0; --y: 0; --w: 2560; --h: 1400; }
+.crop--list { --x: 271; --y: 96; --w: 1400; --h: 590; }
 .shot--bleed .crop { border-radius: var(--space-xs); }
 .crop > img { position: absolute; max-width: none; height: auto; width: calc(2560 / var(--w) * 100%); left: calc(var(--x) / var(--w) * -100%); top: calc(var(--y) / var(--h) * -100%); }
 .shot figcaption { margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-muted); }
@@ -81,21 +83,33 @@ h2 { font: 500 var(--text-section)/1.04 var(--font-display); letter-spacing: var
 .facts dd { margin: var(--space-xs) 0 0; max-width: 34ch; color: var(--color-ink-2); }
 
 
+/* Un panneau de l'app à sa taille réelle : feuille, volet, coup d'œil. */
+.panel { margin: 0; }
+.panel > img { border-radius: var(--radius-card); outline: 1px solid var(--color-edge); outline-offset: -1px; }
+.panel figcaption { margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-muted); }
+.panels { display: grid; grid-template-columns: repeat(2, minmax(0, 440px)); gap: var(--gap-columns); align-items: start; }
+.duo { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--gap-columns); align-items: center; margin-top: var(--space-3xl); }
+.duo__text { display: grid; gap: var(--space-md); }
+.duo h3 { font: 500 var(--text-2xl)/1.1 var(--font-display); letter-spacing: -0.015em; max-width: 14ch; }
+.duo p { max-width: 34ch; color: var(--color-ink-2); }
+.shot--list { margin-top: var(--space-2xl); }
+
 /* Ranger : la phrase à l'échelle de la page, puis la bibliothèque. */
 .sort { margin-top: var(--section-gap); padding-block: var(--section-gap-s); background: var(--color-paper-2); }
 .statement { max-width: 20ch; margin-bottom: var(--space-2xl); font-size: var(--text-display); line-height: 1.02; }
 
 /* Envoyer : trois logiciels, trois lignes. */
+.send__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl) var(--gap-columns); align-items: start; }
 .apps { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-rule); }
-.apps li { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gap-columns); align-items: baseline; padding-block: var(--space-lg); border-bottom: 1px solid var(--color-rule); }
+.apps li { display: grid; gap: var(--space-xs); padding-block: var(--space-lg); border-bottom: 1px solid var(--color-rule); }
 .apps__name { font: 500 var(--text-app)/1.05 var(--font-display); letter-spacing: var(--tracking-display); }
 .apps__how { max-width: 40ch; color: var(--color-ink-2); }
 
 /* Coût : le chiffre, puis ce qui est gratuit et ce qui ne l'est pas. */
-.cost__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gap-columns); align-items: end; }
+.cost__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl) var(--gap-columns); align-items: start; }
 .figure { margin-top: var(--space-xl); font: 500 var(--text-figure)/0.9 var(--font-display); letter-spacing: -0.04em; color: var(--color-accent); white-space: nowrap; }
 .figure__unit { margin-top: var(--space-md); font-size: var(--text-lead); color: var(--color-ink-2); }
-.cost__lists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xl) var(--gap-columns); }
+.cost__lists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xl) var(--gap-columns); margin-top: var(--space-2xl); max-width: 40rem; }
 .cost__lists h3 { padding-bottom: var(--space-sm); border-bottom: 1px solid var(--color-rule); font: 500 var(--text-md)/1.3 var(--font-body); }
 .cost__lists ul { margin: var(--space-sm) 0 0; padding: 0; list-style: none; display: grid; gap: var(--space-xs); color: var(--color-ink-2); }
 .cost__note { grid-column: 1 / -1; max-width: 46ch; font-size: var(--text-sm); color: var(--color-muted); }
@@ -141,17 +155,18 @@ h2 { font: 500 var(--text-section)/1.04 var(--font-display); letter-spacing: var
   .nav__end { margin-inline-start: auto; }
 }
 @media (max-width: 60rem) {
-  .head, .cost__grid, .apps li, .rows > div { grid-template-columns: minmax(0, 1fr); }
+  .head, .cost__grid, .rows > div, .send__grid, .duo { grid-template-columns: minmax(0, 1fr); }
   .head { align-items: start; gap: var(--space-md); }
   .facts--3, .facts--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-xl); }
   .facts > div:nth-child(odd) { padding-left: 0; border-left: 0; }
-  .apps li, .rows > div { gap: var(--space-xs); }
+  .rows > div { gap: var(--space-xs); }
+  .duo { gap: var(--space-lg); }
   .cost__grid { gap: var(--space-2xl); }
   .close { min-height: 70svh; }
 }
 @media (max-width: 40rem) {
   .nav__soon { display: none; }
-  .facts--3, .facts--4, .cost__lists { grid-template-columns: minmax(0, 1fr); }
+  .facts--3, .facts--4, .cost__lists, .panels { grid-template-columns: minmax(0, 1fr); }
   .facts > div { padding-inline: 0; border-left: 0; }
   .query { white-space: normal; text-align: left; padding-block: var(--space-xs); }
   .signup__row { flex-wrap: wrap; }
