@@ -17,7 +17,7 @@
 <link rel="preload" as="image" href="img/frame-rainbow-2400.jpg" imagesrcset="img/frame-rainbow-1200.jpg 1200w, img/frame-rainbow-2400.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400&f[]=switzer@400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=15">
+<link rel="stylesheet" href="site.css?v=16">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -30,14 +30,59 @@
       <img src="img/icon-256.png" width="32" height="32" alt="">
       <span>Eye Derush</span>
     </a>
-    <nav class="nav__links" aria-label="Chapitres" data-en-aria-label="Chapters">
-      <a href="#partout" data-nav-link><b>01</b> <span data-en="Anywhere">Partout</span></a>
-      <a href="#retrouver" data-nav-link><b>02</b> <span data-en="Find">Retrouver</span></a>
-      <a href="#ranger" data-nav-link><b>03</b> <span data-en="Sort">Ranger</span></a>
-      <a href="#analyse" data-nav-link><b>04</b> <span data-en="Analysis & pricing">Analyse et tarifs</span></a>
+    <nav class="menu" id="menu" aria-label="Menu" data-en-aria-label="Menu" data-menu>
+      <ul class="menu__list">
+        <li class="menu__item">
+          <button class="menu__btn" type="button" aria-expanded="false" aria-controls="menu-fonctions"><span data-en="Features">Fonctions</span><svg class="menu__chev" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="menu__panel menu__panel--wide" id="menu-fonctions">
+            <div class="menu__cols">
+          <div class="menu__col">
+            <p class="menu__group"><b>01</b> <span data-en="Anywhere">Partout</span></p>
+            <a class="menu__link" href="#hors-ligne"><span class="menu__label" data-en="Offline">Hors ligne</span><span class="menu__desc" data-en="Log without the drives, on the previews">Dérushez sans les disques, sur les aperçus</span></a>
+            <a class="menu__link" href="#envoyer"><span class="menu__label" data-en="To the edit">Vers le montage</span><span class="menu__desc" data-en="Final Cut Pro, Premiere Pro and DaVinci Resolve">Final Cut Pro, Premiere Pro et DaVinci Resolve</span></a>
+          </div>
+          <div class="menu__col">
+            <p class="menu__group"><b>02</b> <span data-en="Find">Retrouver</span></p>
+            <a class="menu__link" href="#langues"><span class="menu__label" data-en="Languages">Langues</span><span class="menu__desc" data-en="Transcribed in more than 100 languages">Transcrit dans plus de 100 langues</span></a>
+            <a class="menu__link" href="#chercher"><span class="menu__label" data-en="Search">Recherche</span><span class="menu__desc" data-en="Speech and pictures, in the same results">Paroles et images, dans les mêmes résultats</span></a>
+            <a class="menu__link" href="#fiche"><span class="menu__label" data-en="Clip view">Fiche du plan</span><span class="menu__desc" data-en="Click a sentence, the clip opens there">Cliquez une phrase, le plan s’ouvre là</span></a>
+            <a class="menu__link" href="#corriger"><span class="menu__label" data-en="Transcript fixes">Correction du texte</span><span class="menu__desc" data-en="Fix the transcript in two moves">Corrigez la transcription en deux gestes</span></a>
+            <a class="menu__link" href="#personnages"><span class="menu__label" data-en="Faces">Visages</span><span class="menu__desc" data-en="Find anyone by their face">Retrouvez chacun par son visage</span></a>
+          </div>
+          <div class="menu__col">
+            <p class="menu__group"><b>03</b> <span data-en="Sort">Ranger</span></p>
+            <a class="menu__link" href="#rangement"><span class="menu__label" data-en="Organizing">Rangement</span><span class="menu__desc" data-en="Your files never move">Vos fichiers ne bougent jamais</span></a>
+            <a class="menu__link" href="#origine"><span class="menu__label" data-en="Origin">Origine</span><span class="menu__desc" data-en="Always know where a clip comes from">Toujours savoir d’où vient un plan</span></a>
+            <a class="menu__link" href="#sections"><span class="menu__label" data-en="Sections">Sections</span><span class="menu__desc" data-en="Keep a passage, not the whole clip">Gardez un passage, pas tout le plan</span></a>
+            <a class="menu__link" href="#resumer"><span class="menu__label" data-en="Summaries">Résumés</span><span class="menu__desc" data-en="A summary, then the recurring subjects">Un résumé, puis les sujets qui reviennent</span></a>
+            <a class="menu__link" href="#affichage"><span class="menu__label" data-en="Display">Affichage</span><span class="menu__desc" data-en="Show what you need">Affichez ce qui vous sert</span></a>
+            <a class="menu__link" href="#correction"><span class="menu__label" data-en="Grading">Étalonnage</span><span class="menu__desc" data-en="Your log footage, already graded">Vos images log, déjà étalonnées</span></a>
+          </div>
+            </div>
+            <p class="menu__bar"><a href="#partout" data-en="All features →">Toutes les fonctions →</a><a href="#cout" data-en="See pricing →">Voir les tarifs →</a></p>
+          </div>
+        </li>
+        <li class="menu__item">
+          <button class="menu__btn" type="button" aria-expanded="false" aria-controls="menu-ressources"><span data-en="Resources">Ressources</span><svg class="menu__chev" aria-hidden="true" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="menu__panel" id="menu-ressources">
+            <div class="menu__cols">
+          <div class="menu__col">
+            <a class="menu__link" href="#essentiel"><span class="menu__label" data-en="How analysis works">L’analyse</span><span class="menu__desc" data-en="What is sent, what is counted">Ce qui part, ce qui est compté</span></a>
+            <a class="menu__link" href="#formats"><span class="menu__label" data-en="Formats">Formats</span><span class="menu__desc" data-en="Video, audio and log profiles the app reads">Vidéo, son et profils log lus par l’app</span></a>
+          </div>
+          <div class="menu__col">
+            <a class="menu__link" href="#disponible"><span class="menu__label" data-en="Launch">Sortie</span><span class="menu__desc" data-en="Be notified when it’s on the Mac App Store">Soyez prévenu de la sortie sur le Mac App Store</span></a>
+            <a class="menu__link" href="https://sandrophoto.github.io/" rel="noopener"><span class="menu__label" data-en="The studio">Le studio</span><span class="menu__desc" data-en="STUPIDS STUDIO, who make Eye Derush">STUPIDS STUDIO, qui fait Eye Derush</span></a>
+          </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu__item"><a class="menu__btn" href="#cout" data-en="Pricing">Tarifs</a></li>
+      </ul>
     </nav>
     <div class="nav__end">
       <button class="lang" type="button" data-lang-toggle aria-label="Read this page in English" data-en-aria-label="Lire cette page en français"><span data-en="Français">English</span></button>
+      <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle><span data-en="Menu">Menu</span></button>
       <a class="btn btn--quiet nav__soon" href="#disponible" data-en="Get notified at launch">Être prévenu de la sortie</a>
     </div>
   </div>
@@ -134,7 +179,7 @@
   </div>
 </section>
 
-<div class="chapter" id="partout" data-chapter>
+<div class="chapter" id="partout">
 <header class="opener">
   <div class="opener__frame" aria-hidden="true">
     <img src="img/frame-wall-2400.jpg" srcset="img/frame-wall-1200.jpg 1200w, img/frame-wall-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
@@ -218,7 +263,7 @@
 
 </div>
 
-<div class="chapter" id="retrouver" data-chapter>
+<div class="chapter" id="retrouver">
 <header class="opener">
   <div class="opener__frame" aria-hidden="true">
     <img src="img/frame-pilot-2400.jpg" srcset="img/frame-pilot-1200.jpg 1200w, img/frame-pilot-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
@@ -430,7 +475,7 @@
 
 </div>
 
-<div class="chapter" id="ranger" data-chapter>
+<div class="chapter" id="ranger">
 <header class="opener">
   <div class="opener__frame" aria-hidden="true">
     <img src="img/frame-arch-2400.jpg" srcset="img/frame-arch-1200.jpg 1200w, img/frame-arch-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
@@ -692,7 +737,7 @@
 
 </div>
 
-<div class="chapter" id="analyse" data-chapter>
+<div class="chapter" id="analyse">
 <header class="opener">
   <div class="opener__frame" aria-hidden="true">
     <img src="img/frame-turbine-2400.jpg" srcset="img/frame-turbine-1200.jpg 1200w, img/frame-turbine-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" alt="" loading="lazy">
@@ -885,6 +930,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=12"></script>
+<script src="site.js?v=13"></script>
 </body>
 </html>

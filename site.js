@@ -239,6 +239,37 @@
   new IntersectionObserver(([entry]) => nav.classList.toggle('is-solid', !entry.isIntersecting), { rootMargin: '-72px 0px 0px 0px' })
     .observe(document.querySelector('[data-hero]'));
 
+  // ----- Menu : Fonctions et Ressources s'ouvrent au survol ou au clic ; Échap, un clic ailleurs ou un lien les referment. -----
+  const narrow = matchMedia('(max-width: 56rem)');
+  const menuItems = [...document.querySelectorAll('.menu__item')].filter((item) => item.querySelector('button.menu__btn'));
+  const setOpen = (item, open) => {
+    item.classList.toggle('is-open', open);
+    item.querySelector('.menu__btn').setAttribute('aria-expanded', String(open));
+  };
+  const closeAll = (except) => menuItems.forEach((item) => { if (item !== except) setOpen(item, false); });
+  menuItems.forEach((item) => {
+    // Au clavier, Entrée ouvre et referme ; à la souris, le clic ouvre (le survol l'a souvent déjà fait).
+    item.querySelector('.menu__btn').addEventListener('click', (event) => {
+      const open = event.detail === 0 ? !item.classList.contains('is-open') : true;
+      closeAll(item);
+      setOpen(item, open);
+    });
+    item.addEventListener('pointerenter', (event) => { if (event.pointerType === 'mouse' && !narrow.matches) { closeAll(item); setOpen(item, true); } });
+    item.addEventListener('pointerleave', (event) => { if (event.pointerType === 'mouse' && !narrow.matches) setOpen(item, false); });
+  });
+  // Sur un écran étroit, le bouton Menu ouvre la même liste en plein écran.
+  const burger = document.querySelector('[data-menu-toggle]');
+  const setSheet = (open) => { nav.classList.toggle('is-menu', open); burger.setAttribute('aria-expanded', String(open)); };
+  burger.addEventListener('click', () => setSheet(!nav.classList.contains('is-menu')));
+  document.querySelector('[data-menu]').addEventListener('click', (event) => { if (event.target.closest('a')) { closeAll(); setSheet(false); } });
+  document.addEventListener('click', (event) => { if (!event.target.closest('[data-menu]')) closeAll(); });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    const open = menuItems.find((item) => item.classList.contains('is-open'));
+    if (open) { setOpen(open, false); open.querySelector('.menu__btn').focus(); }
+    if (nav.classList.contains('is-menu')) { setSheet(false); burger.focus(); }
+  });
+
   // ----- Arrivées : titres et captures, une fois, quand ils entrent à l'écran. -----
   const reveal = new IntersectionObserver((entries) => entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -246,15 +277,6 @@
     reveal.unobserve(entry.target);
   }), { rootMargin: '0px 0px -10% 0px' });
   document.querySelectorAll('[data-reveal], [data-split]').forEach((el) => { if (!el.closest('.hero')) reveal.observe(el); });
-
-  // ----- Barre du haut : le chapitre où l'on est. -----
-  const chapterLinks = new Map([...document.querySelectorAll('[data-nav-link]')].map((a) => [a.getAttribute('href').slice(1), a]));
-  const chapterWatch = new IntersectionObserver((entries) => entries.forEach((entry) => {
-    const link = chapterLinks.get(entry.target.id);
-    if (entry.isIntersecting) chapterLinks.forEach((a) => (a === link ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
-    else link.removeAttribute('aria-current');
-  }), { rootMargin: '-50% 0px -50% 0px' });
-  document.querySelectorAll('[data-chapter]').forEach((el) => chapterWatch.observe(el));
 
   // ----- Les chiffres mesurés comptent jusqu'à leur valeur, une fois, quand ils entrent à l'écran. -----
   const count = new IntersectionObserver((entries) => entries.forEach((entry) => {
