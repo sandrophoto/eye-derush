@@ -263,11 +263,18 @@
   burger.addEventListener('click', () => setSheet(!nav.classList.contains('is-menu')));
   document.querySelector('[data-menu]').addEventListener('click', (event) => { if (event.target.closest('a')) { closeAll(); setSheet(false); } });
   document.addEventListener('click', (event) => { if (!event.target.closest('[data-menu]')) closeAll(); });
+  // Info-bulles : un toucher ouvre (Safari ne donne pas le focus aux boutons), un toucher ailleurs ferme.
+  document.addEventListener('click', (event) => {
+    const tip = event.target.closest('.tip');
+    document.querySelectorAll('.tip.is-open').forEach((open) => { if (open !== tip) open.classList.remove('is-open'); });
+    if (tip && event.target.closest('.tip__btn')) tip.classList.toggle('is-open');
+  });
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
     const open = menuItems.find((item) => item.classList.contains('is-open'));
     if (open) { setOpen(open, false); open.querySelector('.menu__btn').focus(); }
     if (nav.classList.contains('is-menu')) { setSheet(false); burger.focus(); }
+    document.querySelectorAll('.tip.is-open').forEach((tip) => tip.classList.remove('is-open'));
   });
 
   // ----- Arrivées : titres et captures, une fois, quand ils entrent à l'écran. -----
