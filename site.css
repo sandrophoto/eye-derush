@@ -231,7 +231,7 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 
 /* Tarifs : deux formules côte à côte, le chiffre en grand ; ce qui est gratuit et ce qui est compté. */
 /* Les trois formules, à la manière d'une grille de prix : l'app, puis les deux façons de payer l'analyse. */
-.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-columns); align-items: stretch; }
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 var(--gap-columns); align-items: stretch; }
 .plan { display: flex; flex-direction: column; gap: var(--space-lg); padding: var(--space-xl); border-radius: calc(var(--radius-card) * 1.6); transition: background-color var(--dur-long) var(--ease-out), outline-color var(--dur-long) var(--ease-out); outline: 1px solid transparent; outline-offset: -1px; }
 .plan:hover { outline-color: var(--color-edge); }
 /* La formule du milieu dépasse en haut et en bas, sur un fond levé, avec une lueur d'accent. */
@@ -239,8 +239,12 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .plan--featured:hover { outline-color: color-mix(in oklab, var(--color-accent) 60%, transparent); }
 /* Les cartes arrivent sans être découpées, pour garder la lueur entière. */
 .js .plan[data-reveal], .js .plan[data-reveal].is-in { clip-path: none; }
-.plans .plan:nth-child(2) { transition-delay: 90ms; }
-.plans .plan:nth-child(3) { transition-delay: 180ms; }
+.plans .plan:nth-of-type(2) { transition-delay: 90ms; }
+.plans .plan:nth-of-type(3) { transition-delay: 180ms; }
+/* Crochet au-dessus des deux formules qui débloquent tout. */
+.plans__unlock { grid-column: 2 / 4; margin-bottom: calc(var(--space-xl) + var(--space-sm)); text-align: center; font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent); }
+.plans__unlock::after { content: ""; display: block; height: var(--space-sm); margin-top: var(--space-xs); border: 1px solid color-mix(in oklab, var(--color-accent) 45%, transparent); border-bottom: 0; border-radius: 6px 6px 0 0; }
+
 .plan__name { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs) var(--space-sm); white-space: nowrap; font: 500 var(--text-lg)/1.2 var(--font-body); letter-spacing: -0.01em; }
 .plan__tag { padding: var(--space-3xs) var(--space-xs); border: 1px solid color-mix(in oklab, var(--color-accent) 55%, transparent); border-radius: 6px; font: 300 var(--text-xs)/1.2 var(--font-outlier); letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent); }
 .plan__price { display: flex; align-items: flex-end; gap: var(--space-sm); margin-top: var(--space-xs); }
@@ -441,6 +445,7 @@ a, button, input, [data-zoom] { -webkit-tap-highlight-color: transparent; }
   .plan { padding: var(--space-xl) var(--space-lg); outline-color: var(--color-edge); }
   .plan--featured { order: -1; margin-block: 0; padding-block: var(--space-xl); }
   .plans .plan:nth-child(n) { transition-delay: 0ms; }
+  .plans__unlock { display: none; }
   .opener__body { grid-template-columns: minmax(0, 1fr); }
   .opener { min-height: 84svh; padding-block: var(--space-3xl) var(--space-2xl); }
   .close { min-height: 76svh; }
