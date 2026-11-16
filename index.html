@@ -17,7 +17,7 @@
 <link rel="preload" as="image" href="img/frame-rainbow-2400.jpg" imagesrcset="img/frame-rainbow-1200.jpg 1200w, img/frame-rainbow-2400.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400&f[]=switzer@400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=12">
+<link rel="stylesheet" href="site.css?v=14">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -754,42 +754,71 @@
   <div class="container">
     <p class="kicker"><b>04.2</b> <span data-en="Pricing">Tarifs</span></p>
     <div class="head">
-      <h2 data-split data-en="Pay for analysis your way">Payez l’analyse à votre façon</h2>
-      <p class="lead" data-en="Credits or a subscription, to fit your needs. Without analysis, the app still does everything else.">Crédits ou abonnement, selon vos besoins. Sans analyse, l’app sert pour tout le reste.</p>
+      <h2 data-split data-en="A licence, credits, or all included">Une licence, des crédits, ou tout compris</h2>
+      <p class="lead" data-en="Buy the app once and analyse without limit on your Mac. Add credits for the most precise AI, or take the subscription that includes everything.">Achetez l’app une fois et analysez sans limite sur votre Mac. Ajoutez des crédits pour l’IA la plus précise, ou prenez l’abonnement qui comprend tout.</p>
     </div>
-    <div class="offers" data-reveal>
-      <div class="offer">
-        <h3 class="offer__name" data-en="Credits">Crédits</h3>
-        <p class="offer__figure"><span class="num" data-en="10 h">10 h</span></p>
-        <p class="offer__line" data-en="of analysis or more, bought only when you need them.">d’analyse ou plus, achetées seulement quand vous en avez besoin.</p>
-      </div>
-      <div class="offer">
-        <h3 class="offer__name" data-en="Subscription">Abonnement</h3>
-        <p class="offer__figure"><span class="num">1 h</span><span class="offer__per" data-en=" / month"> / mois</span></p>
-        <p class="offer__line" data-en="of analysis or more, every month, for regular shoots.">d’analyse ou plus, chaque mois, pour les tournages réguliers.</p>
-      </div>
-    </div>
-    <p class="offers__note" data-en="Prices announced at launch.">Prix annoncés à la sortie.</p>
-    <div class="cost__lists" data-reveal>
-      <div>
-        <h3 data-en="Free, with or without analysis">Gratuit, avec ou sans analyse</h3>
-        <ul>
-          <li data-en="Import and pre-analyse">Importer et pré-analyser</li>
-          <li data-en="Recognise faces">Reconnaître les visages</li>
-          <li data-en="Rate and organise">Classer et ranger</li>
-          <li data-en="Export to the edit">Exporter vers le montage</li>
+    <div class="plans">
+      <article class="plan" data-reveal>
+        <h3 class="plan__name">Eye Derush</h3>
+        <p class="plan__price"><span class="plan__figure num" data-en="€169">169 €</span><span class="plan__unit"><span data-en="per seat">par poste</span><span data-en="lifetime">à vie</span></span></p>
+        <p class="plan__for" data-en="To do it all on your Mac, with no subscription.">Pour tout faire sur votre Mac, sans abonnement.</p>
+        <ul class="plan__list">
+          <li data-en="The Mac app, in English and French">L’app Mac, en français et en anglais</li>
+          <li data-en="Unlimited analysis, on your Mac">Analyse illimitée, sur votre Mac</li>
+          <li data-en="Unlimited search by speech and picture">Recherche illimitée par les paroles et les images</li>
+          <li data-en="Faces recognised on your Mac, never sent">Visages reconnus sur votre Mac, jamais envoyés</li>
+          <li data-en="All your shoots, even with the drives unplugged">Tous vos tournages, même disques débranchés</li>
+          <li data-en="Export to Final Cut Pro, Premiere Pro and DaVinci Resolve">Export vers Final Cut Pro, Premiere Pro et DaVinci Resolve</li>
         </ul>
-      </div>
-      <div>
-        <h3 data-en="Counted in hours of analysis">Compté en heures d’analyse</h3>
-        <ul>
-          <li data-en="AI transcription">Transcription par l’IA</li>
-          <li data-en="AI picture description">Description des images par l’IA</li>
-          <li data-en="AI search by meaning">Recherche par le sens, par l’IA</li>
-          <li data-en="Themes found by AI">Thématiques trouvées par l’IA</li>
+        <div class="plan__foot">
+          <ul class="plan__rows">
+          <li class="plan__row plan__row--best"><span data-en="Lifetime">À vie</span><span data-en="Buy once">Achat unique</span><span data-en="€169">169 €</span></li>
+          </ul>
+          <a class="btn btn--quiet plan__cta" href="#disponible" data-en="Get notified at launch">Être prévenu de la sortie</a>
+          <p class="plan__note" data-en="Lifetime licences include one year of updates.">Les licences à vie incluent un an de mises à jour.</p>
+        </div>
+      </article>
+      <article class="plan" data-reveal>
+        <h3 class="plan__name">Eye Derush <span class="plan__tag" data-en="Credits">Crédits</span></h3>
+        <p class="plan__price"><span class="plan__figure num" data-en="10 h">10 h</span><span class="plan__unit"><span data-en="of AI analysis">d’analyse IA</span><span data-en="or more">ou plus</span></span></p>
+        <p class="plan__for" data-en="An option on top of the licence, to go even further.">En option, avec la licence, pour aller encore plus loin.</p>
+        <p class="plan__plus" data-en="On top of the licence, add:">Avec la licence, ajoutez :</p>
+        <ul class="plan__list">
+          <li data-en="A more precise picture and sound analysis">Une analyse visuelle et audio plus précise</li>
+          <li data-en="Search across picture and sound together">Une recherche croisée, image et son ensemble</li>
+          <li data-en="Themes searched for directly inside Eye Derush">Les thématiques cherchées directement dans Eye Derush</li>
+          <li data-en="No Claude or other account to create: it’s all built in">Aucun compte Claude ou autre à créer : tout est intégré</li>
         </ul>
-      </div>
-      <p class="cost__note" data-en="Before each analysis, the app shows what it is about to count.">Avant chaque analyse, l’app montre ce qu’elle va compter.</p>
+        <div class="plan__foot">
+          <ul class="plan__rows">
+          <li class="plan__row"><span data-en="Price">Prix</span><span data-en=""></span><span data-en="announced at launch">annoncé à la sortie</span></li>
+          </ul>
+          <a class="btn btn--quiet plan__cta" href="#disponible" data-en="Get notified at launch">Être prévenu de la sortie</a>
+          <p class="plan__note" data-en="A clip already analysed is not sent again, unless you ask.">Un plan déjà analysé ne repart pas, sauf si vous le demandez.</p>
+        </div>
+      </article>
+      <article class="plan plan--featured" data-reveal>
+        <h3 class="plan__name">Eye Derush <span class="plan__tag" data-en="All included">Tout compris</span></h3>
+        <p class="plan__price"><span class="plan__figure num" data-en="1 h">1 h</span><span class="plan__unit"><span data-en="of AI analysis a month">d’analyse IA par mois</span><span data-en="or more">ou plus</span></span></p>
+        <p class="plan__for" data-en="The licence and the most precise AI, with nothing else to buy.">La licence et l’IA la plus précise, sans rien acheter d’autre.</p>
+        <p class="plan__plus" data-en="All included:">Tout compris :</p>
+        <ul class="plan__list">
+          <li data-en="The full Eye Derush licence">La licence Eye Derush complète</li>
+          <li data-en="A more precise picture and sound analysis">Une analyse visuelle et audio plus précise</li>
+          <li data-en="Search across picture and sound together">Une recherche croisée, image et son ensemble</li>
+          <li data-en="Themes searched for directly inside Eye Derush">Les thématiques cherchées directement dans Eye Derush</li>
+          <li data-en="No Claude or other account to create: it’s all built in">Aucun compte Claude ou autre à créer : tout est intégré</li>
+          <li data-en="Hours of AI analysis every month">Des heures d’analyse IA chaque mois</li>
+        </ul>
+        <div class="plan__foot">
+          <ul class="plan__rows">
+          <li class="plan__row"><span data-en="Monthly">Mensuel</span><span data-en=""></span><span data-en="announced at launch">annoncé à la sortie</span></li>
+          <li class="plan__row"><span data-en="Yearly">Annuel</span><span data-en=""></span><span data-en="announced at launch">annoncé à la sortie</span></li>
+          </ul>
+          <a class="btn plan__cta" href="#disponible" data-en="Get notified at launch">Être prévenu de la sortie</a>
+          <p class="plan__note" data-en="Before each analysis, the app shows what it is about to count.">Avant chaque analyse, l’app montre ce qu’elle va compter.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
