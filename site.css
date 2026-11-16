@@ -221,7 +221,7 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .js .plan[data-reveal], .js .plan[data-reveal].is-in { clip-path: none; }
 .plans .plan:nth-child(2) { transition-delay: 90ms; }
 .plans .plan:nth-child(3) { transition-delay: 180ms; }
-.plan__name { display: flex; align-items: center; gap: var(--space-sm); font: 500 var(--text-lg)/1.2 var(--font-body); letter-spacing: -0.01em; }
+.plan__name { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs) var(--space-sm); white-space: nowrap; font: 500 var(--text-lg)/1.2 var(--font-body); letter-spacing: -0.01em; }
 .plan__tag { padding: var(--space-3xs) var(--space-xs); border: 1px solid color-mix(in oklab, var(--color-accent) 55%, transparent); border-radius: 6px; font: 300 var(--text-xs)/1.2 var(--font-outlier); letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent); }
 .plan__price { display: flex; align-items: flex-end; gap: var(--space-sm); margin-top: var(--space-xs); }
 .plan__figure { font: 300 clamp(3.75rem, 5.4vw, 5.75rem)/0.82 var(--font-display); letter-spacing: -0.045em; white-space: nowrap; }
