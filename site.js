@@ -37,7 +37,7 @@
   const shots = [...document.querySelectorAll('[data-src-en]')].map((el) => ({ el, fr: el.getAttribute('src'), en: el.dataset.srcEn }));
   const meta = {
     fr: { title: document.title, description: document.querySelector('meta[name="description"]').content },
-    en: { title: 'Eye Derush: every shoot you’ve ever done, one memory', description: 'Eye Derush remembers all your rushes on the Mac: what is said, what is seen. Even with the drives unplugged, whatever your editing software.' },
+    en: { title: 'Eye Derush understands your rushes, sorts them and finds them', description: 'Eye Derush remembers all your rushes on the Mac: what is said, what is seen. Even with the drives unplugged, whatever your editing software.' },
   };
 
   let lang = 'fr';
