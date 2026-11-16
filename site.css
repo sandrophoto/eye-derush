@@ -282,6 +282,10 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .tip__icon { display: inline-grid; place-items: center; width: 1.25em; height: 1.25em; margin-right: 0.4em; border-radius: 50%; background: var(--color-muted); vertical-align: -0.2em; font: 600 0.8em/1 var(--font-body); color: var(--color-paper); }
 .tip__bubble { position: absolute; z-index: 5; bottom: calc(100% + 10px); left: 50%; width: min(19rem, 80vw); padding: var(--space-md); border: 1px solid var(--color-rule); border-radius: var(--radius-card); background: var(--color-paper-3); box-shadow: 0 18px 48px -12px rgb(0 0 0 / 0.6); font-size: var(--text-sm); line-height: 1.5; text-align: left; color: var(--color-ink); translate: -50% 4px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--dur-short) var(--ease-out), translate var(--dur-short) var(--ease-out), visibility 0s linear var(--dur-short); }
 .tip:hover .tip__bubble, .tip.is-open .tip__bubble, .tip__btn:focus-visible + .tip__bubble { translate: -50% 0; opacity: 1; visibility: visible; transition-delay: 0s; }
+.tip--start { display: inline-block; }
+.tip--start .tip__bubble { left: 0; translate: 0 4px; }
+.tip--start:hover .tip__bubble, .tip--start.is-open .tip__bubble, .tip--start .tip__btn:focus-visible + .tip__bubble { translate: 0 0; }
+.plan__list .tip__btn { text-decoration-color: color-mix(in oklab, currentColor 35%, transparent); }
 
 /* La fiche technique : cinq lignes. */
 .tech h2 { margin-bottom: var(--space-3xl); }
