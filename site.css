@@ -345,6 +345,24 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 
 /* ---------- Défilement : parallaxe et lectures, sans script ---------- */
 
+/* ---------- Privé · Précis : deux lignes, chacune à la couleur de son mode ---------- */
+
+.crop--mode { --x: 1000; --y: 0; --w: 1560; --h: 520; }
+.modes__rows { display: grid; gap: var(--space-3xl); }
+.mode { --mode-c: var(--color-accent); display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--space-2xl) var(--gap-columns); align-items: center; padding-top: var(--space-xl); border-top: 1px solid var(--mode-c); }
+.mode--prive { --mode-c: oklch(74% 0.055 145); }
+.mode__text { display: grid; gap: var(--space-md); justify-items: start; }
+.mode__tag { padding: var(--space-2xs) var(--space-md); border-radius: var(--radius-pill); background: color-mix(in oklab, var(--mode-c) 18%, transparent); color: var(--mode-c); font: 500 var(--text-sm)/1.4 var(--font-body); letter-spacing: 0.04em; text-transform: uppercase; }
+.mode h3 { font: 300 var(--text-3xl)/1.08 var(--font-display); letter-spacing: var(--tracking-display); }
+.mode__sentence { color: var(--color-ink-2); line-height: 1.5; max-width: 44ch; }
+.mode__list { display: grid; gap: var(--space-xs); padding: 0; margin: 0; list-style: none; font-size: var(--text-sm); line-height: 1.45; color: var(--color-ink-2); }
+.mode__list li { position: relative; padding-left: var(--space-lg); }
+.mode__list li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 50%; background: var(--mode-c); }
+.mode__why { font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); }
+.mode__why b { color: var(--mode-c); font-weight: 500; }
+.mode .crop { outline-color: color-mix(in oklab, var(--mode-c) 55%, transparent); }
+.modes__note { max-width: 60ch; margin-top: var(--space-2xl); color: var(--color-muted); font-size: var(--text-sm); line-height: 1.5; }
+
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
   @supports (animation-timeline: view()) {
@@ -439,6 +457,7 @@ a, button, input, [data-zoom] { -webkit-tap-highlight-color: transparent; }
 }
 @keyframes menu-in { from { opacity: 0; transform: translateY(-8px); } }
 @media (max-width: 60rem) {
+  .mode { grid-template-columns: minmax(0, 1fr); }
   .fix__text { position: static; }
   .head, .plans, .origin__grid, .fix__grid, .people__grid, .rows > div, .send__grid, .duo, .hero__body, .offline__grid, .langs__grid { grid-template-columns: minmax(0, 1fr); }
   .head { align-items: start; gap: var(--space-md); margin-bottom: var(--space-2xl); }
