@@ -17,7 +17,7 @@
 <link rel="preload" as="image" href="img/frame-rainbow-2400.jpg" imagesrcset="img/frame-rainbow-1200.jpg 1200w, img/frame-rainbow-2400.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400&f[]=switzer@400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=30">
+<link rel="stylesheet" href="site.css?v=31">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -55,6 +55,7 @@
             <a class="menu__link" href="#origine"><span class="menu__label" data-en="Origin">Origine</span><span class="menu__desc" data-en="Always know where a clip comes from">Toujours savoir d’où vient un plan</span></a>
             <a class="menu__link" href="#sections"><span class="menu__label" data-en="Sections">Sections</span><span class="menu__desc" data-en="Keep a passage, not the whole clip">Gardez un passage, pas tout le plan</span></a>
             <a class="menu__link" href="#resumer"><span class="menu__label" data-en="Summaries">Résumés</span><span class="menu__desc" data-en="A summary, then the recurring subjects">Un résumé, puis les sujets qui reviennent</span></a>
+            <a class="menu__link" href="#mind"><span class="menu__label">Mind</span><span class="menu__desc" data-en="Your ideas, linked to your shots">Vos idées, reliées à vos plans</span></a>
             <a class="menu__link" href="#structure"><span class="menu__label" data-en="Structure">Structure</span><span class="menu__desc" data-en="Build the film, sequence by sequence">Construisez le film, séquence par séquence</span></a>
             <a class="menu__link" href="#affichage"><span class="menu__label" data-en="Display">Affichage</span><span class="menu__desc" data-en="Show what you need">Affichez ce qui vous sert</span></a>
             <a class="menu__link" href="#correction"><span class="menu__label" data-en="Grading">Étalonnage</span><span class="menu__desc" data-en="Your log footage, already graded">Vos images log, déjà étalonnées</span></a>
@@ -427,7 +428,7 @@
         </div>
         <div>
           <dt data-en="Who speaks">Qui parle</dt>
-          <dd data-en="A line given to the wrong voice? Pick the right person for it.">Une ligne attribuée à la mauvaise voix ? Choisissez le bon personnage.</dd>
+          <dd data-en="A line given to the wrong voice? Pick the right person for it. Redo the transcription and the names you gave the voices are kept.">Une ligne attribuée à la mauvaise voix ? Choisissez le bon personnage. Refaites la transcription : les noms donnés aux voix sont gardés.</dd>
         </div>
       </dl>
     </div>
@@ -511,15 +512,16 @@
     <p class="opener__num" aria-hidden="true">03</p>
     <h2 class="opener__title" data-split data-en="Sort and view">Rangez, regardez</h2>
     <div class="opener__side">
-      <p class="opener__lede" data-en="Rate, locate, summarize, structure, grade, without ever touching your files.">Classer, situer, résumer, structurer, étalonner, sans jamais toucher à vos fichiers.</p>
+      <p class="opener__lede" data-en="Rate, locate, summarize, map out, structure, grade, without ever touching your files.">Classer, situer, résumer, imaginer, structurer, étalonner, sans jamais toucher à vos fichiers.</p>
       <ol class="opener__toc">
       <li><a href="#rangement"><b>03.1</b> <span data-en="Organizing">Rangement</span></a></li>
       <li><a href="#origine"><b>03.2</b> <span data-en="Origin">Origine</span></a></li>
       <li><a href="#sections"><b>03.3</b> <span data-en="Sections">Sections</span></a></li>
       <li><a href="#resumer"><b>03.4</b> <span data-en="Summaries">Résumés</span></a></li>
-      <li><a href="#structure"><b>03.5</b> <span data-en="Structure">Structure</span></a></li>
-      <li><a href="#affichage"><b>03.6</b> <span data-en="Display">Affichage</span></a></li>
-      <li><a href="#correction"><b>03.7</b> <span data-en="Grading">Étalonnage</span></a></li>
+      <li><a href="#mind"><b>03.5</b> <span>Mind</span></a></li>
+      <li><a href="#structure"><b>03.6</b> <span data-en="Structure">Structure</span></a></li>
+      <li><a href="#affichage"><b>03.7</b> <span data-en="Display">Affichage</span></a></li>
+      <li><a href="#correction"><b>03.8</b> <span data-en="Grading">Étalonnage</span></a></li>
       </ol>
     </div>
   </div>
@@ -559,7 +561,8 @@
     <div class="duo marks">
       <div class="duo__text">
         <h3 data-en="Show, hide, or only that">Affichez, masquez, ou rien que ça</h3>
-        <p data-en="Favourites, Seen, Verified, Rejected: each button in the tab bar shows those clips, hides them, or shows only them. They combine: verified favourites in two clicks.">Favoris, Vu, Vérifié, Rejeté : chaque bouton de la barre des onglets affiche ces plans, les masque, ou n’affiche qu’eux. Ils se combinent : les favoris vérifiés, en deux clics.</p>
+        <p data-en="Favourites, Seen, Verified, Rejected: each button in the tab bar shows those clips, hides them, or shows only them, in step with the left column. They combine: verified favourites in two clicks.">Favoris, Vu, Vérifié, Rejeté : chaque bouton de la barre des onglets affiche ces plans, les masque, ou n’affiche qu’eux, en accord avec la colonne de gauche. Ils se combinent : les favoris vérifiés, en deux clics.</p>
+        <p data-en="And to see everything except one person, a bin or a keyword: ⌥-click it in the left column. “All clips except Slavica”.">Et pour tout voir sauf une personne, un chutier ou un mot-clé : ⌥-clic dessus dans la colonne de gauche. « Tous les plans sauf Slavica ».</p>
         <figure class="panel panel--bar marks__bar">
           <img src="img/shot-marks-bar-fr.webp" data-src-en="img/shot-marks-bar-en.webp" width="200" height="56" loading="lazy"
             alt="Les quatre boutons : Favoris en « seuls », Vu et Vérifié affichés, Rejeté masqué en bleu barré." data-en-alt="The four buttons: Favourites set to only, Seen and Verified shown, Rejected hidden in struck-through blue.">
@@ -642,7 +645,7 @@
     <p class="kicker"><b>03.4</b> <span data-en="Summaries">Résumés</span></p>
     <div class="head">
       <h2 data-split data-en="A summary, then the subjects that keep coming back">Un résumé, puis les sujets qui reviennent</h2>
-      <p class="lead" data-en="On a selection of clips, the AI writes what they show and say, then finds the themes. Each one becomes a bin in a click, ready to become a sequence of the film.">Sur une sélection de plans, l’IA écrit ce qu’ils montrent et disent, puis repère les thématiques. Chacune devient un chutier d’un clic, prêt à devenir une séquence du film.</p>
+      <p class="lead" data-en="On a selection of clips, the AI writes what they show and say, then finds the themes, right after the analysis if you wish. Each one becomes a bin in a click, ready to become a sequence of the film.">Sur une sélection de plans, l’IA écrit ce qu’ils montrent et disent, puis repère les thématiques, dans la foulée de l’analyse si vous le voulez. Chacune devient un chutier d’un clic, prêt à devenir une séquence du film.</p>
     </div>
     <div class="panels" data-reveal>
       <figure class="panel">
@@ -659,20 +662,53 @@
   </div>
 </section>
 
+<section class="section mind" id="mind">
+  <div class="container">
+    <p class="kicker"><b>03.5</b> <span>Mind</span></p>
+    <div class="head">
+      <h2 data-split data-en="Lay out your ideas, link them to your shots">Posez vos idées, reliez-les à vos plans</h2>
+      <p class="lead" data-en="A mind map inside the library, the way you prepare a documentary: what you have, what you want, what is missing. Bubbles for the ideas, your bins and shots dragged in, linked with a stroke.">Une carte mentale dans la bibliothèque, comme on prépare un documentaire : ce qu’on a, ce qu’on veut, ce qui manque. Des bulles pour les idées, vos chutiers et vos plans glissés dedans, reliés d’un trait.</p>
+    </div>
+  </div>
+  <figure class="shot shot--bleed" data-reveal>
+    <div class="crop crop--mind">
+      <img src="img/shot-mind-fr.webp" data-src-en="img/shot-mind-en.webp" width="2560" height="1280" loading="lazy"
+        alt="La vue Mind : l’idée du film au centre, reliée à ce qu’on a (deux chutiers et un plan avec sa vignette), à ce qu’on veut et à ce qui manque." data-en-alt="The Mind view: the film’s idea in the middle, linked to what we have (two bins and a shot with its thumbnail), what we want and what is missing.">
+    </div>
+    <figcaption data-en="Two bins and a shot sit among the ideas. A double-click opens them.">Deux chutiers et un plan au milieu des idées. Un double-clic les ouvre.</figcaption>
+  </figure>
+  <div class="container">
+    <dl class="facts facts--3" data-reveal>
+      <div>
+        <dt data-en="Everything links up">Tout se relie</dt>
+        <dd data-en="Draw a stroke from one bubble to another, or into empty space to create a new one already linked.">Tirez un trait d’une bulle vers une autre, ou vers le vide pour en créer une, déjà reliée.</dd>
+      </div>
+      <div>
+        <dt data-en="Your rushes inside">Vos rushs dedans</dt>
+        <dd data-en="A bin dragged from the left column or a shot from the grid becomes a bubble.">Un chutier glissé depuis la colonne de gauche, ou un plan depuis la grille, devient une bulle.</dd>
+      </div>
+      <div>
+        <dt data-en="Smooth">Fluide</dt>
+        <dd data-en="The wheel zooms, the background moves, Tab and Return add bubbles from the keyboard.">La molette zoome, le fond se déplace, Tab et Entrée ajoutent des bulles au clavier.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
 <section class="section structure" id="structure">
   <div class="container">
-    <p class="kicker"><b>03.5</b> <span data-en="Structure">Structure</span></p>
+    <p class="kicker"><b>03.6</b> <span data-en="Structure">Structure</span></p>
     <div class="head">
       <h2 data-split data-en="Build the film, sequence by sequence">Construisez le film, séquence par séquence</h2>
-      <p class="lead" data-en="Each bin becomes a sequence. Drag them from the left column into the film’s thread, in the order you want, then send the whole film to the edit.">Chaque chutier devient une séquence. Glissez-les depuis la colonne de gauche dans le fil du film, dans l’ordre voulu, puis envoyez le film entier au montage.</p>
+      <p class="lead" data-en="Each bin becomes a sequence. The film’s thread runs along the top; below it, the chosen sequence and its shots, in order. Drag a shot to move it, or to send it to another sequence.">Chaque chutier devient une séquence. Le fil du film court en haut ; en dessous, la séquence choisie et ses plans, dans l’ordre. Glissez un plan pour le déplacer, ou pour l’envoyer dans une autre séquence.</p>
     </div>
   </div>
   <figure class="shot shot--bleed" data-reveal>
     <div class="crop crop--structure">
-      <img src="img/shot-structure-fr.webp" data-src-en="img/shot-structure-en.webp" width="2560" height="1229" loading="lazy"
-        alt="La vue Structure : le film Documentaire Refuge en quatre séquences numérotées, L’aube, Le vol, La livraison et Le refuge, avec leurs plans et leur durée ; les chutiers dans la colonne de gauche." data-en-alt="The Structure view: the Hut documentary film in four numbered sequences, Dawn, The flight, The delivery and The hut, with their clips and running time; the bins in the left column.">
+      <img src="img/shot-structure-fr.webp" data-src-en="img/shot-structure-en.webp" width="2560" height="1280" loading="lazy"
+        alt="La vue Structure : en haut le fil du film Documentaire Refuge, quatre séquences avec leurs mini-vignettes ; en dessous, la séquence La livraison et ses trois plans en grandes vignettes." data-en-alt="The Structure view: along the top, the thread of the Hut documentary, four sequences with their mini thumbnails; below, The delivery sequence and its three shots as large thumbnails.">
     </div>
-    <figcaption data-en="Four bins, four sequences, 14 minutes of rushes in order. “Evening” stays aside, ready if needed.">Quatre chutiers, quatre séquences, 14 minutes de rushs dans l’ordre. « Le soir » reste de côté, prêt s’il le faut.</figcaption>
+    <figcaption data-en="“The delivery” opened under the thread: three shots, in film order, starting at 2:29.">« La livraison » ouverte sous le fil : trois plans, dans l’ordre du film, qui commence à 2:29.</figcaption>
   </figure>
   <div class="container duo">
     <div class="duo__text">
@@ -695,8 +731,8 @@
         <dd data-en="Wherever they come from, nothing enters the film on its own: you choose.">D’où qu’ils viennent, rien n’entre dans le film tout seul : vous choisissez.</dd>
       </div>
       <div>
-        <dt data-en="Every move undone">Chaque geste s’annule</dt>
-        <dd data-en="⌘Z undoes each addition, move or removal.">⌘Z défait chaque ajout, déplacement ou retrait.</dd>
+        <dt data-en="From the keyboard">Au clavier</dt>
+        <dd data-en="↑↓ changes sequence, ←→ changes shot, with ⌥ they move. ⌘Z undoes every move.">↑↓ change de séquence, ←→ de plan, et avec ⌥ ils se déplacent. ⌘Z défait chaque geste.</dd>
       </div>
     </dl>
   </div>
@@ -704,7 +740,7 @@
 
 <section class="section display" id="affichage">
   <div class="container">
-    <p class="kicker"><b>03.6</b> <span data-en="Display">Affichage</span></p>
+    <p class="kicker"><b>03.7</b> <span data-en="Display">Affichage</span></p>
     <div class="head">
       <h2 data-split data-en="Show what you need, hide the rest">Affichez ce qui vous sert, masquez le reste</h2>
       <p class="lead" data-en="Every piece of information on a thumbnail switches on or off in one click: name, analysis badges, shooting details.">Chaque information d’une vignette s’allume ou s’éteint d’un clic : nom, pastilles d’analyse, détails de tournage.</p>
@@ -720,7 +756,7 @@
       <figcaption data-en="Everything off: the picture alone.">Tout éteint : l’image seule.</figcaption>
     </figure>
     <figure class="panel panel--next panel--bar" data-reveal>
-      <img src="img/shot-display-bar-fr.webp" data-src-en="img/shot-display-bar-en.webp" width="1100" height="56" loading="lazy"
+      <img src="img/shot-display-bar-fr.webp" data-src-en="img/shot-display-bar-en.webp" width="1200" height="56" loading="lazy"
         alt="Les boutons d’affichage de la barre des onglets : favoris, vus, vérifiés, rejetés, nom, pastilles, détails, grille, liste ou structure, tri, taille des vignettes." data-en-alt="The display buttons in the tab bar: favourites, seen, verified, rejects, name, badges, details, grid, list or structure, sort, thumbnail size.">
       <figcaption data-en="The buttons that do it, in the tab bar.">Les boutons qui le font, dans la barre des onglets.</figcaption>
     </figure>
@@ -763,7 +799,7 @@
 
 <section class="section grade" id="correction">
   <div class="container">
-    <p class="kicker"><b>03.7</b> <span data-en="Grading">Étalonnage</span></p>
+    <p class="kicker"><b>03.8</b> <span data-en="Grading">Étalonnage</span></p>
     <div class="head">
       <h2 data-split data-en="Your log footage, already graded">Vos images log, déjà étalonnées</h2>
       <p class="lead" data-en="Two LUTs on top of each other, applied on screen only: your files are never modified.">Deux LUT l’une sur l’autre, appliquées à l’écran seulement : vos fichiers ne sont jamais modifiés.</p>
@@ -935,17 +971,17 @@
     <div class="duo duo--sheets">
       <div class="duo__text">
         <h3 data-en="You know before you start">Vous savez avant de lancer</h3>
-        <p data-en="Dialogue and visuals, each with its own box. Before anything starts, the app gives a computing time in Private, a price in Precise.">Dialogues et visuel, chacun dans son bloc. Avant de lancer, l’app donne un temps de calcul en Privé, un prix en Précis.</p>
+        <p data-en="Dialogue, visuals, themes: three blocks, one switch each. Before anything starts, the app gives a computing time in Private, a price in Precise. A notification tells you when it is done.">Dialogues, visuel, thèmes : trois blocs, un interrupteur chacun. Avant de lancer, l’app donne un temps de calcul en Privé, un prix en Précis. Une notification vous prévient quand c’est fini.</p>
       </div>
       <div class="pair" data-reveal>
         <figure class="panel">
-          <img src="img/shot-analyse-prive-fr.webp" data-src-en="img/shot-analyse-prive-en.webp" width="500" height="595" loading="lazy"
-            alt="La fenêtre Analyser en mode Privé : dialogues et visuel, estimation d’environ 4 minutes, rien n’est payé ni envoyé." data-en-alt="The Analyze window in Private mode: dialogue and visuals, an estimate of about 4 minutes, nothing paid or sent.">
+          <img src="img/shot-analyse-prive-fr.webp" data-src-en="img/shot-analyse-prive-en.webp" width="460" height="605" loading="lazy"
+            alt="La fenêtre Analyser en mode Privé : blocs Dialogues, Visuel et Trouver les thèmes, estimation d’environ 4 minutes, rien n’est payé ni envoyé." data-en-alt="The Analyze window in Private mode: Dialogue, Visual and Find themes blocks, an estimate of about 4 minutes, nothing paid or sent.">
           <figcaption data-en="Private: a time, nothing to pay.">Privé : une durée, rien à payer.</figcaption>
         </figure>
         <figure class="panel">
-          <img src="img/shot-analyse-precis-fr.webp" data-src-en="img/shot-analyse-precis-en.webp" width="500" height="595" loading="lazy"
-            alt="La fenêtre Analyser en mode Précis : seuls les dialogues reconnus sont analysés, estimation à 0,11 dollar pour 8 vidéos." data-en-alt="The Analyze window in Precise mode: only recognised dialogue is analysed, an estimate of 0.11 dollars for 8 videos.">
+          <img src="img/shot-analyse-precis-fr.webp" data-src-en="img/shot-analyse-precis-en.webp" width="460" height="605" loading="lazy"
+            alt="La fenêtre Analyser en mode Précis : blocs Dialogues, Visuel et Trouver les thèmes, estimation à 0,11 dollar pour 8 vidéos." data-en-alt="The Analyze window in Precise mode: Dialogue, Visual and Find themes blocks, an estimate of 0.11 dollars for 8 videos.">
           <figcaption data-en="Precise: a price, to the cent.">Précis : un prix, au centime.</figcaption>
         </figure>
       </div>
@@ -976,7 +1012,7 @@
             <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f4"><span data-en="Faces recognised on your Mac, never sent">Visages reconnus sur votre Mac, jamais envoyés</span></button><span class="tip__bubble" role="tooltip" id="tip-f4" data-en="Name a person once: their clips come up in a click, and their voice carries their name in the transcript. Nothing leaves your catalogue.">Nommez une personne une fois : ses plans se retrouvent d’un clic, et sa voix porte son nom dans la transcription. Rien ne quitte votre catalogue.</span></span></li>
             <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f5"><span data-en="All your shoots, even with the drives unplugged">Tous vos tournages, même disques débranchés</span></button><span class="tip__bubble" role="tooltip" id="tip-f5" data-en="One catalogue for all your years of rushes. Playback, skimming, sections and ratings work on light previews, without the drives.">Un seul catalogue pour toutes vos années de rushs. Lecture, survol, sections et classement se font sur des aperçus légers, sans les disques.</span></span></li>
             <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f6"><span data-en="Export to Final Cut Pro, Premiere Pro and DaVinci Resolve">Export vers Final Cut Pro, Premiere Pro et DaVinci Resolve</span></button><span class="tip__bubble" role="tooltip" id="tip-f6" data-en="A bin, or the whole film sequence by sequence, goes to the edit with its clips, sections, keywords and subtitles: your logging follows wherever you cut.">Un chutier, ou le film entier séquence par séquence, part au montage avec ses plans, ses sections, ses mots-clés et ses sous-titres : votre dérush suit là où vous montez.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f37"><span data-en="The film’s structure, sequence by sequence">La structure du film, séquence par séquence</span></button><span class="tip__bubble" role="tooltip" id="tip-f37" data-en="Your bins become the sequences of the film. Put them in order by dragging, then send the whole film to the edit.">Vos chutiers deviennent les séquences du film. Mettez-les dans l’ordre en les glissant, puis envoyez le film entier au montage.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f37"><span data-en="Mind, and the film’s structure">Mind, et la structure du film</span></button><span class="tip__bubble" role="tooltip" id="tip-f37" data-en="Lay out your ideas on a mind map, with your bins and shots inside. Then your bins become the sequences of the film: put them in order by dragging, and send the whole film to the edit.">Posez vos idées sur une carte mentale, avec vos chutiers et vos plans dedans. Puis vos chutiers deviennent les séquences du film : mettez-les dans l’ordre en les glissant, et envoyez le film entier au montage.</span></span></li>
           </ul>
           <p class="plan__group plan__group--off" data-en="Precise mode, with credits or the subscription">Mode Précis, avec crédits ou abonnement</p>
           <ul class="plan__list">
@@ -1013,7 +1049,7 @@
             <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f10"><span data-en="Faces recognised on your Mac, never sent">Visages reconnus sur votre Mac, jamais envoyés</span></button><span class="tip__bubble" role="tooltip" id="tip-f10" data-en="Name a person once: their clips come up in a click, and their voice carries their name in the transcript. Nothing leaves your catalogue.">Nommez une personne une fois : ses plans se retrouvent d’un clic, et sa voix porte son nom dans la transcription. Rien ne quitte votre catalogue.</span></span></li>
             <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f11"><span data-en="All your shoots, even with the drives unplugged">Tous vos tournages, même disques débranchés</span></button><span class="tip__bubble" role="tooltip" id="tip-f11" data-en="One catalogue for all your years of rushes. Playback, skimming, sections and ratings work on light previews, without the drives.">Un seul catalogue pour toutes vos années de rushs. Lecture, survol, sections et classement se font sur des aperçus légers, sans les disques.</span></span></li>
             <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f12"><span data-en="Export to Final Cut Pro, Premiere Pro and DaVinci Resolve">Export vers Final Cut Pro, Premiere Pro et DaVinci Resolve</span></button><span class="tip__bubble" role="tooltip" id="tip-f12" data-en="A bin, or the whole film sequence by sequence, goes to the edit with its clips, sections, keywords and subtitles: your logging follows wherever you cut.">Un chutier, ou le film entier séquence par séquence, part au montage avec ses plans, ses sections, ses mots-clés et ses sous-titres : votre dérush suit là où vous montez.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f38"><span data-en="The film’s structure, sequence by sequence">La structure du film, séquence par séquence</span></button><span class="tip__bubble" role="tooltip" id="tip-f38" data-en="Your bins become the sequences of the film. Put them in order by dragging, then send the whole film to the edit.">Vos chutiers deviennent les séquences du film. Mettez-les dans l’ordre en les glissant, puis envoyez le film entier au montage.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f38"><span data-en="Mind, and the film’s structure">Mind, et la structure du film</span></button><span class="tip__bubble" role="tooltip" id="tip-f38" data-en="Lay out your ideas on a mind map, with your bins and shots inside. Then your bins become the sequences of the film: put them in order by dragging, and send the whole film to the edit.">Posez vos idées sur une carte mentale, avec vos chutiers et vos plans dedans. Puis vos chutiers deviennent les séquences du film : mettez-les dans l’ordre en les glissant, et envoyez le film entier au montage.</span></span></li>
           </ul>
           <p class="plan__group" data-en="Precise mode, with credits or the subscription">Mode Précis, avec crédits ou abonnement</p>
           <ul class="plan__list">
@@ -1050,7 +1086,7 @@
             <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f21"><span data-en="Faces recognised on your Mac, never sent">Visages reconnus sur votre Mac, jamais envoyés</span></button><span class="tip__bubble" role="tooltip" id="tip-f21" data-en="Name a person once: their clips come up in a click, and their voice carries their name in the transcript. Nothing leaves your catalogue.">Nommez une personne une fois : ses plans se retrouvent d’un clic, et sa voix porte son nom dans la transcription. Rien ne quitte votre catalogue.</span></span></li>
             <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f22"><span data-en="All your shoots, even with the drives unplugged">Tous vos tournages, même disques débranchés</span></button><span class="tip__bubble" role="tooltip" id="tip-f22" data-en="One catalogue for all your years of rushes. Playback, skimming, sections and ratings work on light previews, without the drives.">Un seul catalogue pour toutes vos années de rushs. Lecture, survol, sections et classement se font sur des aperçus légers, sans les disques.</span></span></li>
             <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f23"><span data-en="Export to Final Cut Pro, Premiere Pro and DaVinci Resolve">Export vers Final Cut Pro, Premiere Pro et DaVinci Resolve</span></button><span class="tip__bubble" role="tooltip" id="tip-f23" data-en="A bin, or the whole film sequence by sequence, goes to the edit with its clips, sections, keywords and subtitles: your logging follows wherever you cut.">Un chutier, ou le film entier séquence par séquence, part au montage avec ses plans, ses sections, ses mots-clés et ses sous-titres : votre dérush suit là où vous montez.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f39"><span data-en="The film’s structure, sequence by sequence">La structure du film, séquence par séquence</span></button><span class="tip__bubble" role="tooltip" id="tip-f39" data-en="Your bins become the sequences of the film. Put them in order by dragging, then send the whole film to the edit.">Vos chutiers deviennent les séquences du film. Mettez-les dans l’ordre en les glissant, puis envoyez le film entier au montage.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f39"><span data-en="Mind, and the film’s structure">Mind, et la structure du film</span></button><span class="tip__bubble" role="tooltip" id="tip-f39" data-en="Lay out your ideas on a mind map, with your bins and shots inside. Then your bins become the sequences of the film: put them in order by dragging, and send the whole film to the edit.">Posez vos idées sur une carte mentale, avec vos chutiers et vos plans dedans. Puis vos chutiers deviennent les séquences du film : mettez-les dans l’ordre en les glissant, et envoyez le film entier au montage.</span></span></li>
           </ul>
           <p class="plan__group" data-en="Precise mode, with credits or the subscription">Mode Précis, avec crédits ou abonnement</p>
           <ul class="plan__list">

@@ -131,7 +131,8 @@ h2 { font: 300 var(--text-section)/1.02 var(--font-display); letter-spacing: var
 .crop--speech { --x: 2020; --y: 40; --w: 540; --h: 265; }
 .crop--filterbar { --x: 271; --y: 58; --w: 1970; --h: 250; }
 .crop--person { --x: 271; --y: 58; --w: 1480; --h: 400; }
-.crop--structure { --x: 0; --y: 0; --w: 2560; --h: 1229; }
+.crop--structure { --x: 0; --y: 0; --w: 2560; --h: 700; }
+.crop--mind { --x: 400; --y: 150; --w: 2160; --h: 980; }
 .crop--marks { --x: 271; --y: 58; --w: 1965; --h: 700; }
 .crop--comment { --x: 2010; --y: 0; --w: 550; --h: 230; }
 .marks__bar { margin-top: var(--space-md); }
@@ -514,7 +515,8 @@ a, button, input, [data-zoom] { -webkit-tap-highlight-color: transparent; }
   .crop--list { --x: 271; --y: 100; --w: 1060; --h: 640; }
   .crop--filterbar { --x: 271; --y: 58; --w: 1000; --h: 700; }
   .crop--person { --x: 0; --y: 40; --w: 1260; --h: 900; }
-  .crop--structure { --x: 0; --y: 0; --w: 1400; --h: 1150; }
+  .crop--structure { --x: 390; --y: 130; --w: 1100; --h: 560; }
+  .crop--mind { --x: 500; --y: 150; --w: 1500; --h: 980; }
   .crop--marks { --x: 271; --y: 58; --w: 1000; --h: 700; }
   .crop--comment { --x: 2010; --y: 0; --w: 550; --h: 230; }
 
