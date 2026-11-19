@@ -277,6 +277,23 @@
     document.querySelectorAll('.tip.is-open').forEach((tip) => tip.classList.remove('is-open'));
   });
 
+  // ----- Partie 2 : les détails s'ouvrent d'un clic sur le bouton, ou d'un lien (menu, sommaire, adresse) qui mène dedans. -----
+  const details = document.getElementById('details');
+  const more = document.querySelector('[data-more]');
+  const showDetails = (open) => { details.hidden = !open; more.setAttribute('aria-expanded', String(open)); };
+  more.addEventListener('click', () => {
+    const open = details.hidden;
+    showDetails(open);
+    if (open) details.scrollIntoView({ behavior: still ? 'auto' : 'smooth' });
+  });
+  const follow = (hash) => {
+    const target = hash.length > 1 && document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (target && details.hidden && details.contains(target)) { showDetails(true); target.scrollIntoView(); }
+  };
+  document.addEventListener('click', (event) => { const link = event.target.closest('a[href^="#"]'); if (link) follow(link.getAttribute('href')); });
+  addEventListener('hashchange', () => follow(location.hash));
+  follow(location.hash);
+
   // ----- Arrivées : titres et captures, une fois, quand ils entrent à l'écran. -----
   const reveal = new IntersectionObserver((entries) => entries.forEach((entry) => {
     if (!entry.isIntersecting) return;

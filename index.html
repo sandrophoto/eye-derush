@@ -17,7 +17,7 @@
 <link rel="preload" as="image" href="img/frame-rainbow-2400.jpg" imagesrcset="img/frame-rainbow-1200.jpg 1200w, img/frame-rainbow-2400.jpg 2400w" imagesizes="100vw" fetchpriority="high">
 <link href="https://api.fontshare.com/v2/css?f[]=gambetta@300,400&f[]=switzer@400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=31">
+<link rel="stylesheet" href="site.css?v=32">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -56,7 +56,6 @@
             <a class="menu__link" href="#sections"><span class="menu__label" data-en="Sections">Sections</span><span class="menu__desc" data-en="Keep a passage, not the whole clip">Gardez un passage, pas tout le plan</span></a>
             <a class="menu__link" href="#resumer"><span class="menu__label" data-en="Summaries">Résumés</span><span class="menu__desc" data-en="A summary, then the recurring subjects">Un résumé, puis les sujets qui reviennent</span></a>
             <a class="menu__link" href="#mind"><span class="menu__label">Mind</span><span class="menu__desc" data-en="Your ideas, linked to your shots">Vos idées, reliées à vos plans</span></a>
-            <a class="menu__link" href="#structure"><span class="menu__label" data-en="Structure">Structure</span><span class="menu__desc" data-en="Build the film, sequence by sequence">Construisez le film, séquence par séquence</span></a>
             <a class="menu__link" href="#affichage"><span class="menu__label" data-en="Display">Affichage</span><span class="menu__desc" data-en="Show what you need">Affichez ce qui vous sert</span></a>
             <a class="menu__link" href="#correction"><span class="menu__label" data-en="Grading">Étalonnage</span><span class="menu__desc" data-en="Your log footage, already graded">Vos images log, déjà étalonnées</span></a>
           </div>
@@ -160,27 +159,217 @@
 <section class="section memory" id="memoire">
   <div class="container">
     <h2 class="statement" data-split data-en="Your editing software searches one project. Eye Derush remembers everything.">Votre logiciel de montage cherche dans un projet. Eye Derush se souvient de tout.</h2>
-    <dl class="facts facts--4" data-reveal>
+  </div>
+</section>
+
+<section class="section lead-feature" id="comprend">
+  <div class="container">
+    <p class="kicker"><b>1</b> <span data-en="Understand">Comprendre</span></p>
+    <div class="head">
+      <h2 data-split data-en="It listens to and watches every shot">Il écoute et regarde chacun de vos plans</h2>
+      <p class="lead" data-en="Every word is transcribed in its own language, more than 100 to choose from, then translated into yours. Every voice and every face gets a name. Every picture is described.">Chaque parole est transcrite dans sa langue, plus de 100 au choix, puis traduite dans la vôtre. Chaque voix et chaque visage reçoivent un nom. Chaque image est décrite.</p>
+    </div>
+  </div>
+  <figure class="shot shot--bleed" data-reveal>
+    <div class="crop crop--clip">
+      <img src="img/shot-translation-fr.webp" data-src-en="img/shot-translation-en.webp" width="2560" height="1400" loading="lazy"
+        alt="La fiche d’un plan tourné en slovène : sous-titre et transcription traduits, chaque réplique avec le nom de qui parle." data-en-alt="A clip shot in Slovenian: subtitle and transcript translated, each line with the name of who is speaking.">
+    </div>
+    <figcaption data-en="A shot filmed in Slovenian: subtitles and transcript in your language.">Un plan tourné en slovène : sous-titres et transcription dans votre langue.</figcaption>
+  </figure>
+</section>
+
+<section class="section lead-feature" id="trouve">
+  <div class="container">
+    <p class="kicker"><b>2</b> <span data-en="Find">Retrouver</span></p>
+    <div class="head">
+      <h2 data-split data-en="A line, a picture: found to the second">Une phrase, une image : retrouvée à la seconde</h2>
+      <p class="lead" data-en="Type what you are looking for. Eye Derush searches the words and the pictures of all your shoots, even with the drives unplugged, and opens the clip at the right moment.">Tapez ce que vous cherchez. Eye Derush fouille les paroles et les images de tous vos tournages, même disques débranchés, et ouvre le plan au bon moment.</p>
+    </div>
+    <figure class="shot" data-reveal>
+      <div class="crop crop--results">
+        <img src="img/shot-search-fr.webp" data-src-en="img/shot-search-en.webp" width="2560" height="1400" loading="lazy"
+          alt="Eye Derush après la recherche « hélicoptère » : huit moments, paroles et images mêlées, chacun avec son minutage." data-en-alt="Eye Derush after searching “helicopter”: eight moments, speech and pictures together, each with its timecode.">
+      </div>
+      <figcaption data-en="Searching “helicopter”: what is said, and what is filmed.">Recherche « hélicoptère » : ce qui est dit, et ce qui est filmé.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section lead-feature" id="construit">
+  <div class="container">
+    <p class="kicker"><b>3</b> <span data-en="Build">Construire</span></p>
+    <div class="head">
+      <h2 data-split data-en="Mind: from your rushes to your film">Mind : de vos rushs à votre film</h2>
+      <p class="lead" data-en="Lay out your ideas on a map, drag your bins and shots onto it, link it all together. Double-click a bin and its shots open right below: put them in the order of the film.">Posez vos idées sur une carte, glissez-y vos chutiers et vos plans, reliez le tout. Double-clic sur un chutier : ses plans s’ouvrent juste en dessous, rangez-les dans l’ordre du film.</p>
+    </div>
+  </div>
+  <figure class="shot shot--bleed" data-reveal>
+    <div class="crop crop--mindgrid">
+      <img src="img/shot-mind-grid-fr.webp" data-src-en="img/shot-mind-grid-en.webp" width="2560" height="1280" loading="lazy"
+        alt="La vue Mind : l’idée du film au centre, et le chutier Sélects ouvert en mini-grille sous sa bulle, ses six plans à ranger." data-en-alt="The Mind view: the film’s idea in the middle, and the Selects bin open as a mini-grid below its bubble, its six shots ready to arrange.">
+    </div>
+    <figcaption data-en="The Selects bin opened under its bubble: drag a shot to change its place.">Le chutier Sélects ouvert sous sa bulle : glissez un plan pour changer sa place.</figcaption>
+  </figure>
+</section>
+
+<section class="section lead-feature" id="libre">
+  <div class="container">
+    <p class="kicker"><b>4</b> <span data-en="Wherever you are">Où vous voulez</span></p>
+    <div class="head">
+      <h2 data-split data-en="On your Mac, offline, then straight to the edit">Sur votre Mac, hors ligne, puis droit au montage</h2>
+    </div>
+    <dl class="facts facts--3" data-reveal>
       <div>
-        <dt data-en="Every shoot">Tous vos tournages</dt>
-        <dd data-en="One catalogue for all your years of rushes, not one per project.">Un seul catalogue pour toutes vos années de rushs, pas un par projet.</dd>
+        <dt data-en="Private or Precise">Privé ou Précis</dt>
+        <dd data-en="Everything on your Mac, free, nothing sent. Or the highest accuracy online, when the project calls for it.">Tout sur votre Mac, gratuit, rien n’est envoyé. Ou la précision maximale en ligne, quand le projet l’exige.</dd>
       </div>
       <div>
-        <dt data-en="Drives unplugged">Disques débranchés</dt>
-        <dd data-en="Search and log without the drives, on light previews.">Cherchez et dérushez sans les disques, sur des aperçus légers.</dd>
+        <dt data-en="Without the drives">Sans les disques</dt>
+        <dd data-en="A light copy of every clip travels with the catalogue: log on the train or on a plane.">Une copie légère de chaque plan voyage avec le catalogue : dérushez dans le train ou en avion.</dd>
       </div>
       <div>
-        <dt data-en="Three editors">Trois logiciels de montage</dt>
-        <dd data-en="Final Cut Pro, Premiere Pro, DaVinci Resolve: your logging goes where you cut.">Final Cut Pro, Premiere Pro, DaVinci Resolve : votre dérush part où vous montez.</dd>
-      </div>
-      <div>
-        <dt data-en="100+ languages">Plus de 100 langues</dt>
-        <dd data-en="Transcribed, translated into the language you choose, and searchable in your own.">Transcrites, traduites dans la langue de votre choix, et cherchables dans la vôtre.</dd>
+        <dt>Final Cut Pro, Premiere Pro, DaVinci Resolve</dt>
+        <dd data-en="Your bins, sections and subtitles go to the edit. Bins from Final Cut Pro and Premiere import back.">Vos chutiers, sections et sous-titres partent au montage. Ceux de Final Cut Pro et Premiere s’importent.</dd>
       </div>
     </dl>
   </div>
 </section>
 
+<section class="section cost" id="cout">
+  <div class="container">
+    <p class="kicker"><b>5</b> <span data-en="Pricing">Tarifs</span></p>
+    <div class="head">
+      <h2 data-split data-en="The app, and two ways to unlock it all">L’app, et deux façons de tout débloquer</h2>
+      <p class="lead" data-en="The core app comes with Private mode: everything is analysed on your Mac, free and unlimited. For the finest analysis, Precise mode runs on credits you buy when you need them, or that arrive every month with a subscription.">L’app de base inclut le mode Privé : tout est analysé sur votre Mac, gratuitement et sans limite. Pour l’analyse la plus fine, le mode Précis fonctionne avec des crédits, achetés quand vous en avez besoin ou reçus chaque mois avec un abonnement.</p>
+    </div>
+    <div class="plans">
+      <p class="plans__unlock" aria-hidden="true" data-en="Precise mode unlocked, two ways">Mode Précis débloqué, deux façons</p>
+      <article class="plan" data-reveal>
+        <h3 class="plan__name">Eye Derush</h3>
+        <p class="plan__price"><span class="plan__figure num" data-en="€169">169 €</span><span class="plan__unit"><span data-en="per seat">par poste</span><span data-en="lifetime">à vie</span></span></p>
+        <p class="plan__fit" data-en="For occasional use">Pour un usage ponctuel</p>
+        <p class="plan__for" data-en="The core app with Private mode: everything runs on your Mac, with no subscription. Slightly less precise than Precise, and still all you need to derush.">L’app de base avec le mode Privé : tout se fait sur votre Mac, sans abonnement. Un peu moins précis que Précis, et déjà tout ce qu’il faut pour dérusher.</p>
+        <div class="plan__features">
+          <p class="plan__group" data-en="Private mode, in the core app">Mode Privé, dans l’app de base</p>
+          <ul class="plan__list">
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f1"><span data-en="The Mac app, in English and French">L’app Mac, en français et en anglais</span></button><span class="tip__bubble" role="tooltip" id="tip-f1" data-en="A native Mac app. The whole interface comes in English or French, your choice, in light or dark appearance.">Une app native pour Mac. Toute l’interface existe en français et en anglais, au choix, en apparence claire ou sombre.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f2"><span data-en="Free, unlimited analysis, on your Mac">Analyse gratuite et illimitée, sur votre Mac</span></button><span class="tip__bubble" role="tooltip" id="tip-f2" data-en="Transcription, picture descriptions, summaries, themes, translation and faces: everything runs on your Mac, with no hour limit, no connection and nothing sent. A little less precise than Precise mode, and the models are downloaded once.">Transcription, descriptions des images, résumés, thématiques, traduction et visages : tout tourne sur votre Mac, sans limite d’heures, sans connexion, rien n’est envoyé. Un peu moins précis que le mode Précis, et les modèles se téléchargent une fois.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f3"><span data-en="Unlimited search by words and by picture">Recherche illimitée par les mots et par l’image</span></button><span class="tip__bubble" role="tooltip" id="tip-f3" data-en="Search what is said by its words, and what is filmed by describing the picture, in more than 100 languages. Search by meaning is part of Precise mode. Each result opens to the second.">Cherchez ce qui est dit par ses mots, et ce qui est filmé en décrivant l’image, dans plus de 100 langues. La recherche par le sens fait partie du mode Précis. Chaque résultat s’ouvre à la seconde près.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f4"><span data-en="Faces recognised on your Mac, never sent">Visages reconnus sur votre Mac, jamais envoyés</span></button><span class="tip__bubble" role="tooltip" id="tip-f4" data-en="Name a person once: their clips come up in a click, and their voice carries their name in the transcript. Nothing leaves your catalogue.">Nommez une personne une fois : ses plans se retrouvent d’un clic, et sa voix porte son nom dans la transcription. Rien ne quitte votre catalogue.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f5"><span data-en="All your shoots, even with the drives unplugged">Tous vos tournages, même disques débranchés</span></button><span class="tip__bubble" role="tooltip" id="tip-f5" data-en="One catalogue for all your years of rushes. Playback, skimming, sections and ratings work on light previews, without the drives.">Un seul catalogue pour toutes vos années de rushs. Lecture, survol, sections et classement se font sur des aperçus légers, sans les disques.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f6"><span data-en="Export to Final Cut Pro, Premiere Pro and DaVinci Resolve">Export vers Final Cut Pro, Premiere Pro et DaVinci Resolve</span></button><span class="tip__bubble" role="tooltip" id="tip-f6" data-en="Bins go to the edit with their clips, sections, keywords and subtitles, and bins from Final Cut Pro and Premiere import back: your logging follows wherever you cut.">Vos chutiers partent au montage avec leurs plans, sections, mots-clés et sous-titres, et ceux de Final Cut Pro et Premiere s’importent : votre dérush suit là où vous montez.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f37"><span data-en="Mind, from your ideas to your film">Mind, de vos idées à votre film</span></button><span class="tip__bubble" role="tooltip" id="tip-f37" data-en="Lay out your ideas on a mind map, with your bins and shots inside. Double-click a bin to put its shots in order.">Posez vos idées sur une carte mentale, avec vos chutiers et vos plans dedans. Double-cliquez sur un chutier pour mettre ses plans dans l’ordre.</span></span></li>
+          </ul>
+          <p class="plan__group plan__group--off" data-en="Precise mode, with credits or the subscription">Mode Précis, avec crédits ou abonnement</p>
+          <ul class="plan__list">
+            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f30"><span data-en="The most accurate analysis: descriptions, voices">L’analyse la plus juste : descriptions, voix</span></button><span class="tip__bubble" role="tooltip" id="tip-f30" data-en="A more powerful AI, online, describes each clip in finer detail: what is seen, what is heard, short lines and small text in the picture. For each language, the app picks the most accurate transcription.">Une IA plus puissante, en ligne, décrit chaque plan avec plus de finesse : ce qui se voit, ce qui s’entend, les répliques courtes et les petits textes à l’image. Pour chaque langue, l’app choisit la transcription la plus juste.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
+            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f31"><span data-en="The finest summaries and themes, per clip and per group">Les résumés et thématiques les plus fins, par plan et par groupe</span></button><span class="tip__bubble" role="tooltip" id="tip-f31" data-en="Summaries and themes also exist in Private mode. In Precise mode they are written by the most capable AI: more faithful, more nuanced.">Résumés et thématiques existent aussi en mode Privé. En Précis, ils sont écrits par l’IA la plus capable : plus fidèles, plus nuancés.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
+            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f32"><span data-en="Search by meaning, picture and sound together">Une recherche par le sens, image et son ensemble</span></button><span class="tip__bubble" role="tooltip" id="tip-f32" data-en="Search for an idea rather than an exact word, in picture and sound at once: a precise line, said in a precise setting.">Cherchez une idée plutôt qu’un mot exact, dans l’image et le son à la fois : une phrase précise, dite dans un décor précis.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
+            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f33"><span data-en="Translation into any language, from the original">Traduction dans toutes les langues, depuis l’original</span></button><span class="tip__bubble" role="tooltip" id="tip-f33" data-en="In Precise mode, the translation arrives with the transcript, into the language you choose, always from the original: the most accurate, and fast even on a small Mac.">En Précis, la traduction arrive avec la transcription, dans la langue de votre choix, toujours depuis l’original : le plus juste, et rapide même sur un petit Mac.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
+            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f34"><span data-en="AI built in, with no account to create with an AI provider">Une IA intégrée, sans compte à créer chez un fournisseur d’IA</span></button><span class="tip__bubble" role="tooltip" id="tip-f34" data-en="The AI is already inside Eye Derush. No account to open with an AI provider, no key to set up.">L’IA est déjà dans Eye Derush. Pas de compte à ouvrir chez un fournisseur d’IA, pas de clé à configurer.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
+          </ul>
+          <p class="plan__group plan__group--off" data-en="Added with the subscription">En plus, avec l’abonnement</p>
+          <ul class="plan__list">
+            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f35"><span data-en="Credits renewed every month">Des crédits renouvelés chaque mois</span></button><span class="tip__bubble" role="tooltip" id="tip-f35" data-en="With the subscription, 10 hours of AI analysis arrive every month, or more depending on the plan. Before each analysis, the app shows what it will count.">Avec l’abonnement, 10 h d’analyse IA arrivent chaque mois, ou plus selon la formule. Avant chaque analyse, l’app montre ce qu’elle va compter.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
+          </ul>
+        </div>
+        <div class="plan__foot">
+          <ul class="plan__rows">
+          <li class="plan__row plan__row--best"><span data-en="Lifetime">À vie</span><span data-en="Buy once">Achat unique</span><span data-en="€169">169 €</span></li>
+          </ul>
+          <a class="btn btn--quiet plan__cta" href="#disponible" data-en="Get notified at launch">Être prévenu de la sortie</a>
+          <p class="plan__note"><span class="tip"><button class="tip__btn" type="button" aria-describedby="tip-updates"><span class="tip__icon" aria-hidden="true">i</span><span data-en="Lifetime licences include one year of updates.">Les licences à vie incluent un an de mises à jour.</span></button><span class="tip__bubble" role="tooltip" id="tip-updates" data-en="Lifetime licences include one year of free updates. After that year, you keep using Eye Derush forever, and updates become optional. Whenever you want another year of updates, it costs 50% of the lifetime licence price.">Les licences à vie incluent un an de mises à jour gratuites. Passé cette année, vous gardez Eye Derush pour toujours, et les mises à jour deviennent optionnelles. Quand vous voulez une nouvelle année de mises à jour, elle coûte 50 % du prix de la licence à vie.</span></span></p>
+        </div>
+      </article>
+      <article class="plan" data-reveal>
+        <h3 class="plan__name">Eye Derush <span class="plan__tag" data-en="Credits">Crédits</span></h3>
+        <p class="plan__price"><span class="plan__figure num" data-en="10 h">10 h</span><span class="plan__unit"><span data-en="of AI analysis">d’analyse IA</span><span data-en="or more">ou plus</span></span></p>
+        <p class="plan__fit" data-en="For one project">Pour un projet</p>
+        <p class="plan__for" data-en="Buy credits when you need them: they unlock Precise mode, for as long as a project lasts.">Achetez des crédits quand vous en avez besoin : ils débloquent le mode Précis, le temps d’un projet.</p>
+        <div class="plan__features">
+          <p class="plan__group" data-en="Private mode, in the core app">Mode Privé, dans l’app de base</p>
+          <ul class="plan__list">
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f7"><span data-en="The Mac app, in English and French">L’app Mac, en français et en anglais</span></button><span class="tip__bubble" role="tooltip" id="tip-f7" data-en="A native Mac app. The whole interface comes in English or French, your choice, in light or dark appearance.">Une app native pour Mac. Toute l’interface existe en français et en anglais, au choix, en apparence claire ou sombre.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f8"><span data-en="Free, unlimited analysis, on your Mac">Analyse gratuite et illimitée, sur votre Mac</span></button><span class="tip__bubble" role="tooltip" id="tip-f8" data-en="Transcription, picture descriptions, summaries, themes, translation and faces: everything runs on your Mac, with no hour limit, no connection and nothing sent. A little less precise than Precise mode, and the models are downloaded once.">Transcription, descriptions des images, résumés, thématiques, traduction et visages : tout tourne sur votre Mac, sans limite d’heures, sans connexion, rien n’est envoyé. Un peu moins précis que le mode Précis, et les modèles se téléchargent une fois.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f9"><span data-en="Unlimited search by words and by picture">Recherche illimitée par les mots et par l’image</span></button><span class="tip__bubble" role="tooltip" id="tip-f9" data-en="Search what is said by its words, and what is filmed by describing the picture, in more than 100 languages. Search by meaning is part of Precise mode. Each result opens to the second.">Cherchez ce qui est dit par ses mots, et ce qui est filmé en décrivant l’image, dans plus de 100 langues. La recherche par le sens fait partie du mode Précis. Chaque résultat s’ouvre à la seconde près.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f10"><span data-en="Faces recognised on your Mac, never sent">Visages reconnus sur votre Mac, jamais envoyés</span></button><span class="tip__bubble" role="tooltip" id="tip-f10" data-en="Name a person once: their clips come up in a click, and their voice carries their name in the transcript. Nothing leaves your catalogue.">Nommez une personne une fois : ses plans se retrouvent d’un clic, et sa voix porte son nom dans la transcription. Rien ne quitte votre catalogue.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f11"><span data-en="All your shoots, even with the drives unplugged">Tous vos tournages, même disques débranchés</span></button><span class="tip__bubble" role="tooltip" id="tip-f11" data-en="One catalogue for all your years of rushes. Playback, skimming, sections and ratings work on light previews, without the drives.">Un seul catalogue pour toutes vos années de rushs. Lecture, survol, sections et classement se font sur des aperçus légers, sans les disques.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f12"><span data-en="Export to Final Cut Pro, Premiere Pro and DaVinci Resolve">Export vers Final Cut Pro, Premiere Pro et DaVinci Resolve</span></button><span class="tip__bubble" role="tooltip" id="tip-f12" data-en="Bins go to the edit with their clips, sections, keywords and subtitles, and bins from Final Cut Pro and Premiere import back: your logging follows wherever you cut.">Vos chutiers partent au montage avec leurs plans, sections, mots-clés et sous-titres, et ceux de Final Cut Pro et Premiere s’importent : votre dérush suit là où vous montez.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f38"><span data-en="Mind, from your ideas to your film">Mind, de vos idées à votre film</span></button><span class="tip__bubble" role="tooltip" id="tip-f38" data-en="Lay out your ideas on a mind map, with your bins and shots inside. Double-click a bin to put its shots in order.">Posez vos idées sur une carte mentale, avec vos chutiers et vos plans dedans. Double-cliquez sur un chutier pour mettre ses plans dans l’ordre.</span></span></li>
+          </ul>
+          <p class="plan__group" data-en="Precise mode, with credits or the subscription">Mode Précis, avec crédits ou abonnement</p>
+          <ul class="plan__list">
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f13"><span data-en="The most accurate analysis: descriptions, voices">L’analyse la plus juste : descriptions, voix</span></button><span class="tip__bubble" role="tooltip" id="tip-f13" data-en="A more powerful AI, online, describes each clip in finer detail: what is seen, what is heard, short lines and small text in the picture. For each language, the app picks the most accurate transcription.">Une IA plus puissante, en ligne, décrit chaque plan avec plus de finesse : ce qui se voit, ce qui s’entend, les répliques courtes et les petits textes à l’image. Pour chaque langue, l’app choisit la transcription la plus juste.</span></span></li>
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f14"><span data-en="The finest summaries and themes, per clip and per group">Les résumés et thématiques les plus fins, par plan et par groupe</span></button><span class="tip__bubble" role="tooltip" id="tip-f14" data-en="Summaries and themes also exist in Private mode. In Precise mode they are written by the most capable AI: more faithful, more nuanced.">Résumés et thématiques existent aussi en mode Privé. En Précis, ils sont écrits par l’IA la plus capable : plus fidèles, plus nuancés.</span></span></li>
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f15"><span data-en="Search by meaning, picture and sound together">Une recherche par le sens, image et son ensemble</span></button><span class="tip__bubble" role="tooltip" id="tip-f15" data-en="Search for an idea rather than an exact word, in picture and sound at once: a precise line, said in a precise setting.">Cherchez une idée plutôt qu’un mot exact, dans l’image et le son à la fois : une phrase précise, dite dans un décor précis.</span></span></li>
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f16"><span data-en="Translation into any language, from the original">Traduction dans toutes les langues, depuis l’original</span></button><span class="tip__bubble" role="tooltip" id="tip-f16" data-en="In Precise mode, the translation arrives with the transcript, into the language you choose, always from the original: the most accurate, and fast even on a small Mac.">En Précis, la traduction arrive avec la transcription, dans la langue de votre choix, toujours depuis l’original : le plus juste, et rapide même sur un petit Mac.</span></span></li>
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f17"><span data-en="AI built in, with no account to create with an AI provider">Une IA intégrée, sans compte à créer chez un fournisseur d’IA</span></button><span class="tip__bubble" role="tooltip" id="tip-f17" data-en="The AI is already inside Eye Derush. No account to open with an AI provider, no key to set up.">L’IA est déjà dans Eye Derush. Pas de compte à ouvrir chez un fournisseur d’IA, pas de clé à configurer.</span></span></li>
+          </ul>
+          <p class="plan__group plan__group--off" data-en="Added with the subscription">En plus, avec l’abonnement</p>
+          <ul class="plan__list">
+            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f36"><span data-en="Credits renewed every month">Des crédits renouvelés chaque mois</span></button><span class="tip__bubble" role="tooltip" id="tip-f36" data-en="With the subscription, 10 hours of AI analysis arrive every month, or more depending on the plan. Before each analysis, the app shows what it will count.">Avec l’abonnement, 10 h d’analyse IA arrivent chaque mois, ou plus selon la formule. Avant chaque analyse, l’app montre ce qu’elle va compter.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
+          </ul>
+        </div>
+        <div class="plan__foot">
+          <ul class="plan__rows">
+          <li class="plan__row"><span data-en="Price">Prix</span><span data-en=""></span><span data-en="announced at launch">annoncé à la sortie</span></li>
+          </ul>
+          <a class="btn btn--quiet plan__cta" href="#disponible" data-en="Get notified at launch">Être prévenu de la sortie</a>
+          <p class="plan__note" data-en="A clip already analysed is not analysed again, unless you ask.">Un plan déjà analysé n’est pas refait, sauf si vous le demandez.</p>
+        </div>
+      </article>
+      <article class="plan plan--featured" data-reveal>
+        <h3 class="plan__name">Eye Derush <span class="plan__tag" data-en="All included">Tout compris</span></h3>
+        <p class="plan__price"><span class="plan__figure num" data-en="10 h">10 h</span><span class="plan__unit"><span data-en="of AI analysis a month">d’analyse IA par mois</span><span data-en="or more">ou plus</span></span></p>
+        <p class="plan__fit" data-en="For agencies, production companies, full-time editors">Pour une agence, une boîte de prod, un monteur à plein temps</p>
+        <p class="plan__for" data-en="The app and credits renewed every month: Precise mode all the time, with no credits to buy.">L’app et des crédits renouvelés chaque mois : le mode Précis en continu, sans rien racheter.</p>
+        <div class="plan__features">
+          <p class="plan__group" data-en="Private mode, in the core app">Mode Privé, dans l’app de base</p>
+          <ul class="plan__list">
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f18"><span data-en="The Mac app, in English and French">L’app Mac, en français et en anglais</span></button><span class="tip__bubble" role="tooltip" id="tip-f18" data-en="A native Mac app. The whole interface comes in English or French, your choice, in light or dark appearance.">Une app native pour Mac. Toute l’interface existe en français et en anglais, au choix, en apparence claire ou sombre.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f19"><span data-en="Free, unlimited analysis, on your Mac">Analyse gratuite et illimitée, sur votre Mac</span></button><span class="tip__bubble" role="tooltip" id="tip-f19" data-en="Transcription, picture descriptions, summaries, themes, translation and faces: everything runs on your Mac, with no hour limit, no connection and nothing sent. A little less precise than Precise mode, and the models are downloaded once.">Transcription, descriptions des images, résumés, thématiques, traduction et visages : tout tourne sur votre Mac, sans limite d’heures, sans connexion, rien n’est envoyé. Un peu moins précis que le mode Précis, et les modèles se téléchargent une fois.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f20"><span data-en="Unlimited search by words and by picture">Recherche illimitée par les mots et par l’image</span></button><span class="tip__bubble" role="tooltip" id="tip-f20" data-en="Search what is said by its words, and what is filmed by describing the picture, in more than 100 languages. Search by meaning is part of Precise mode. Each result opens to the second.">Cherchez ce qui est dit par ses mots, et ce qui est filmé en décrivant l’image, dans plus de 100 langues. La recherche par le sens fait partie du mode Précis. Chaque résultat s’ouvre à la seconde près.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f21"><span data-en="Faces recognised on your Mac, never sent">Visages reconnus sur votre Mac, jamais envoyés</span></button><span class="tip__bubble" role="tooltip" id="tip-f21" data-en="Name a person once: their clips come up in a click, and their voice carries their name in the transcript. Nothing leaves your catalogue.">Nommez une personne une fois : ses plans se retrouvent d’un clic, et sa voix porte son nom dans la transcription. Rien ne quitte votre catalogue.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f22"><span data-en="All your shoots, even with the drives unplugged">Tous vos tournages, même disques débranchés</span></button><span class="tip__bubble" role="tooltip" id="tip-f22" data-en="One catalogue for all your years of rushes. Playback, skimming, sections and ratings work on light previews, without the drives.">Un seul catalogue pour toutes vos années de rushs. Lecture, survol, sections et classement se font sur des aperçus légers, sans les disques.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f23"><span data-en="Export to Final Cut Pro, Premiere Pro and DaVinci Resolve">Export vers Final Cut Pro, Premiere Pro et DaVinci Resolve</span></button><span class="tip__bubble" role="tooltip" id="tip-f23" data-en="Bins go to the edit with their clips, sections, keywords and subtitles, and bins from Final Cut Pro and Premiere import back: your logging follows wherever you cut.">Vos chutiers partent au montage avec leurs plans, sections, mots-clés et sous-titres, et ceux de Final Cut Pro et Premiere s’importent : votre dérush suit là où vous montez.</span></span></li>
+            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f39"><span data-en="Mind, from your ideas to your film">Mind, de vos idées à votre film</span></button><span class="tip__bubble" role="tooltip" id="tip-f39" data-en="Lay out your ideas on a mind map, with your bins and shots inside. Double-click a bin to put its shots in order.">Posez vos idées sur une carte mentale, avec vos chutiers et vos plans dedans. Double-cliquez sur un chutier pour mettre ses plans dans l’ordre.</span></span></li>
+          </ul>
+          <p class="plan__group" data-en="Precise mode, with credits or the subscription">Mode Précis, avec crédits ou abonnement</p>
+          <ul class="plan__list">
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f24"><span data-en="The most accurate analysis: descriptions, voices">L’analyse la plus juste : descriptions, voix</span></button><span class="tip__bubble" role="tooltip" id="tip-f24" data-en="A more powerful AI, online, describes each clip in finer detail: what is seen, what is heard, short lines and small text in the picture. For each language, the app picks the most accurate transcription.">Une IA plus puissante, en ligne, décrit chaque plan avec plus de finesse : ce qui se voit, ce qui s’entend, les répliques courtes et les petits textes à l’image. Pour chaque langue, l’app choisit la transcription la plus juste.</span></span></li>
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f25"><span data-en="The finest summaries and themes, per clip and per group">Les résumés et thématiques les plus fins, par plan et par groupe</span></button><span class="tip__bubble" role="tooltip" id="tip-f25" data-en="Summaries and themes also exist in Private mode. In Precise mode they are written by the most capable AI: more faithful, more nuanced.">Résumés et thématiques existent aussi en mode Privé. En Précis, ils sont écrits par l’IA la plus capable : plus fidèles, plus nuancés.</span></span></li>
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f26"><span data-en="Search by meaning, picture and sound together">Une recherche par le sens, image et son ensemble</span></button><span class="tip__bubble" role="tooltip" id="tip-f26" data-en="Search for an idea rather than an exact word, in picture and sound at once: a precise line, said in a precise setting.">Cherchez une idée plutôt qu’un mot exact, dans l’image et le son à la fois : une phrase précise, dite dans un décor précis.</span></span></li>
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f27"><span data-en="Translation into any language, from the original">Traduction dans toutes les langues, depuis l’original</span></button><span class="tip__bubble" role="tooltip" id="tip-f27" data-en="In Precise mode, the translation arrives with the transcript, into the language you choose, always from the original: the most accurate, and fast even on a small Mac.">En Précis, la traduction arrive avec la transcription, dans la langue de votre choix, toujours depuis l’original : le plus juste, et rapide même sur un petit Mac.</span></span></li>
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f28"><span data-en="AI built in, with no account to create with an AI provider">Une IA intégrée, sans compte à créer chez un fournisseur d’IA</span></button><span class="tip__bubble" role="tooltip" id="tip-f28" data-en="The AI is already inside Eye Derush. No account to open with an AI provider, no key to set up.">L’IA est déjà dans Eye Derush. Pas de compte à ouvrir chez un fournisseur d’IA, pas de clé à configurer.</span></span></li>
+          </ul>
+          <p class="plan__group" data-en="Added with the subscription">En plus, avec l’abonnement</p>
+          <ul class="plan__list">
+            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f29"><span data-en="Credits renewed every month">Des crédits renouvelés chaque mois</span></button><span class="tip__bubble" role="tooltip" id="tip-f29" data-en="With the subscription, 10 hours of AI analysis arrive every month, or more depending on the plan. Before each analysis, the app shows what it will count.">Avec l’abonnement, 10 h d’analyse IA arrivent chaque mois, ou plus selon la formule. Avant chaque analyse, l’app montre ce qu’elle va compter.</span></span></li>
+          </ul>
+        </div>
+        <div class="plan__foot">
+          <ul class="plan__rows">
+          <li class="plan__row"><span data-en="Monthly">Mensuel</span><span data-en=""></span><span data-en="announced at launch">annoncé à la sortie</span></li>
+          <li class="plan__row"><span data-en="Yearly">Annuel</span><span data-en=""></span><span data-en="announced at launch">annoncé à la sortie</span></li>
+          </ul>
+          <a class="btn plan__cta" href="#disponible" data-en="Get notified at launch">Être prévenu de la sortie</a>
+          <p class="plan__note" data-en="Before each analysis, the app shows what it is about to count.">Avant chaque analyse, l’app montre ce qu’elle va compter.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section more-cta" id="details-cta">
+  <div class="container more__intro">
+    <h2 data-split data-en="Everything else, in detail">Tout le reste, en détail</h2>
+    <p class="lead" data-en="Search, transcript fixes, faces, sections, summaries, grading, formats, what is sent and what is counted: every feature, with its captures.">Recherche, correction du texte, visages, sections, résumés, étalonnage, formats, ce qui est envoyé et ce qui est compté : chaque fonction, avec ses captures.</p>
+    <button class="btn more__toggle" type="button" aria-expanded="false" aria-controls="details" data-more><span class="more__open" data-en="See every feature">Voir toutes les fonctions</span><span class="more__close" data-en="Hide the details">Masquer les détails</span></button>
+  </div>
+</section>
+
+<div class="more" id="details" hidden>
 <div class="chapter" id="partout">
 <header class="opener">
   <div class="opener__frame" aria-hidden="true">
@@ -237,13 +426,13 @@
     <p class="kicker"><b>01.2</b> <span data-en="To the edit">Vers le montage</span></p>
     <div class="head">
       <h2 data-split data-en="Then everything goes to the edit">Puis tout part au montage</h2>
-      <p class="lead" data-en="A moment, a section, a bin or the whole film: the editor reads your rushes where they are, with 2 seconds of handle before and after each moment.">Un moment, une section, un chutier ou le film entier : le logiciel lit vos rushs là où ils sont, avec 2 secondes de marge avant et après chaque moment.</p>
+      <p class="lead" data-en="A moment, a section or whole bins: the editor reads your rushes where they are, with 2 seconds of handle before and after each moment.">Un moment, une section ou des chutiers entiers : le logiciel lit vos rushs là où ils sont, avec 2 secondes de marge avant et après chaque moment.</p>
     </div>
     <div class="send__grid">
       <ul class="apps" data-reveal>
       <li>
         <span class="apps__name">Final Cut Pro</span>
-        <span class="apps__how" data-en="Straight into the open library, or as an .fcpxml file. One timeline per bin if you want, and the film as one compound clip per sequence.">Import direct dans la bibliothèque ouverte, ou fichier .fcpxml. Une timeline par chutier si vous le voulez, et le film en un plan composé par séquence.</span>
+        <span class="apps__how" data-en="Straight into the open library, or as an .fcpxml file. One timeline per bin if you want. Its keyword collections come back as bins.">Import direct dans la bibliothèque ouverte, ou fichier .fcpxml. Une timeline par chutier si vous le voulez. Et ses collections de mots-clés reviennent en chutiers.</span>
       </li>
       <li>
         <span class="apps__name">DaVinci Resolve</span>
@@ -251,7 +440,7 @@
       </li>
       <li>
         <span class="apps__name">Premiere Pro</span>
-        <span class="apps__how" data-en="An .xml file: bins, clips, sections as subclips, and a sequence per bin.">Un fichier .xml : chutiers, plans, sections en sous-plans, et une séquence par chutier.</span>
+        <span class="apps__how" data-en="An .xml file: bins, clips, sections as subclips, and a sequence per bin. Its bins import back the other way.">Un fichier .xml : chutiers, plans, sections en sous-plans, et une séquence par chutier. Ses chutiers s’importent dans l’autre sens.</span>
       </li>
       </ul>
       <figure class="panel" data-reveal>
@@ -401,6 +590,22 @@
         alt="Le coup d’œil : le plan lu dans un panneau, avec son sous-titre et sa barre de lecture." data-en-alt="Quick look: the clip playing in a panel, with its subtitle and transport bar.">
     </figure>
   </div>
+  <div class="container">
+    <dl class="facts facts--3" data-reveal>
+      <div>
+        <dt data-en="Second screen">Second écran</dt>
+        <dd data-en="The clip plays full screen on your other display; a click on a thumbnail sends it there, to the right moment.">Le plan se lit en plein écran sur votre autre écran ; un clic sur une vignette l’y envoie, au bon moment.</dd>
+      </div>
+      <div>
+        <dt data-en="From the keyboard">Au clavier</dt>
+        <dd data-en="J K L for speed, C for subtitles, V for seen, the space bar plays from the mouse position.">J K L pour la vitesse, C pour les sous-titres, V pour vu, la barre d’espace lit là où passe la souris.</dd>
+      </div>
+      <div>
+        <dt data-en="A complete transcript file">Une transcription complète</dt>
+        <dd data-en="Besides SRT and text, an Eye Derush file carries everything: translations, voices, corrections. Export it, import it, nothing is lost.">En plus du SRT et du texte, un fichier Eye Derush emporte tout : traductions, voix, corrections. Exporté puis importé, rien ne se perd.</dd>
+      </div>
+    </dl>
+  </div>
   <div class="container duo">
     <div class="duo__text">
       <h3 data-en="A comment on every clip">Un commentaire sur chaque plan</h3>
@@ -512,16 +717,15 @@
     <p class="opener__num" aria-hidden="true">03</p>
     <h2 class="opener__title" data-split data-en="Sort and view">Rangez, regardez</h2>
     <div class="opener__side">
-      <p class="opener__lede" data-en="Rate, locate, summarize, map out, structure, grade, without ever touching your files.">Classer, situer, résumer, imaginer, structurer, étalonner, sans jamais toucher à vos fichiers.</p>
+      <p class="opener__lede" data-en="Rate, locate, summarize, map out, grade, without ever touching your files.">Classer, situer, résumer, imaginer, étalonner, sans jamais toucher à vos fichiers.</p>
       <ol class="opener__toc">
       <li><a href="#rangement"><b>03.1</b> <span data-en="Organizing">Rangement</span></a></li>
       <li><a href="#origine"><b>03.2</b> <span data-en="Origin">Origine</span></a></li>
       <li><a href="#sections"><b>03.3</b> <span data-en="Sections">Sections</span></a></li>
       <li><a href="#resumer"><b>03.4</b> <span data-en="Summaries">Résumés</span></a></li>
       <li><a href="#mind"><b>03.5</b> <span>Mind</span></a></li>
-      <li><a href="#structure"><b>03.6</b> <span data-en="Structure">Structure</span></a></li>
-      <li><a href="#affichage"><b>03.7</b> <span data-en="Display">Affichage</span></a></li>
-      <li><a href="#correction"><b>03.8</b> <span data-en="Grading">Étalonnage</span></a></li>
+      <li><a href="#affichage"><b>03.6</b> <span data-en="Display">Affichage</span></a></li>
+      <li><a href="#correction"><b>03.7</b> <span data-en="Grading">Étalonnage</span></a></li>
       </ol>
     </div>
   </div>
@@ -645,7 +849,7 @@
     <p class="kicker"><b>03.4</b> <span data-en="Summaries">Résumés</span></p>
     <div class="head">
       <h2 data-split data-en="A summary, then the subjects that keep coming back">Un résumé, puis les sujets qui reviennent</h2>
-      <p class="lead" data-en="On a selection of clips, the AI writes what they show and say, then finds the themes, right after the analysis if you wish. Each one becomes a bin in a click, ready to become a sequence of the film.">Sur une sélection de plans, l’IA écrit ce qu’ils montrent et disent, puis repère les thématiques, dans la foulée de l’analyse si vous le voulez. Chacune devient un chutier d’un clic, prêt à devenir une séquence du film.</p>
+      <p class="lead" data-en="On a selection of clips, the AI writes what they show and say, then finds the themes, right after the analysis if you wish. Each one becomes a bin in a click, ready to be laid out in Mind.">Sur une sélection de plans, l’IA écrit ce qu’ils montrent et disent, puis repère les thématiques, dans la foulée de l’analyse si vous le voulez. Chacune devient un chutier d’un clic, prêt à être posé dans Mind.</p>
     </div>
     <div class="panels" data-reveal>
       <figure class="panel">
@@ -659,6 +863,20 @@
         <figcaption data-en="Three themes, three bins ready to create.">Trois thématiques, trois chutiers prêts à créer.</figcaption>
       </figure>
     </div>
+    <dl class="facts facts--3" data-reveal>
+      <div>
+        <dt data-en="Stories and themes">Histoires et thèmes</dt>
+        <dd data-en="The full search reads your rushes twice: once for stories and characters, once for themes. Every theme rests on a line that was really spoken.">La recherche complète lit vos rushs deux fois : une pour les histoires et les personnages, une pour les thèmes. Chaque thème s’appuie sur une phrase réellement dite.</dd>
+      </div>
+      <div>
+        <dt data-en="Seven summary styles">Sept styles de résumé</dt>
+        <dd data-en="Balanced overview, highlights, interviews, coverage inventory… pick what you need to know.">Vue d’ensemble, temps forts, interviews, inventaire de la couverture… choisissez ce que vous voulez savoir.</dd>
+      </div>
+      <div>
+        <dt data-en="On what is ready">Sur ce qui est prêt</dt>
+        <dd data-en="Start on the shots already analysed, without waiting for the rest.">Lancez sur les plans déjà analysés, sans attendre les autres.</dd>
+      </div>
+    </dl>
   </div>
 </section>
 
@@ -667,7 +885,7 @@
     <p class="kicker"><b>03.5</b> <span>Mind</span></p>
     <div class="head">
       <h2 data-split data-en="Lay out your ideas, link them to your shots">Posez vos idées, reliez-les à vos plans</h2>
-      <p class="lead" data-en="A mind map inside the library, the way you prepare a documentary: what you have, what you want, what is missing. Bubbles for the ideas, your bins and shots dragged in, linked with a stroke.">Une carte mentale dans la bibliothèque, comme on prépare un documentaire : ce qu’on a, ce qu’on veut, ce qui manque. Des bulles pour les idées, vos chutiers et vos plans glissés dedans, reliés d’un trait.</p>
+      <p class="lead" data-en="A mind map inside the library, the way you prepare a documentary: what you have, what you want, what is missing. Bubbles for the ideas, your bins and shots dragged in, linked with a stroke. Double-click a bin: its shots open right below, ready to be put in order.">Une carte mentale dans la bibliothèque, comme on prépare un documentaire : ce qu’on a, ce qu’on veut, ce qui manque. Des bulles pour les idées, vos chutiers et vos plans glissés dedans, reliés d’un trait. Double-clic sur un chutier : ses plans s’ouvrent juste en dessous, prêts à être mis dans l’ordre.</p>
     </div>
   </div>
   <figure class="shot shot--bleed" data-reveal>
@@ -675,7 +893,7 @@
       <img src="img/shot-mind-fr.webp" data-src-en="img/shot-mind-en.webp" width="2560" height="1280" loading="lazy"
         alt="La vue Mind : l’idée du film au centre, reliée à ce qu’on a (deux chutiers et un plan avec sa vignette), à ce qu’on veut et à ce qui manque." data-en-alt="The Mind view: the film’s idea in the middle, linked to what we have (two bins and a shot with its thumbnail), what we want and what is missing.">
     </div>
-    <figcaption data-en="Two bins and a shot sit among the ideas. A double-click opens them.">Deux chutiers et un plan au milieu des idées. Un double-clic les ouvre.</figcaption>
+    <figcaption data-en="Two bins and a shot among the ideas.">Deux chutiers et un plan au milieu des idées.</figcaption>
   </figure>
   <div class="container">
     <dl class="facts facts--3" data-reveal>
@@ -689,50 +907,7 @@
       </div>
       <div>
         <dt data-en="Smooth">Fluide</dt>
-        <dd data-en="The wheel zooms, the background moves, Tab and Return add bubbles from the keyboard.">La molette zoome, le fond se déplace, Tab et Entrée ajoutent des bulles au clavier.</dd>
-      </div>
-    </dl>
-  </div>
-</section>
-
-<section class="section structure" id="structure">
-  <div class="container">
-    <p class="kicker"><b>03.6</b> <span data-en="Structure">Structure</span></p>
-    <div class="head">
-      <h2 data-split data-en="Build the film, sequence by sequence">Construisez le film, séquence par séquence</h2>
-      <p class="lead" data-en="Each bin becomes a sequence. The film’s thread runs along the top; below it, the chosen sequence and its shots, in order. Drag a shot to move it, or to send it to another sequence.">Chaque chutier devient une séquence. Le fil du film court en haut ; en dessous, la séquence choisie et ses plans, dans l’ordre. Glissez un plan pour le déplacer, ou pour l’envoyer dans une autre séquence.</p>
-    </div>
-  </div>
-  <figure class="shot shot--bleed" data-reveal>
-    <div class="crop crop--structure">
-      <img src="img/shot-structure-fr.webp" data-src-en="img/shot-structure-en.webp" width="2560" height="1280" loading="lazy"
-        alt="La vue Structure : en haut le fil du film Documentaire Refuge, quatre séquences avec leurs mini-vignettes ; en dessous, la séquence La livraison et ses trois plans en grandes vignettes." data-en-alt="The Structure view: along the top, the thread of the Hut documentary, four sequences with their mini thumbnails; below, The delivery sequence and its three shots as large thumbnails.">
-    </div>
-    <figcaption data-en="“The delivery” opened under the thread: three shots, in film order, starting at 2:29.">« La livraison » ouverte sous le fil : trois plans, dans l’ordre du film, qui commence à 2:29.</figcaption>
-  </figure>
-  <div class="container duo">
-    <div class="duo__text">
-      <h3 data-en="The film goes to the edit">Le film part au montage</h3>
-      <p data-en="In Final Cut Pro, a project named after the film, one compound clip per sequence. In Premiere Pro and DaVinci Resolve, one sequence per bin, then the whole film.">Dans Final Cut Pro, un projet au nom du film, un plan composé par séquence. Dans Premiere Pro et DaVinci Resolve, une séquence par chutier, puis le film entier.</p>
-    </div>
-    <figure class="panel" data-reveal>
-      <img src="img/shot-structure-export-fr.webp" data-src-en="img/shot-structure-export-en.webp" width="560" height="780" loading="lazy"
-        alt="La feuille d’export du film : les quatre séquences, vers Final Cut Pro, Premiere Pro ou DaVinci Resolve." data-en-alt="The film export sheet: the four sequences, to Final Cut Pro, Premiere Pro or DaVinci Resolve.">
-    </figure>
-  </div>
-  <div class="container">
-    <dl class="facts facts--3" data-reveal>
-      <div>
-        <dt data-en="One film per catalogue">Un film par catalogue</dt>
-        <dd data-en="Always one click away, next to Grid and List.">Toujours à un clic, à côté de Grille et Liste.</dd>
-      </div>
-      <div>
-        <dt data-en="Every bin available">Tous vos chutiers</dt>
-        <dd data-en="Wherever they come from, nothing enters the film on its own: you choose.">D’où qu’ils viennent, rien n’entre dans le film tout seul : vous choisissez.</dd>
-      </div>
-      <div>
-        <dt data-en="From the keyboard">Au clavier</dt>
-        <dd data-en="↑↓ changes sequence, ←→ changes shot, with ⌥ they move. ⌘Z undoes every move.">↑↓ change de séquence, ←→ de plan, et avec ⌥ ils se déplacent. ⌘Z défait chaque geste.</dd>
+        <dd data-en="The wheel zooms, the background moves, zones gather bubbles, and “Align all” tidies up in one click.">La molette zoome, le fond se déplace, des zones réunissent les bulles, et « Tout aligner » range en un clic.</dd>
       </div>
     </dl>
   </div>
@@ -740,7 +915,7 @@
 
 <section class="section display" id="affichage">
   <div class="container">
-    <p class="kicker"><b>03.7</b> <span data-en="Display">Affichage</span></p>
+    <p class="kicker"><b>03.6</b> <span data-en="Display">Affichage</span></p>
     <div class="head">
       <h2 data-split data-en="Show what you need, hide the rest">Affichez ce qui vous sert, masquez le reste</h2>
       <p class="lead" data-en="Every piece of information on a thumbnail switches on or off in one click: name, analysis badges, shooting details.">Chaque information d’une vignette s’allume ou s’éteint d’un clic : nom, pastilles d’analyse, détails de tournage.</p>
@@ -757,25 +932,9 @@
     </figure>
     <figure class="panel panel--next panel--bar" data-reveal>
       <img src="img/shot-display-bar-fr.webp" data-src-en="img/shot-display-bar-en.webp" width="1200" height="56" loading="lazy"
-        alt="Les boutons d’affichage de la barre des onglets : favoris, vus, vérifiés, rejetés, nom, pastilles, détails, grille, liste ou structure, tri, taille des vignettes." data-en-alt="The display buttons in the tab bar: favourites, seen, verified, rejects, name, badges, details, grid, list or structure, sort, thumbnail size.">
+        alt="Les boutons d’affichage de la barre des onglets : favoris, vus, vérifiés, rejetés, nom, pastilles, détails, grille, liste ou Mind, tri, taille des vignettes." data-en-alt="The display buttons in the tab bar: favourites, seen, verified, rejects, name, badges, details, grid, list or Mind, sort, thumbnail size.">
       <figcaption data-en="The buttons that do it, in the tab bar.">Les boutons qui le font, dans la barre des onglets.</figcaption>
     </figure>
-    <div class="pair pair--next" data-reveal>
-      <figure class="shot">
-        <div class="crop crop--cards">
-          <img src="img/shot-grid-fr.webp" data-src-en="img/shot-grid-en.webp" width="2560" height="1400" loading="lazy"
-            alt="La bibliothèque en apparence sombre." data-en-alt="The library in dark appearance.">
-        </div>
-        <figcaption data-en="Dark appearance.">Apparence sombre.</figcaption>
-      </figure>
-      <figure class="shot">
-        <div class="crop crop--cards">
-          <img src="img/shot-grid-light-fr.webp" data-src-en="img/shot-grid-light-en.webp" width="2560" height="1400" loading="lazy"
-            alt="La même bibliothèque en apparence claire." data-en-alt="The same library in light appearance.">
-        </div>
-        <figcaption data-en="Light appearance.">Apparence claire.</figcaption>
-      </figure>
-    </div>
     <dl class="facts facts--4" data-reveal>
       <div>
         <dt data-en="List columns">Colonnes de la liste</dt>
@@ -799,7 +958,7 @@
 
 <section class="section grade" id="correction">
   <div class="container">
-    <p class="kicker"><b>03.8</b> <span data-en="Grading">Étalonnage</span></p>
+    <p class="kicker"><b>03.7</b> <span data-en="Grading">Étalonnage</span></p>
     <div class="head">
       <h2 data-split data-en="Your log footage, already graded">Vos images log, déjà étalonnées</h2>
       <p class="lead" data-en="Two LUTs on top of each other, applied on screen only: your files are never modified.">Deux LUT l’une sur l’autre, appliquées à l’écran seulement : vos fichiers ne sont jamais modifiés.</p>
@@ -874,8 +1033,7 @@
       <ol class="opener__toc">
       <li><a href="#modes"><b>04.1</b> <span data-en="Private · Precise">Privé · Précis</span></a></li>
       <li><a href="#essentiel"><b>04.2</b> <span data-en="The essentials">L’essentiel</span></a></li>
-      <li><a href="#cout"><b>04.3</b> <span data-en="Pricing">Tarifs</span></a></li>
-      <li><a href="#formats"><b>04.4</b> <span data-en="Formats">Formats</span></a></li>
+      <li><a href="#formats"><b>04.3</b> <span data-en="Formats">Formats</span></a></li>
       </ol>
     </div>
   </div>
@@ -989,134 +1147,9 @@
   </div>
 </section>
 
-<section class="section cost" id="cout">
-  <div class="container">
-    <p class="kicker"><b>04.3</b> <span data-en="Pricing">Tarifs</span></p>
-    <div class="head">
-      <h2 data-split data-en="The app, and two ways to unlock it all">L’app, et deux façons de tout débloquer</h2>
-      <p class="lead" data-en="The core app comes with Private mode: everything is analysed on your Mac, free and unlimited. For the finest analysis, Precise mode runs on credits you buy when you need them, or that arrive every month with a subscription.">L’app de base inclut le mode Privé : tout est analysé sur votre Mac, gratuitement et sans limite. Pour l’analyse la plus fine, le mode Précis fonctionne avec des crédits, achetés quand vous en avez besoin ou reçus chaque mois avec un abonnement.</p>
-    </div>
-    <div class="plans">
-      <p class="plans__unlock" aria-hidden="true" data-en="Precise mode unlocked, two ways">Mode Précis débloqué, deux façons</p>
-      <article class="plan" data-reveal>
-        <h3 class="plan__name">Eye Derush</h3>
-        <p class="plan__price"><span class="plan__figure num" data-en="€169">169 €</span><span class="plan__unit"><span data-en="per seat">par poste</span><span data-en="lifetime">à vie</span></span></p>
-        <p class="plan__fit" data-en="For occasional use">Pour un usage ponctuel</p>
-        <p class="plan__for" data-en="The core app with Private mode: everything runs on your Mac, with no subscription. Slightly less precise than Precise, and still all you need to derush.">L’app de base avec le mode Privé : tout se fait sur votre Mac, sans abonnement. Un peu moins précis que Précis, et déjà tout ce qu’il faut pour dérusher.</p>
-        <div class="plan__features">
-          <p class="plan__group" data-en="Private mode, in the core app">Mode Privé, dans l’app de base</p>
-          <ul class="plan__list">
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f1"><span data-en="The Mac app, in English and French">L’app Mac, en français et en anglais</span></button><span class="tip__bubble" role="tooltip" id="tip-f1" data-en="A native Mac app. The whole interface comes in English or French, your choice, in light or dark appearance.">Une app native pour Mac. Toute l’interface existe en français et en anglais, au choix, en apparence claire ou sombre.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f2"><span data-en="Free, unlimited analysis, on your Mac">Analyse gratuite et illimitée, sur votre Mac</span></button><span class="tip__bubble" role="tooltip" id="tip-f2" data-en="Transcription, picture descriptions, summaries, themes, translation and faces: everything runs on your Mac, with no hour limit, no connection and nothing sent. A little less precise than Precise mode, and the models are downloaded once.">Transcription, descriptions des images, résumés, thématiques, traduction et visages : tout tourne sur votre Mac, sans limite d’heures, sans connexion, rien n’est envoyé. Un peu moins précis que le mode Précis, et les modèles se téléchargent une fois.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f3"><span data-en="Unlimited search by words and by picture">Recherche illimitée par les mots et par l’image</span></button><span class="tip__bubble" role="tooltip" id="tip-f3" data-en="Search what is said by its words, and what is filmed by describing the picture, in more than 100 languages. Search by meaning is part of Precise mode. Each result opens to the second.">Cherchez ce qui est dit par ses mots, et ce qui est filmé en décrivant l’image, dans plus de 100 langues. La recherche par le sens fait partie du mode Précis. Chaque résultat s’ouvre à la seconde près.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f4"><span data-en="Faces recognised on your Mac, never sent">Visages reconnus sur votre Mac, jamais envoyés</span></button><span class="tip__bubble" role="tooltip" id="tip-f4" data-en="Name a person once: their clips come up in a click, and their voice carries their name in the transcript. Nothing leaves your catalogue.">Nommez une personne une fois : ses plans se retrouvent d’un clic, et sa voix porte son nom dans la transcription. Rien ne quitte votre catalogue.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f5"><span data-en="All your shoots, even with the drives unplugged">Tous vos tournages, même disques débranchés</span></button><span class="tip__bubble" role="tooltip" id="tip-f5" data-en="One catalogue for all your years of rushes. Playback, skimming, sections and ratings work on light previews, without the drives.">Un seul catalogue pour toutes vos années de rushs. Lecture, survol, sections et classement se font sur des aperçus légers, sans les disques.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f6"><span data-en="Export to Final Cut Pro, Premiere Pro and DaVinci Resolve">Export vers Final Cut Pro, Premiere Pro et DaVinci Resolve</span></button><span class="tip__bubble" role="tooltip" id="tip-f6" data-en="A bin, or the whole film sequence by sequence, goes to the edit with its clips, sections, keywords and subtitles: your logging follows wherever you cut.">Un chutier, ou le film entier séquence par séquence, part au montage avec ses plans, ses sections, ses mots-clés et ses sous-titres : votre dérush suit là où vous montez.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f37"><span data-en="Mind, and the film’s structure">Mind, et la structure du film</span></button><span class="tip__bubble" role="tooltip" id="tip-f37" data-en="Lay out your ideas on a mind map, with your bins and shots inside. Then your bins become the sequences of the film: put them in order by dragging, and send the whole film to the edit.">Posez vos idées sur une carte mentale, avec vos chutiers et vos plans dedans. Puis vos chutiers deviennent les séquences du film : mettez-les dans l’ordre en les glissant, et envoyez le film entier au montage.</span></span></li>
-          </ul>
-          <p class="plan__group plan__group--off" data-en="Precise mode, with credits or the subscription">Mode Précis, avec crédits ou abonnement</p>
-          <ul class="plan__list">
-            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f30"><span data-en="The most accurate analysis: descriptions, voices">L’analyse la plus juste : descriptions, voix</span></button><span class="tip__bubble" role="tooltip" id="tip-f30" data-en="A more powerful AI, online, describes each clip in finer detail: what is seen, what is heard, short lines and small text in the picture. For each language, the app picks the most accurate transcription.">Une IA plus puissante, en ligne, décrit chaque plan avec plus de finesse : ce qui se voit, ce qui s’entend, les répliques courtes et les petits textes à l’image. Pour chaque langue, l’app choisit la transcription la plus juste.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
-            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f31"><span data-en="The finest summaries and themes, per clip and per group">Les résumés et thématiques les plus fins, par plan et par groupe</span></button><span class="tip__bubble" role="tooltip" id="tip-f31" data-en="Summaries and themes also exist in Private mode. In Precise mode they are written by the most capable AI: more faithful, more nuanced.">Résumés et thématiques existent aussi en mode Privé. En Précis, ils sont écrits par l’IA la plus capable : plus fidèles, plus nuancés.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
-            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f32"><span data-en="Search by meaning, picture and sound together">Une recherche par le sens, image et son ensemble</span></button><span class="tip__bubble" role="tooltip" id="tip-f32" data-en="Search for an idea rather than an exact word, in picture and sound at once: a precise line, said in a precise setting.">Cherchez une idée plutôt qu’un mot exact, dans l’image et le son à la fois : une phrase précise, dite dans un décor précis.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
-            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f33"><span data-en="Translation into any language, from the original">Traduction dans toutes les langues, depuis l’original</span></button><span class="tip__bubble" role="tooltip" id="tip-f33" data-en="In Precise mode, the translation arrives with the transcript, into the language you choose, always from the original: the most accurate, and fast even on a small Mac.">En Précis, la traduction arrive avec la transcription, dans la langue de votre choix, toujours depuis l’original : le plus juste, et rapide même sur un petit Mac.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
-            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f34"><span data-en="AI built in, with no account to create with an AI provider">Une IA intégrée, sans compte à créer chez un fournisseur d’IA</span></button><span class="tip__bubble" role="tooltip" id="tip-f34" data-en="The AI is already inside Eye Derush. No account to open with an AI provider, no key to set up.">L’IA est déjà dans Eye Derush. Pas de compte à ouvrir chez un fournisseur d’IA, pas de clé à configurer.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
-          </ul>
-          <p class="plan__group plan__group--off" data-en="Added with the subscription">En plus, avec l’abonnement</p>
-          <ul class="plan__list">
-            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f35"><span data-en="Credits renewed every month">Des crédits renouvelés chaque mois</span></button><span class="tip__bubble" role="tooltip" id="tip-f35" data-en="With the subscription, 10 hours of AI analysis arrive every month, or more depending on the plan. Before each analysis, the app shows what it will count.">Avec l’abonnement, 10 h d’analyse IA arrivent chaque mois, ou plus selon la formule. Avant chaque analyse, l’app montre ce qu’elle va compter.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
-          </ul>
-        </div>
-        <div class="plan__foot">
-          <ul class="plan__rows">
-          <li class="plan__row plan__row--best"><span data-en="Lifetime">À vie</span><span data-en="Buy once">Achat unique</span><span data-en="€169">169 €</span></li>
-          </ul>
-          <a class="btn btn--quiet plan__cta" href="#disponible" data-en="Get notified at launch">Être prévenu de la sortie</a>
-          <p class="plan__note"><span class="tip"><button class="tip__btn" type="button" aria-describedby="tip-updates"><span class="tip__icon" aria-hidden="true">i</span><span data-en="Lifetime licences include one year of updates.">Les licences à vie incluent un an de mises à jour.</span></button><span class="tip__bubble" role="tooltip" id="tip-updates" data-en="Lifetime licences include one year of free updates. After that year, you keep using Eye Derush forever, and updates become optional. Whenever you want another year of updates, it costs 50% of the lifetime licence price.">Les licences à vie incluent un an de mises à jour gratuites. Passé cette année, vous gardez Eye Derush pour toujours, et les mises à jour deviennent optionnelles. Quand vous voulez une nouvelle année de mises à jour, elle coûte 50 % du prix de la licence à vie.</span></span></p>
-        </div>
-      </article>
-      <article class="plan" data-reveal>
-        <h3 class="plan__name">Eye Derush <span class="plan__tag" data-en="Credits">Crédits</span></h3>
-        <p class="plan__price"><span class="plan__figure num" data-en="10 h">10 h</span><span class="plan__unit"><span data-en="of AI analysis">d’analyse IA</span><span data-en="or more">ou plus</span></span></p>
-        <p class="plan__fit" data-en="For one project">Pour un projet</p>
-        <p class="plan__for" data-en="Buy credits when you need them: they unlock Precise mode, for as long as a project lasts.">Achetez des crédits quand vous en avez besoin : ils débloquent le mode Précis, le temps d’un projet.</p>
-        <div class="plan__features">
-          <p class="plan__group" data-en="Private mode, in the core app">Mode Privé, dans l’app de base</p>
-          <ul class="plan__list">
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f7"><span data-en="The Mac app, in English and French">L’app Mac, en français et en anglais</span></button><span class="tip__bubble" role="tooltip" id="tip-f7" data-en="A native Mac app. The whole interface comes in English or French, your choice, in light or dark appearance.">Une app native pour Mac. Toute l’interface existe en français et en anglais, au choix, en apparence claire ou sombre.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f8"><span data-en="Free, unlimited analysis, on your Mac">Analyse gratuite et illimitée, sur votre Mac</span></button><span class="tip__bubble" role="tooltip" id="tip-f8" data-en="Transcription, picture descriptions, summaries, themes, translation and faces: everything runs on your Mac, with no hour limit, no connection and nothing sent. A little less precise than Precise mode, and the models are downloaded once.">Transcription, descriptions des images, résumés, thématiques, traduction et visages : tout tourne sur votre Mac, sans limite d’heures, sans connexion, rien n’est envoyé. Un peu moins précis que le mode Précis, et les modèles se téléchargent une fois.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f9"><span data-en="Unlimited search by words and by picture">Recherche illimitée par les mots et par l’image</span></button><span class="tip__bubble" role="tooltip" id="tip-f9" data-en="Search what is said by its words, and what is filmed by describing the picture, in more than 100 languages. Search by meaning is part of Precise mode. Each result opens to the second.">Cherchez ce qui est dit par ses mots, et ce qui est filmé en décrivant l’image, dans plus de 100 langues. La recherche par le sens fait partie du mode Précis. Chaque résultat s’ouvre à la seconde près.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f10"><span data-en="Faces recognised on your Mac, never sent">Visages reconnus sur votre Mac, jamais envoyés</span></button><span class="tip__bubble" role="tooltip" id="tip-f10" data-en="Name a person once: their clips come up in a click, and their voice carries their name in the transcript. Nothing leaves your catalogue.">Nommez une personne une fois : ses plans se retrouvent d’un clic, et sa voix porte son nom dans la transcription. Rien ne quitte votre catalogue.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f11"><span data-en="All your shoots, even with the drives unplugged">Tous vos tournages, même disques débranchés</span></button><span class="tip__bubble" role="tooltip" id="tip-f11" data-en="One catalogue for all your years of rushes. Playback, skimming, sections and ratings work on light previews, without the drives.">Un seul catalogue pour toutes vos années de rushs. Lecture, survol, sections et classement se font sur des aperçus légers, sans les disques.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f12"><span data-en="Export to Final Cut Pro, Premiere Pro and DaVinci Resolve">Export vers Final Cut Pro, Premiere Pro et DaVinci Resolve</span></button><span class="tip__bubble" role="tooltip" id="tip-f12" data-en="A bin, or the whole film sequence by sequence, goes to the edit with its clips, sections, keywords and subtitles: your logging follows wherever you cut.">Un chutier, ou le film entier séquence par séquence, part au montage avec ses plans, ses sections, ses mots-clés et ses sous-titres : votre dérush suit là où vous montez.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f38"><span data-en="Mind, and the film’s structure">Mind, et la structure du film</span></button><span class="tip__bubble" role="tooltip" id="tip-f38" data-en="Lay out your ideas on a mind map, with your bins and shots inside. Then your bins become the sequences of the film: put them in order by dragging, and send the whole film to the edit.">Posez vos idées sur une carte mentale, avec vos chutiers et vos plans dedans. Puis vos chutiers deviennent les séquences du film : mettez-les dans l’ordre en les glissant, et envoyez le film entier au montage.</span></span></li>
-          </ul>
-          <p class="plan__group" data-en="Precise mode, with credits or the subscription">Mode Précis, avec crédits ou abonnement</p>
-          <ul class="plan__list">
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f13"><span data-en="The most accurate analysis: descriptions, voices">L’analyse la plus juste : descriptions, voix</span></button><span class="tip__bubble" role="tooltip" id="tip-f13" data-en="A more powerful AI, online, describes each clip in finer detail: what is seen, what is heard, short lines and small text in the picture. For each language, the app picks the most accurate transcription.">Une IA plus puissante, en ligne, décrit chaque plan avec plus de finesse : ce qui se voit, ce qui s’entend, les répliques courtes et les petits textes à l’image. Pour chaque langue, l’app choisit la transcription la plus juste.</span></span></li>
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f14"><span data-en="The finest summaries and themes, per clip and per group">Les résumés et thématiques les plus fins, par plan et par groupe</span></button><span class="tip__bubble" role="tooltip" id="tip-f14" data-en="Summaries and themes also exist in Private mode. In Precise mode they are written by the most capable AI: more faithful, more nuanced.">Résumés et thématiques existent aussi en mode Privé. En Précis, ils sont écrits par l’IA la plus capable : plus fidèles, plus nuancés.</span></span></li>
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f15"><span data-en="Search by meaning, picture and sound together">Une recherche par le sens, image et son ensemble</span></button><span class="tip__bubble" role="tooltip" id="tip-f15" data-en="Search for an idea rather than an exact word, in picture and sound at once: a precise line, said in a precise setting.">Cherchez une idée plutôt qu’un mot exact, dans l’image et le son à la fois : une phrase précise, dite dans un décor précis.</span></span></li>
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f16"><span data-en="Translation into any language, from the original">Traduction dans toutes les langues, depuis l’original</span></button><span class="tip__bubble" role="tooltip" id="tip-f16" data-en="In Precise mode, the translation arrives with the transcript, into the language you choose, always from the original: the most accurate, and fast even on a small Mac.">En Précis, la traduction arrive avec la transcription, dans la langue de votre choix, toujours depuis l’original : le plus juste, et rapide même sur un petit Mac.</span></span></li>
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f17"><span data-en="AI built in, with no account to create with an AI provider">Une IA intégrée, sans compte à créer chez un fournisseur d’IA</span></button><span class="tip__bubble" role="tooltip" id="tip-f17" data-en="The AI is already inside Eye Derush. No account to open with an AI provider, no key to set up.">L’IA est déjà dans Eye Derush. Pas de compte à ouvrir chez un fournisseur d’IA, pas de clé à configurer.</span></span></li>
-          </ul>
-          <p class="plan__group plan__group--off" data-en="Added with the subscription">En plus, avec l’abonnement</p>
-          <ul class="plan__list">
-            <li class="is-off"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f36"><span data-en="Credits renewed every month">Des crédits renouvelés chaque mois</span></button><span class="tip__bubble" role="tooltip" id="tip-f36" data-en="With the subscription, 10 hours of AI analysis arrive every month, or more depending on the plan. Before each analysis, the app shows what it will count.">Avec l’abonnement, 10 h d’analyse IA arrivent chaque mois, ou plus selon la formule. Avant chaque analyse, l’app montre ce qu’elle va compter.</span></span><span class="visually-hidden" data-en=" (not included)"> (non compris)</span></li>
-          </ul>
-        </div>
-        <div class="plan__foot">
-          <ul class="plan__rows">
-          <li class="plan__row"><span data-en="Price">Prix</span><span data-en=""></span><span data-en="announced at launch">annoncé à la sortie</span></li>
-          </ul>
-          <a class="btn btn--quiet plan__cta" href="#disponible" data-en="Get notified at launch">Être prévenu de la sortie</a>
-          <p class="plan__note" data-en="A clip already analysed is not analysed again, unless you ask.">Un plan déjà analysé n’est pas refait, sauf si vous le demandez.</p>
-        </div>
-      </article>
-      <article class="plan plan--featured" data-reveal>
-        <h3 class="plan__name">Eye Derush <span class="plan__tag" data-en="All included">Tout compris</span></h3>
-        <p class="plan__price"><span class="plan__figure num" data-en="10 h">10 h</span><span class="plan__unit"><span data-en="of AI analysis a month">d’analyse IA par mois</span><span data-en="or more">ou plus</span></span></p>
-        <p class="plan__fit" data-en="For agencies, production companies, full-time editors">Pour une agence, une boîte de prod, un monteur à plein temps</p>
-        <p class="plan__for" data-en="The app and credits renewed every month: Precise mode all the time, with no credits to buy.">L’app et des crédits renouvelés chaque mois : le mode Précis en continu, sans rien racheter.</p>
-        <div class="plan__features">
-          <p class="plan__group" data-en="Private mode, in the core app">Mode Privé, dans l’app de base</p>
-          <ul class="plan__list">
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f18"><span data-en="The Mac app, in English and French">L’app Mac, en français et en anglais</span></button><span class="tip__bubble" role="tooltip" id="tip-f18" data-en="A native Mac app. The whole interface comes in English or French, your choice, in light or dark appearance.">Une app native pour Mac. Toute l’interface existe en français et en anglais, au choix, en apparence claire ou sombre.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f19"><span data-en="Free, unlimited analysis, on your Mac">Analyse gratuite et illimitée, sur votre Mac</span></button><span class="tip__bubble" role="tooltip" id="tip-f19" data-en="Transcription, picture descriptions, summaries, themes, translation and faces: everything runs on your Mac, with no hour limit, no connection and nothing sent. A little less precise than Precise mode, and the models are downloaded once.">Transcription, descriptions des images, résumés, thématiques, traduction et visages : tout tourne sur votre Mac, sans limite d’heures, sans connexion, rien n’est envoyé. Un peu moins précis que le mode Précis, et les modèles se téléchargent une fois.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f20"><span data-en="Unlimited search by words and by picture">Recherche illimitée par les mots et par l’image</span></button><span class="tip__bubble" role="tooltip" id="tip-f20" data-en="Search what is said by its words, and what is filmed by describing the picture, in more than 100 languages. Search by meaning is part of Precise mode. Each result opens to the second.">Cherchez ce qui est dit par ses mots, et ce qui est filmé en décrivant l’image, dans plus de 100 langues. La recherche par le sens fait partie du mode Précis. Chaque résultat s’ouvre à la seconde près.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f21"><span data-en="Faces recognised on your Mac, never sent">Visages reconnus sur votre Mac, jamais envoyés</span></button><span class="tip__bubble" role="tooltip" id="tip-f21" data-en="Name a person once: their clips come up in a click, and their voice carries their name in the transcript. Nothing leaves your catalogue.">Nommez une personne une fois : ses plans se retrouvent d’un clic, et sa voix porte son nom dans la transcription. Rien ne quitte votre catalogue.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f22"><span data-en="All your shoots, even with the drives unplugged">Tous vos tournages, même disques débranchés</span></button><span class="tip__bubble" role="tooltip" id="tip-f22" data-en="One catalogue for all your years of rushes. Playback, skimming, sections and ratings work on light previews, without the drives.">Un seul catalogue pour toutes vos années de rushs. Lecture, survol, sections et classement se font sur des aperçus légers, sans les disques.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f23"><span data-en="Export to Final Cut Pro, Premiere Pro and DaVinci Resolve">Export vers Final Cut Pro, Premiere Pro et DaVinci Resolve</span></button><span class="tip__bubble" role="tooltip" id="tip-f23" data-en="A bin, or the whole film sequence by sequence, goes to the edit with its clips, sections, keywords and subtitles: your logging follows wherever you cut.">Un chutier, ou le film entier séquence par séquence, part au montage avec ses plans, ses sections, ses mots-clés et ses sous-titres : votre dérush suit là où vous montez.</span></span></li>
-            <li><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f39"><span data-en="Mind, and the film’s structure">Mind, et la structure du film</span></button><span class="tip__bubble" role="tooltip" id="tip-f39" data-en="Lay out your ideas on a mind map, with your bins and shots inside. Then your bins become the sequences of the film: put them in order by dragging, and send the whole film to the edit.">Posez vos idées sur une carte mentale, avec vos chutiers et vos plans dedans. Puis vos chutiers deviennent les séquences du film : mettez-les dans l’ordre en les glissant, et envoyez le film entier au montage.</span></span></li>
-          </ul>
-          <p class="plan__group" data-en="Precise mode, with credits or the subscription">Mode Précis, avec crédits ou abonnement</p>
-          <ul class="plan__list">
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f24"><span data-en="The most accurate analysis: descriptions, voices">L’analyse la plus juste : descriptions, voix</span></button><span class="tip__bubble" role="tooltip" id="tip-f24" data-en="A more powerful AI, online, describes each clip in finer detail: what is seen, what is heard, short lines and small text in the picture. For each language, the app picks the most accurate transcription.">Une IA plus puissante, en ligne, décrit chaque plan avec plus de finesse : ce qui se voit, ce qui s’entend, les répliques courtes et les petits textes à l’image. Pour chaque langue, l’app choisit la transcription la plus juste.</span></span></li>
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f25"><span data-en="The finest summaries and themes, per clip and per group">Les résumés et thématiques les plus fins, par plan et par groupe</span></button><span class="tip__bubble" role="tooltip" id="tip-f25" data-en="Summaries and themes also exist in Private mode. In Precise mode they are written by the most capable AI: more faithful, more nuanced.">Résumés et thématiques existent aussi en mode Privé. En Précis, ils sont écrits par l’IA la plus capable : plus fidèles, plus nuancés.</span></span></li>
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f26"><span data-en="Search by meaning, picture and sound together">Une recherche par le sens, image et son ensemble</span></button><span class="tip__bubble" role="tooltip" id="tip-f26" data-en="Search for an idea rather than an exact word, in picture and sound at once: a precise line, said in a precise setting.">Cherchez une idée plutôt qu’un mot exact, dans l’image et le son à la fois : une phrase précise, dite dans un décor précis.</span></span></li>
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f27"><span data-en="Translation into any language, from the original">Traduction dans toutes les langues, depuis l’original</span></button><span class="tip__bubble" role="tooltip" id="tip-f27" data-en="In Precise mode, the translation arrives with the transcript, into the language you choose, always from the original: the most accurate, and fast even on a small Mac.">En Précis, la traduction arrive avec la transcription, dans la langue de votre choix, toujours depuis l’original : le plus juste, et rapide même sur un petit Mac.</span></span></li>
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f28"><span data-en="AI built in, with no account to create with an AI provider">Une IA intégrée, sans compte à créer chez un fournisseur d’IA</span></button><span class="tip__bubble" role="tooltip" id="tip-f28" data-en="The AI is already inside Eye Derush. No account to open with an AI provider, no key to set up.">L’IA est déjà dans Eye Derush. Pas de compte à ouvrir chez un fournisseur d’IA, pas de clé à configurer.</span></span></li>
-          </ul>
-          <p class="plan__group" data-en="Added with the subscription">En plus, avec l’abonnement</p>
-          <ul class="plan__list">
-            <li class="is-plus"><span class="tip tip--start"><button class="tip__btn" type="button" aria-describedby="tip-f29"><span data-en="Credits renewed every month">Des crédits renouvelés chaque mois</span></button><span class="tip__bubble" role="tooltip" id="tip-f29" data-en="With the subscription, 10 hours of AI analysis arrive every month, or more depending on the plan. Before each analysis, the app shows what it will count.">Avec l’abonnement, 10 h d’analyse IA arrivent chaque mois, ou plus selon la formule. Avant chaque analyse, l’app montre ce qu’elle va compter.</span></span></li>
-          </ul>
-        </div>
-        <div class="plan__foot">
-          <ul class="plan__rows">
-          <li class="plan__row"><span data-en="Monthly">Mensuel</span><span data-en=""></span><span data-en="announced at launch">annoncé à la sortie</span></li>
-          <li class="plan__row"><span data-en="Yearly">Annuel</span><span data-en=""></span><span data-en="announced at launch">annoncé à la sortie</span></li>
-          </ul>
-          <a class="btn plan__cta" href="#disponible" data-en="Get notified at launch">Être prévenu de la sortie</a>
-          <p class="plan__note" data-en="Before each analysis, the app shows what it is about to count.">Avant chaque analyse, l’app montre ce qu’elle va compter.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
 <section class="section tech" id="formats">
   <div class="container">
-    <p class="kicker"><b>04.4</b> <span data-en="Formats">Formats</span></p>
+    <p class="kicker"><b>04.3</b> <span data-en="Formats">Formats</span></p>
     <h2 data-split data-en="Your formats, your log profiles">Vos formats, vos profils log</h2>
     <dl class="rows" data-reveal>
       <div>
@@ -1142,6 +1175,8 @@
     </dl>
   </div>
 </section>
+
+</div>
 
 </div>
 
@@ -1174,6 +1209,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=16"></script>
+<script src="site.js?v=17"></script>
 </body>
 </html>
